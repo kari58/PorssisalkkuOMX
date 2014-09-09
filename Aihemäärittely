@@ -1,0 +1,6 @@
+Aihe: Porssikauppaan liittyvä atk-ohjelma, jossa vuoden lopussa katsotaan ostojen ja myyntien tuotto ilman osinkoja
+Kayttäjät Opiskelija ja muut innokkaat
+Tarvitaan arvo-osuutili ,salasanat
+tietyilla säännöillä salkkuun ostetaan pörssieriä, joita myydään kurssien laskujen/nousujen mukaan tietyllä kertoimella
+uusien osakkeiden lisäys, limiitti, kappalemäärä ja arvo
+ostojen ja myyntien FIRSTINFIRSTOUT sääntöä noudattaen tuotto
