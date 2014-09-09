@@ -12,7 +12,7 @@ public class App {
         // TODO code application logic here
         System.out.println("testi");
     }
-    private Map<String, Double> ostohinnat;
+    private HashMap<String, Double> ostohinnat;
     private HashMap<String, Integer> saldot;
     private HashMap<String, Double> markkinaArvot;
     private Double markkinaArvo;
@@ -28,7 +28,14 @@ public class App {
         this.saldot = new HashMap<String, Integer>();
         this.markkinaArvot = new HashMap<String, Double>();
     }
-
+public HashMap<String,Double> getostohinnat(){
+    return ostohinnat;
+}
+public HashMap<String,Integer>getsaldot(){
+    return saldot;
+}
+        
+        
     public void lisaaOsake(String osake, double ostohinta, int saldo) {
         this.ostohinnat.put(osake, ostohinta);
         this.saldot.put(osake, saldo);

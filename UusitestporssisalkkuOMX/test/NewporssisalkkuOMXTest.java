@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,9 +37,13 @@ public class NewporssisalkkuOMXTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void hello() {}
+    @Test
+    public void konstruktoriApp(){
+        NewporssisalkkuOMX salkku=new NewporssisalkkuOMX(10);
+    }
 }
+ //public App() {//konstruktori porssisalkkuOMX joka jostain syystä vääntää tätä nimeä
+       // this.ostohinnat = new HashMap<String, Double>();
+       // this.saldot = new HashMap<String, Integer>();
