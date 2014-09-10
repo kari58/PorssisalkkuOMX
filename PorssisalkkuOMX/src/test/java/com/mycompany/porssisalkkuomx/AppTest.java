@@ -74,18 +74,14 @@ public class AppTest
         
         instance.lisaaOsake(osake, ostohinta, saldo);
      double oikeahinta= instance.getostohinnat().get(osake);
-        // TODO review the generated test code and remove the default call to fail.
+        
    assertEquals(oikeahinta,11.8);
-   //assertEquals(oikeamaara,100);
-   
-   //public HashMap<String,Integer>getsaldot(){
-   // return saldot;
-}
+    }
  
      public void testLisaaOsakeSaldot() {
         System.out.println("lisaaOsake");
-        String osake = "Nokian renkaat";
-        double ostohinta = 26.5;
+        String osake = "UPM";
+        double ostohinta = 11.8;
         int saldo = 100;
         App instance = new App();
         
@@ -100,6 +96,17 @@ public class AppTest
    //public HashMap<String,Integer>getsaldot(){
    // return saldot;
 }
+     public void testLisaaOsakemarkkinaArvot(){
+         System.out.println("lisaaOsake");
+         String osake="UPM";
+         double markkinaArvo=11.8;  //TÄSSÄ 11.8 MUUTETTIIN 0.0
+         int saldo=100;
+         App instance=new App();
+         
+         instance.lisaaOsake(osake, markkinaArvo, saldo);
+          double oikeamarkkinaArvo=instance.getmarkkinaArvot().get(osake);
+          assertEquals(oikeamarkkinaArvo,11.8);
+     }
         
   
 
@@ -108,13 +115,14 @@ public class AppTest
      */
     public void testOstohinta() {
         System.out.println("ostohinta");
-        String osake = "";
+        String osake = "UPM";
         App instance = new App();
-        double expResult = 0.0;
+        double expResult = 11.8;
+       instance.lisaaOsake(osake, expResult, 100);
         double result = instance.ostohinta(osake);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 11.8);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -122,13 +130,14 @@ public class AppTest
      */
     public void testSaldo() {
         System.out.println("saldo");
-        String osake = "";
+        String osake = "UPM";
         App instance = new App();
         int expResult = 0;
+        instance.lisaaOsake(osake, expResult, expResult);
         int result = instance.saldo(osake);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -136,12 +145,12 @@ public class AppTest
      */
     public void testMarkkinaArvo() {
         System.out.println("markkinaArvo");
-        String osake = "";
+        String osake = "UPM";
         App instance = new App();
-        double expResult = 0.0;
+        instance.lisaaOsake(osake, 0.0, 100);
         double result = instance.markkinaArvo(osake);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(result, 11.8);
+        
+        
     }
 }
