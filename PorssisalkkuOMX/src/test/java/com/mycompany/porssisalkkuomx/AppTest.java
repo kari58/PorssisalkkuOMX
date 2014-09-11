@@ -49,12 +49,8 @@ public class AppTest
     /**
      * Test of main method, of class App.
      */
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        App.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testJotain() {
+       
     }
 
     /**
@@ -73,9 +69,9 @@ public class AppTest
         
         
         instance.lisaaOsake(osake, ostohinta, saldo);
-     double oikeahinta= instance.getostohinnat().get(osake);
+        double oikeahinta= instance.getostohinnat().get(osake);
         
-   assertEquals(oikeahinta,11.8);
+        assertEquals(oikeahinta,11.8);
     }
  
      public void testLisaaOsakeSaldot() {
@@ -89,9 +85,9 @@ public class AppTest
         int oikeamaara=instance.getsaldot().get(osake);
         
        
-        // TODO review the generated test code and remove the default call to fail.
-   //assertEquals(oikeahinta,11.8);
-   assertEquals(oikeamaara,100);
+            // TODO review the generated test code and remove the default call to fail.
+            //assertEquals(oikeahinta,11.8);
+            assertEquals(oikeamaara,100);
    
    //public HashMap<String,Integer>getsaldot(){
    // return saldot;
