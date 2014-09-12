@@ -11,19 +11,19 @@ import java.util.Calendar;
  *
  * @author kromanow
  */
-public class FIFOOstoja {
+public class FIFOMyynnit {
     private String osakkeennimi;
     private Paivamaara ostopaiva;
     
-    public FIFOOstoja(String osakkeennimi,int paiva,int kuukausi,int vuosi){
+    public FIFOMyynnit(String osakkeennimi,int paiva,int kuukausi,int vuosi){
         this.osakkeennimi=osakkeennimi;
         this.ostopaiva=new Paivamaara(paiva,kuukausi, vuosi);
     }
-    public FIFOOstoja(String osakkeennimi,Paivamaara ostopaiva){
+    public FIFOMyynnit(String osakkeennimi,Paivamaara ostopaiva){
         this.osakkeennimi=osakkeennimi;
         this.ostopaiva=ostopaiva;
     }
-    public FIFOOstoja(String osakkeennimi){
+    public FIFOMyynnit(String osakkeennimi){
         this.osakkeennimi=osakkeennimi;
     
     Calendar nyt=Calendar.getInstance();
@@ -42,7 +42,7 @@ public class FIFOOstoja {
     return ostopaiva.erotusVuosissa(tamaPaiva);
         
     }
-    public boolean vanhempiKuin(FIFOOstoja verrattava){
+    public boolean vanhempiKuin(FIFOMyynnit verrattava){
         return this.ostopaiva.aiemmin(verrattava.ostopaiva);
     }
     public String getOsakkeennimi(){
