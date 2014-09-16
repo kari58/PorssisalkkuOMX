@@ -42,6 +42,11 @@ public class FIFOMyynnit {
     return ostopaiva.erotusVuosissa(tamaPaiva);
         
     }
+    public int myy(){
+        if(osakkeennimi.vanhinosake&&((ostohinta / markkinaArvo) < 0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
+            saldot-=saldot.values(osakkeennimi);
+        }
+    }
     public boolean vanhempiKuin(FIFOMyynnit verrattava){
         return this.ostopaiva.aiemmin(verrattava.ostopaiva);
     }
@@ -54,5 +59,6 @@ public class FIFOMyynnit {
 }
 //public class Main{
    // public static void main(String[]args){
-      //  FIFOOstoja upm= new FIFOOstoja("UPM", 15,9,2014)
+      //  Ostoja upm= new FIFOOstoja("UPM", 15,9,2014)
+Olet saanut jo hyvin koodia projektiisi! Main-luokassa (eli maven projektissa nimeltään App.java) ei tosin tulisi olla juuri muuta koodia, kuin sen verran mikä vaaditaan ohjelman käynnistämiseen. Siellä nyt sijaitsevat metodit voisi siirtää omaan luokkaansa, vaikkapa PorssisalkkuOMX-nimiseen. Testejä olet myös kirjoitellut ihan hyvin, mutta niitä olisi saanut olla vielä pari lisää (olet kommentoinut osan pois). Muistathan pitää myös luokkakaavion ajan tasalla, nyt sieltä puuttuu mm. Paivamaara-luokka. Kaiken kaikkiaan projektissa ei kuitenkaan ole suurempia puutteita, jatka samaan malliin!
   //  }
