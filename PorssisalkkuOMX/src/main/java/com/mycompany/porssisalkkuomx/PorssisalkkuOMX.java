@@ -6,6 +6,7 @@
 
 package com.mycompany.porssisalkkuomx;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -20,8 +21,8 @@ public class PorssisalkkuOMX {
     private HashMap<String, Double> ostohinnat;
     private HashMap<String, Integer> saldot;
     private HashMap<String, Double> markkinaArvot;
-    private double markkinaArvo=11.8;//TÄSSÄ MUUTETTIIN 11.8  0.0 :KSI
-
+    private double markkinaArvo;
+private ArrayList<Osake>osakkeet =new ArrayList<Osake>();
      
 
     public PorssisalkkuOMX() {//konstruktori porssisalkkuOMX joka jostain syystä vääntää tätä nimeä
@@ -67,12 +68,17 @@ public HashMap<String,Double>getmarkkinaArvot(){
         }
         return this.markkinaArvot.get(osake);
     }
+    public int myy(String osakkeennimi,int saldo){
+        
+
+             if(vanhinosake()&&((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95) ||
+            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) == 1.1))
 
     
 
             
 
-       
+                 }
 
             public String toString() {
                 return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
