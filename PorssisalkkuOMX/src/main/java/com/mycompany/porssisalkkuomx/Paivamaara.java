@@ -26,6 +26,10 @@ public class Paivamaara {
     public String toString() {
         return this.paiva + "." + this.kuukausi + "." + this.vuosi;
     }
+    public int palautakokolukuna(){
+        int l = vuosi+kuukausi*10000+paiva*1000000;
+        return l;
+    }
 
     public boolean aiemmin(Paivamaara verrattava) {
         if (this.vuosi < verrattava.vuosi) {
@@ -61,4 +65,5 @@ public class Paivamaara {
         }
             return this.vuosi-verrattava.vuosi-vuosiPois;
     }
+    
 }

@@ -13,7 +13,7 @@ import java.util.Calendar;
  *
  * @author kromanow
  */
-public class Tapahtumat {
+public class Tapahtumat implements Comparable<Tapahtumat>{
     private String osakkeennimi;
     private Paivamaara ostopaiva;
     
@@ -44,12 +44,7 @@ public class Tapahtumat {
     return ostopaiva.erotusVuosissa(tamaPaiva);
         
     }
-  / / public int myy(String osakkeennimi,saldot.){
-   //     if(osakkeennimi.vanhinosake&&((ostohinta / markkinaArvo) < 0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
-        //    saldot-=saldot.values(osakkeennimi);
-      //  }
-        return 0;
-    }
+
     public boolean vanhempiKuin(Tapahtumat verrattava){
         return this.ostopaiva.aiemmin(verrattava.ostopaiva);
     }
@@ -58,6 +53,15 @@ public class Tapahtumat {
     }
     public String toString(){
         return this.osakkeennimi+",ostopäivä "+this.ostopaiva;
+    }
+    public Paivamaara getVanhin(){
+        return this.ostopaiva;
+    }
+
+    @Override
+    public int compareTo(Tapahtumat o) {
+        return this.ostopaiva.palautakokolukuna()-o.ostopaiva.palautakokolukuna();
+        
     }
 }
 //public class Main{

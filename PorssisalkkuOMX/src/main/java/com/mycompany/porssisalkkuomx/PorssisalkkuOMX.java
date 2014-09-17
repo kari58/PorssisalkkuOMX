@@ -18,11 +18,18 @@ public class PorssisalkkuOMX {
         // TODO code application logic here
         System.out.println("testi");
     }
-    private HashMap<String, Double> ostohinnat;
+    protected HashMap<String, Double> ostohinnat;
    HashMap<String, Integer> saldot;
     private HashMap<String, Double> markkinaArvot;
     double markkinaArvo;
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
+private int Com
+private boolean lisaaOsakeet(String osake){
+       return osakkeet.add(osake);
+    }
+private int vahennaOsakkeet(String osake){
+    return osakkeet.remove(.vanhinosake(osake));
+}
 
 //if limittitili osto osakkeet.add(osake);
 //if limiittitili myy osakkeet.remove(osake.get(osakkeennimi)
@@ -72,17 +79,17 @@ public HashMap<String,Double>getmarkkinaArvot(){
         }
         return this.markkinaArvot.get(osake);
     }
-    public int myy(String osakkeennimi,int saldo){
+   // public int myy(String osakkeennimi,int saldo){
         
 
-             if(vanhinosake()&&((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95) ||
-            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) == 1.1))
+           //  if(vanhinosake()&&((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95) ||
+           // ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) == 1.1))
 
     
 
             
 
-                 }
+               //  }
 
             public String toString() {
                 return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
