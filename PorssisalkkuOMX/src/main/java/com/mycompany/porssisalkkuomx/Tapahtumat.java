@@ -13,19 +13,19 @@ import java.util.Calendar;
  *
  * @author kromanow
  */
-public class Osake {
+public class Tapahtumat {
     private String osakkeennimi;
     private Paivamaara ostopaiva;
     
-    public Osake(String osakkeennimi,int paiva,int kuukausi,int vuosi){
+    public Tapahtumat(String osakkeennimi,int paiva,int kuukausi,int vuosi){
         this.osakkeennimi=osakkeennimi;
         this.ostopaiva=new Paivamaara(paiva,kuukausi, vuosi);
     }
-    public Osake(String osakkeennimi,Paivamaara ostopaiva){
+    public Tapahtumat(String osakkeennimi,Paivamaara ostopaiva){
         this.osakkeennimi=osakkeennimi;
         this.ostopaiva=ostopaiva;
     }
-    public Osake(String osakkeennimi){
+    public Tapahtumat(String osakkeennimi){
         this.osakkeennimi=osakkeennimi;
     
     Calendar nyt=Calendar.getInstance();
@@ -50,7 +50,7 @@ public class Osake {
       //  }
         return 0;
     }
-    public boolean vanhempiKuin(Osake verrattava){
+    public boolean vanhempiKuin(Tapahtumat verrattava){
         return this.ostopaiva.aiemmin(verrattava.ostopaiva);
     }
     public String getOsakkeennimi(){

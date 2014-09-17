@@ -19,10 +19,14 @@ public class PorssisalkkuOMX {
         System.out.println("testi");
     }
     private HashMap<String, Double> ostohinnat;
-    private HashMap<String, Integer> saldot;
+   HashMap<String, Integer> saldot;
     private HashMap<String, Double> markkinaArvot;
-    private double markkinaArvo;
-private ArrayList<Osake>osakkeet =new ArrayList<Osake>();
+    double markkinaArvo;
+ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
+
+//if limittitili osto osakkeet.add(osake);
+//if limiittitili myy osakkeet.remove(osake.get(osakkeennimi)
+//if limiittitili myy osakkeet.remove(osake.vanhinosake();
      
 
     public PorssisalkkuOMX() {//konstruktori porssisalkkuOMX joka jostain syystä vääntää tätä nimeä
