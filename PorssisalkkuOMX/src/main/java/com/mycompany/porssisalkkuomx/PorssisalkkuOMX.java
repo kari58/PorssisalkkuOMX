@@ -7,6 +7,7 @@
 package com.mycompany.porssisalkkuomx;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -19,17 +20,20 @@ public class PorssisalkkuOMX {
         System.out.println("testi");
     }
     protected HashMap<String, Double> ostohinnat;
-   HashMap<String, Integer> saldot;
-    private HashMap<String, Double> markkinaArvot;
+   protected HashMap<String, Integer> saldot;
+    protected HashMap<String, Double> markkinaArvot;
     double markkinaArvo;
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
-private int Com
-private boolean lisaaOsakeet(String osake){
-       return osakkeet.add(osake);
-    }
-private int vahennaOsakkeet(String osake){
-    return osakkeet.remove(.vanhinosake(osake));
-}
+
+ 
+
+
+//private boolean lisaaOsakeet(String osake){
+      // return osakkeet.add(osake);
+   // }
+//private int vahennaOsakkeet(String osake){
+    //return osakkeet.remove(.vanhinosake(osake));
+//}
 
 //if limittitili osto osakkeet.add(osake);
 //if limiittitili myy osakkeet.remove(osake.get(osakkeennimi)

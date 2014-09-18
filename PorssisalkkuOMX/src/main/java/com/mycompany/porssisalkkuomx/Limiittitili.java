@@ -17,6 +17,10 @@ public class Limiittitili extends PorssisalkkuOMX{
     private String osake;
     private String osakkeennimi;
     private int saldo;
+    private int PE ; //P/E
+    private int F; //määritellään myöhemmin
+       private double ostohinta;
+       private double markkinaArvo;
     public Limiittitili(){
         this.limiittitili=100000;
     }
