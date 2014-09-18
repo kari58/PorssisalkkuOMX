@@ -4,9 +4,7 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
+
 public class AppTest 
     extends TestCase
 {
@@ -38,31 +36,25 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
+   
     public void testApp()
     {
         assertTrue( true );
     }
 
-    /**
-     * Test of main method, of class App.
-     */
+   
     public void testJotain() {
        
     }
 
-    /**
-     * Test of lisaaOsake method, of class App.
-     */
+    
     
     public void testLisaaOsake() {
         System.out.println("lisaaOsake");
         String osake = "UPM";
         double ostohinta = 11.8;
         int saldo = 100;
-        App instance = new App();
+        PorssisalkkuOMX instance = new PorssisalkkuOMX();
         
         instance.lisaaOsake(osake, ostohinta, saldo);
         int oikeamaara=instance.getsaldot().get(osake);
@@ -79,10 +71,11 @@ public class AppTest
         String osake = "UPM";
         double ostohinta = 11.8;
         int saldo = 100;
-        App instance = new App();
+         PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         
         instance.lisaaOsake(osake, ostohinta, saldo);
-        int oikeamaara=instance.getsaldot().get(osake);
+        int oikeamaara;
+        oikeamaara = instance.getsaldot().get(osake);
         
        
             // TODO review the generated test code and remove the default call to fail.
@@ -97,7 +90,7 @@ public class AppTest
          String osake="UPM";
          double markkinaArvo=11.8;  //TÄSSÄ 11.8 MUUTETTIIN 0.0
          int saldo=100;
-         App instance=new App();
+         PorssisalkkuOMX instance=new  PorssisalkkuOMX();
          
          instance.lisaaOsake(osake, markkinaArvo, saldo);
           double oikeamarkkinaArvo=instance.getmarkkinaArvot().get(osake);
@@ -106,13 +99,11 @@ public class AppTest
         
   
 
-    /**
-     * Test of ostohinta method, of class App.
-     */
+   
     public void testOstohinta() {
         System.out.println("ostohinta");
         String osake = "UPM";
-        App instance = new App();
+        PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         double expResult = 11.8;
        instance.lisaaOsake(osake, expResult, 100);
         double result = instance.ostohinta(osake);
@@ -121,13 +112,11 @@ public class AppTest
         
     }
 
-    /**
-     * Test of saldo method, of class App.
-     */
+  
     public void testSaldo() {
         System.out.println("saldo");
         String osake = "UPM";
-        App instance = new App();
+       PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         int expResult = 0;
         instance.lisaaOsake(osake, expResult, expResult);
         int result = instance.saldo(osake);
@@ -136,13 +125,11 @@ public class AppTest
        
     }
 
-    /**
-     * Test of markkinaArvo method, of class App.
-     */
+    
     public void testMarkkinaArvo() {
         System.out.println("markkinaArvo");
         String osake = "UPM";
-        App instance = new App();
+        PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         instance.lisaaOsake(osake, 0.0, 100);
         double result = instance.markkinaArvo(osake);
         assertEquals(result, 11.8);

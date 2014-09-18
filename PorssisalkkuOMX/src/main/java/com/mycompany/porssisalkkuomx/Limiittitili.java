@@ -16,6 +16,9 @@ public class Limiittitili extends PorssisalkkuOMX{
     private double limiittitili;
     private String osake;
     private String osakkeennimi;
+    private Tapahtumat o;       //18.9 ASSISTENTTI
+    private PorssisalkkuOMX h;    //   vanhinosake()   yritetään  yhdistää  
+
     private int saldo;
     private int PE ; //P/E
     private int F; //määritellään myöhemmin
@@ -27,10 +30,12 @@ public class Limiittitili extends PorssisalkkuOMX{
     
     
     public double myy(String osake,int saldo){
-        if(saldot.containsKey(osake)){//  if saldot.get(osake)>saldo 
-             if(osakkeennimi.vanhinosake()&&((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95) ||
-            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) == 1.1))
-            limiittitili+=markkinaArvo*saldo;
+        if(saldot.containsKey(osake)){//  if saldot.get(osake)>saldo TÄHÄN PITÄISI SAADA VANHIN()OSAKE
+             if(((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 0.95) &&
+            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) != 1.1)) {
+            } else {
+                 limiittitili+=markkinaArvo*saldo;
+            }
         }
         return limiittitili;
     }
