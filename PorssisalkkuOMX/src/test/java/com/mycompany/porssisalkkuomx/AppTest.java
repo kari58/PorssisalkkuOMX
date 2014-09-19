@@ -8,6 +8,8 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+    private double markkinaArvo;
+    private double ostohinta;
     /**
      * Create the test case
      *
@@ -56,11 +58,11 @@ public class AppTest
         int saldo = 100;
         PorssisalkkuOMX instance = new PorssisalkkuOMX();
         
-        instance.lisaaOsake(osake, ostohinta, saldo);
+        instance.lisaaOsake(osake, ostohinta, saldo,markkinaArvo);
         int oikeamaara=instance.getsaldot().get(osake);
         
         
-        instance.lisaaOsake(osake, ostohinta, saldo);
+        instance.lisaaOsake(osake, ostohinta, saldo,markkinaArvo);
         double oikeahinta= instance.getostohinnat().get(osake);
         
         assertEquals(oikeahinta,11.8);
@@ -73,7 +75,7 @@ public class AppTest
         int saldo = 100;
          PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         
-        instance.lisaaOsake(osake, ostohinta, saldo);
+        instance.lisaaOsake(osake, ostohinta, saldo,markkinaArvo);
         int oikeamaara;
         oikeamaara = instance.getsaldot().get(osake);
         
@@ -92,12 +94,12 @@ public class AppTest
          int saldo=100;
          PorssisalkkuOMX instance=new  PorssisalkkuOMX();
          
-         instance.lisaaOsake(osake, markkinaArvo, saldo);
+         instance.lisaaOsake(osake,ostohinta,saldo,markkinaArvo);
           double oikeamarkkinaArvo=instance.getmarkkinaArvot().get(osake);
           assertEquals(oikeamarkkinaArvo,11.8);
      }
         
-  
+ 
 
    
     public void testOstohinta() {
@@ -105,7 +107,7 @@ public class AppTest
         String osake = "UPM";
         PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         double expResult = 11.8;
-       instance.lisaaOsake(osake, expResult, 100);
+       instance.lisaaOsake(osake, expResult, 100,11.8);
         double result = instance.ostohinta(osake);
         assertEquals(expResult, result, 11.8);
         // TODO review the generated test code and remove the default call to fail.
@@ -118,7 +120,7 @@ public class AppTest
         String osake = "UPM";
        PorssisalkkuOMX instance = new  PorssisalkkuOMX();
         int expResult = 0;
-        instance.lisaaOsake(osake, expResult, expResult);
+        instance.lisaaOsake(osake, expResult, expResult,expResult);
         int result = instance.saldo(osake);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -130,9 +132,9 @@ public class AppTest
         System.out.println("markkinaArvo");
         String osake = "UPM";
         PorssisalkkuOMX instance = new  PorssisalkkuOMX();
-        instance.lisaaOsake(osake, 0.0, 100);
+        instance.lisaaOsake(osake, 11.8, 100,11.8);
         double result = instance.markkinaArvo(osake);
-        assertEquals(result, 11.8);
+        assertEquals(11.8, result);
         
         
     }

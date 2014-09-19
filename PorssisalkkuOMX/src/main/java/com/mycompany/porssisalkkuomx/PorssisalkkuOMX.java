@@ -56,7 +56,7 @@ public HashMap<String,Double>getmarkkinaArvot(){
 }
         
         
-    public void lisaaOsake(String osake, double ostohinta, int saldo) {
+    public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
         this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);

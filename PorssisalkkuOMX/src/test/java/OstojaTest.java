@@ -44,10 +44,15 @@ public class OstojaTest {
         System.out.println("osta");
         String osake = "UPM";
         int saldo = 100;
-        Ostoja instance = new Ostoja(UPM,100);
-        double expResult = 100;
+        double ostohinta=10;
+        double limiittitili=100000;
+        double pankintili=1000000;
+        int PE=12;
+        int F=4;
+        Ostoja instance = new Ostoja(osake, saldo, ostohinta,limiittitili, pankintili,PE, F);
+        double expResult = 99000;
         double result = instance.osta(osake, saldo);
-        assertEquals(expResult, result, 100);
+        assertEquals(expResult, result, 10);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
@@ -63,3 +68,4 @@ public class OstojaTest {
         int expResult = 3;
         int result = instance.erotusVuosissa(verrattava);
         assertEquals(expResult, result);
+*/
