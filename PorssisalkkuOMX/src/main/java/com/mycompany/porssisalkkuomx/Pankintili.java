@@ -17,11 +17,17 @@ public class Pankintili extends PorssisalkkuOMX{
     public Pankintili(double pankintili){
         this.pankintili=pankintili;
     }
+    /**
+    asiakkaan myydessä osaketta pankin arvo-osuustili kyseiselle asiakkaalle vähenee myynnin edestä. vuoden lopussa
+    pankki tilittää voitoista ja osingoista 30% verottjalla
+    */
     public double myy(){
        return  pankintili-=markkinaArvo*saldo;
     }
                            //joku haluaa ostaa
-    
+    /**
+    asiakkaan ostaessa osakkeita pankin tili kasvaa ostolla
+    */
     public double osta(){
         return pankintili+=markkinaArvo*saldo;
     }

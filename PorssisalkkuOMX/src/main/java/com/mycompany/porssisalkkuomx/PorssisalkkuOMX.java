@@ -25,7 +25,9 @@ public class PorssisalkkuOMX {
     double markkinaArvo;
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
 
- 
+/**
+ * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
+ */ 
 
 
 //private boolean lisaaOsakeet(String osake){
@@ -45,6 +47,12 @@ ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
         this.saldot = new HashMap<String, Integer>();
         this.markkinaArvot = new HashMap<String, Double>();
     }
+    /**
+     * ostohinta kuvaa osakkeen hinnan ostossa, saldot oston määrän saldot salkussa
+     * markkinahinta on tämän päivän kurssi ja sitä käytetään myyntiä arvioitaessa
+     * ostohetken kurssi on tietysti myyjälle markkinahinta
+     * @return 
+     */
 public HashMap<String,Double> getostohinnat(){
     return ostohinnat;
 }
@@ -54,7 +62,14 @@ public HashMap<String,Integer>getsaldot(){
 public HashMap<String,Double>getmarkkinaArvot(){
     return markkinaArvot;
 }
-        
+        /**
+         * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä
+         * markkina-arvot myyntiä tehtäessä
+         * @param osake
+         * @param ostohinta
+         * @param saldo
+         * @param markkinaArvo 
+         */
         
     public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);

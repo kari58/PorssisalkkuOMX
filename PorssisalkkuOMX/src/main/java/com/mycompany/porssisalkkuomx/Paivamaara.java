@@ -9,7 +9,9 @@ package com.mycompany.porssisalkkuomx;
 /**
  *
  * @author kromanow
+ * 
  */
+
 public class Paivamaara {
 
     private int paiva;
@@ -23,14 +25,33 @@ public class Paivamaara {
         this.vuosi = vuosi;
     }
 
+    Paivamaara(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String toString() {
         return this.paiva + "." + this.kuukausi + "." + this.vuosi;
     }
+    /**
+    vanhinosake metodissa tarvitsee olla 
+    public int compareTo(Tapahtumat o) {
+        return this.ostopaiva.palautakokolukuna()-o.ostopaiva.palautakokolukuna();
+    public double myy(String osake,int saldo){
+       // vanhinosake()
+        Collections.sort(super.osakkeet);
+    FIFO säännön mukaan ensin pitää myydä, jos osakkeitta on ostettu useampana aikakaidella:vanhin osake
+     * @return 
+    */
     public int palautakokolukuna(){
         int l = vuosi+kuukausi*10000+paiva*1000000;
         return l;
     }
-
+    
+    /**
+     * Kuvaus metodista aiemmin.etsii aikaisimman eli vanhimman
+     * @param verrattava
+     * @return 
+     */
     public boolean aiemmin(Paivamaara verrattava) {
         if (this.vuosi < verrattava.vuosi) {
             return true;
@@ -44,15 +65,22 @@ public class Paivamaara {
         return false;
 
     }
+    /**
+     * etsii vanhimman kun ostopäivät selvilla
+     * @param verrattava
+     * @return 
+     * TUTKI MIKSI EROTUS TEST 2014-2010=0  EIKÄ 4
+     */
 
     public int erotusVuosissa(Paivamaara verrattava) {  //vanhin ajassa pitäisi myös saada
         if (aiemmin(verrattava)) {
-            return verrattava.erotusVuosissa(verrattava); // (this)
+            return verrattava.erotusVuosissa(this); // (this)
         }
         return laskeErotus(verrattava);
     }
 
     private int laskeErotus(Paivamaara verrattava) {
+        System.out.println("vuodet: " + vuosi + " " + verrattava.vuosi);
         int vuosiPois = 0;
         if (this.kuukausi < verrattava.kuukausi) {
             vuosiPois = 1;
@@ -67,3 +95,6 @@ public class Paivamaara {
     }
     
 }
+
+
+

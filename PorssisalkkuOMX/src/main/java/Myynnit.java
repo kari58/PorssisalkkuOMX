@@ -31,7 +31,7 @@
 
             public double myy(String osake, int saldo) {
                 double voitotTappiot = 0;
-                if (((ostohinta / markkinaArvo) < 0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
+                if (((ostohinta / markkinaArvo) ==0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
                     saldo = 0;//jos myydään kaikki
                     return limiittitili += this.saldo * this.markkinaArvo;
                     //return pankintili-=this.saldo*this.markkinaArvo;

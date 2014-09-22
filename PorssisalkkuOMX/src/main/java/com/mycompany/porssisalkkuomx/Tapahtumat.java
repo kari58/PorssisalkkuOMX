@@ -35,12 +35,16 @@ public class Tapahtumat implements Comparable<Tapahtumat>{
     this.ostopaiva=new Paivamaara(paiva, kuukausi, vuosi);
     
 }
+    /*
+    FIFO-säännön mukaan myydessä vanhin osake pitää myydä ekana
+    */
     public int vanhinosake(){   
         Calendar nyt=Calendar.getInstance();
     int vuosi=nyt.get(Calendar.YEAR);
     int kuukausi=nyt.get(Calendar.MONTH)+1;
     int paiva=nyt.get(Calendar.DATE);
     Paivamaara tamaPaiva=new Paivamaara(paiva,kuukausi, vuosi);
+        System.out.println("vuosi.... " + vuosi + " ja... " + ostopaiva.toString());
     return ostopaiva.erotusVuosissa(tamaPaiva);
         
     }
@@ -57,7 +61,11 @@ public class Tapahtumat implements Comparable<Tapahtumat>{
     public Paivamaara getVanhin(){
         return this.ostopaiva;
     }
-
+/**
+ * palauttaa kok.lukuna, joka on määritelty Paivamaara luokassa
+ * @param o
+ * @return 
+ */
     @Override
     public int compareTo(Tapahtumat o) {
         return this.ostopaiva.palautakokolukuna()-o.ostopaiva.palautakokolukuna();

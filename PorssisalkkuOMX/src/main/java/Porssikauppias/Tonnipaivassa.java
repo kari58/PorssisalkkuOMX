@@ -50,13 +50,18 @@ public class Tonnipaivassa implements Runnable{
         kysymys2vastaukset.add(kysymys2vastaus1);
         kysymys2vastaukset.add(kysymys2vastaus1);
         
-        JButton valmis=new JButton("Valmis");
+        JButton valmis=new JButton("Varma hausse huomenna");
         
         BoxLayout layout=new BoxLayout(container,BoxLayout.Y_AXIS);
         container.setLayout(layout);
         
         container.add(kysymys1);
-        container.add(kysymys1vastausKylla);     //jatkuu sivu 2 rivi 44
+        container.add(kysymys1vastausKylla);  
+        container.add(kysymys1vastausEi);
+        container.add(kysymys2);
+        container.add(kysymys2vastaus1);
+        container.add(kysymys2vastaus2);
+        container.add(valmis);
     }
         public JFrame getFrame(){
             return frame;

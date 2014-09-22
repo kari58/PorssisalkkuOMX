@@ -27,7 +27,13 @@ public class Limiittitili extends PorssisalkkuOMX {
     public Limiittitili(){
         this.limiittitili=100000;
     }
+   /**
+    * 
+     *myydään osake, kun se on vanhin ostosarjasta, jos osakkeen hinta putoaa ostohinnasta 5% 
+     * tai kurssi nousee ostohinnasta 10%
+     * lopussa tillee tulee myynnin arvo, provisiota tai veroa ei huomioida tässä
     
+    */
     
     public double myy(String osake,int saldo){
        // vanhinosake()
@@ -35,14 +41,23 @@ public class Limiittitili extends PorssisalkkuOMX {
         
         
         if(saldot.containsKey(osake)){//  if saldot.get(osake)>saldo TÄHÄN PITÄISI SAADA VANHIN()OSAKE
-             if(((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 0.95) &&
-            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) != 1.1)) {
+             if(((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) == 0.95) &&
+            ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) >= 1.1)) {
             } else {
                  limiittitili+=markkinaArvo*saldo;
             }
         }
         return limiittitili;
     }
+    /**
+     * ostetaan osakeita kun sen kurssin P/E -luku on välillä 7 ja 16
+     * F määritellään myöhemmin, kuitenkin syklisiä osakkeita ostetaan käyrän minimissä ja sama periaate 
+     * muutenkin muissa ostoissa,keskitytään ainoastaan osinkja maksaviin
+     * ostossa limiittililtä lähetetään rahaa välittäjälle
+     * @param osake
+     * @param saldo
+     * @return 
+     */
     public double osta(String osake,int saldo){
         if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {  //  if limiittitili>=markkinaArvot*saldo 
                 return limiittitili -= this.saldo * ostohinta;
