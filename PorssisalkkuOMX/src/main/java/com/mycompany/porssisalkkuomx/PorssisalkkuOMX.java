@@ -22,7 +22,7 @@ public class PorssisalkkuOMX {
     protected HashMap<String, Double> ostohinnat;
    protected HashMap<String, Integer> saldot;
     protected HashMap<String, Double> markkinaArvot;
-    double markkinaArvo;
+    double markkinaArvo=11.0;   //testiä varten
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
 
 /**

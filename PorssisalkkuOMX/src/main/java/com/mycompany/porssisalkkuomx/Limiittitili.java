@@ -14,7 +14,7 @@ import java.util.Collections;
  */
 public class Limiittitili extends PorssisalkkuOMX {
     private double limiittitili;
-  //  private String osake;
+
     private String osakkeennimi;
    // private Tapahtumat o;       //18.9 ASSISTENTTI
     private PorssisalkkuOMX h;    //   vanhinosake()   yritetään  yhdistää  
@@ -25,7 +25,7 @@ public class Limiittitili extends PorssisalkkuOMX {
        private double ostohinta;
        private double markkinaArvo;
     public Limiittitili(){
-        this.limiittitili=100000;
+        this.limiittitili=100000.0;
     }
    /**
     * 
@@ -34,6 +34,9 @@ public class Limiittitili extends PorssisalkkuOMX {
      * lopussa tillee tulee myynnin arvo, provisiota tai veroa ei huomioida tässä
     
     */
+    public double getLimiittitili(){
+        return limiittitili;
+    }
     
     public double myy(String osake,int saldo){
        // vanhinosake()
@@ -58,15 +61,49 @@ public class Limiittitili extends PorssisalkkuOMX {
      * @param saldo
      * @return 
      */
-    public double osta(String osake,int saldo){
+    public double osta(double ostohinta,int saldo){ 
         if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {  //  if limiittitili>=markkinaArvot*saldo 
                 return limiittitili -= this.saldo * ostohinta;
                 //return    pankintili+=this.saldo*ostohinta; //pankin provisiota ei huomioida, voi ottaa *1,005
             }
          
         
-        return limiittitili-=markkinaArvo*saldo;
-        
+        return limiittitili-=ostohinta*saldo;
+    //saldot.put    ostohinnat.put   markkinaArvot.put    
     }
     
 }
+
+
+/*
+@Test
+            public void Tapahtumat2(){
+                
+          
+    Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2010);
+    Tapahtumat tapahtumat2=new Tapahtumat("StoraEnso", 12, 8, 2013);
+    boolean vastaus=tapahtumat.vanhempiKuin(tapahtumat2);
+    assertTrue(vastaus);
+    
+   voitot/tappiot
+publpublic double myy(String osake, int saldo) {
+                double voitotTappiot = 0;
+                if (((ostohinta / markkinaArvo) ==0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
+                    saldo = 0;//jos myydään kaikki
+                    return limiittitili += this.saldo * this.markkinaArvo;
+                    //return pankintili-=this.saldo*this.markkinaArvo;
+                  
+//return voitotTappiot+=this.saldo*markkinaArvo-this.saldo*this.ostohinta;}ic double myy(String osake, int saldo) {
+
+                double voitotTappiot = 0;
+
+                if (((ostohinta / markkinaArvo) ==0.95) || ((ostohinta / markkinaArvo) == 1.1)) {
+                    saldo = 0;//jos myydään kaikki
+                    return limiittitili += this.saldo * this.markkinaArvo;
+                    //return pankintili-=this.saldo*this.markkinaArvo;
+
+                    //return voitotTappiot+=this.saldo*markkinaArvo-this.saldo*this.ostohinta;}
+
+
+}
+*/

@@ -90,7 +90,9 @@ public class TapahtumatTest {
                     
 }
 
-/*
+/**
+ * 
+ * selvittää onko 2013 vai 2012 ostettu osake vanhin FIFO-periaatteeseen
 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 Calendar cal = Calendar.getInstance();
 System.out.println(dateFormat.format(cal.getTime())); //2014/08/06 16:00:22

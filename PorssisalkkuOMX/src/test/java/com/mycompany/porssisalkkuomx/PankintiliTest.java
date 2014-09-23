@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+package com.mycompany.porssisalkkuomx;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,9 +17,10 @@ import static org.junit.Assert.*;
  *
  * @author kromanow
  */
-public class OstojaTest {
-    
-    public OstojaTest() {
+public class PankintiliTest {
+        Pankintili instance = new Pankintili(100000.0);  
+    public PankintiliTest() {
+              instance.getmarkkinaArvot().put("UPM",11.0);
     }
     
     @BeforeClass
@@ -37,8 +40,43 @@ public class OstojaTest {
     }
 
     /**
-     * Test of osta method, of class Ostoja.
+     * Test of myy method, of class Pankintili.
      */
+    @Test
+    public void testMyy() {
+        System.out.println("myy");
+        
+        double result = instance.myy("UPM",100);
+        assertEquals(result, 98900, 0.01);
+       /*
+         @Test
+    public void Limiittitili() {
+        Limiittitili limiittitili2 = new Limiittitili();
+        double vastaus = limiittitili2.osta(10.0, 100);
+        assertEquals(vastaus, 99000.0, 0.01);
+        
+        public double myy(String osakkeennimi,int saldo){
+       return  pankintili-=markkinaArvot.get(osakkeennimi)*saldo;
+    }
+    }
+        */
+    }
+
+    /**
+     * Test of osta method, of class Pankintili.
+     */
+    @Test
+    public void testOsta() {
+        System.out.println("osta");
+       
+        
+        double result = instance.osta("UPM",100);
+        assertEquals(result, 101100, 0.0);
+        
+    }
+    
+}
+/*
     @Test
     public void testOsta() {
         System.out.println("osta");
