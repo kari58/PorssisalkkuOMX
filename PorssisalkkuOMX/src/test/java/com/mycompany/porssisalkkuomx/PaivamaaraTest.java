@@ -91,4 +91,18 @@ public class PaivamaaraTest {
         boolean result = instance.aiemmin(verrattava);
         assertEquals(expResult, result);
     }
+
+    /**
+     * Test of palautakokolukuna method, of class Paivamaara.
+     */
+    @Test
+    public void testPalautakokolukuna() {
+        System.out.println("palautakokolukuna");
+        Paivamaara instance = new Paivamaara(15,8,2014);
+        int expResult = 15082014;
+        int result = instance.palautakokolukuna();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+       
+    }
 }

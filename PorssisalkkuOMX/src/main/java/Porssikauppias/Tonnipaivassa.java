@@ -40,7 +40,13 @@ public class Tonnipaivassa implements Runnable{
     private void luoKomponentit(Container container) {
         JLabel kysymys1=new JLabel("Tonni tänään?");
         JCheckBox kysymys1vastausKylla=new JCheckBox("Tietysti");
-        JCheckBox kysymys1vastausEi= new JCheckBox("Ei");
+        JCheckBox kysymys1vastausEi= new JCheckBox("Satanen riittää");
+        
+        JLabel kysymys3=new JLabel("Ostetaanko tänään Componentaa ?");
+       
+        JCheckBox kysymys3vastausEI=new JCheckBox("Ei, kyllä annin jälkeen putoaa reilusti");
+       JRadioButton kysymys3vastaus1=new JRadioButton("10000 kpl riittää");
+        JRadioButton kysymys3vastaus2=new JRadioButton("Ei ,putoaa vielä");
         
         JLabel kysymys2=new JLabel("Miten meni eilen");
         ButtonGroup kysymys2vastaukset=new ButtonGroup();
@@ -50,7 +56,7 @@ public class Tonnipaivassa implements Runnable{
         kysymys2vastaukset.add(kysymys2vastaus1);
         kysymys2vastaukset.add(kysymys2vastaus1);
         
-        JButton valmis=new JButton("Varma hausse huomenna");
+        JButton valmis=new JButton("Varma hausse huomenna, Ukrainassa sopu !");
         
         BoxLayout layout=new BoxLayout(container,BoxLayout.Y_AXIS);
         container.setLayout(layout);
@@ -61,6 +67,11 @@ public class Tonnipaivassa implements Runnable{
         container.add(kysymys2);
         container.add(kysymys2vastaus1);
         container.add(kysymys2vastaus2);
+        
+        container.add(kysymys3);
+        
+        container.add(kysymys3vastaus1);
+        container.add(kysymys3vastaus2);
         container.add(valmis);
     }
         public JFrame getFrame(){
