@@ -30,5 +30,3 @@ public class Main {
             System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
         }
     }
-
-  

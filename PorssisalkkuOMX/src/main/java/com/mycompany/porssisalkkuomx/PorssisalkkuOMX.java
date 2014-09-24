@@ -9,12 +9,43 @@ package com.mycompany.porssisalkkuomx;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  *
  * @author kromanow
  */
 public class PorssisalkkuOMX {
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 73 * hash + Objects.hashCode(this.ostohinnat);
+        hash = 73 * hash + Objects.hashCode(this.saldot);
+        hash = 73 * hash + Objects.hashCode(this.markkinaArvot);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PorssisalkkuOMX other = (PorssisalkkuOMX) obj;
+        if (!Objects.equals(this.ostohinnat, other.ostohinnat)) {
+            return false;
+        }
+        if (!Objects.equals(this.saldot, other.saldot)) {
+            return false;
+        }
+        if (!Objects.equals(this.markkinaArvot, other.markkinaArvot)) {
+            return false;
+        }
+        return true;
+    }
      public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("testi");
