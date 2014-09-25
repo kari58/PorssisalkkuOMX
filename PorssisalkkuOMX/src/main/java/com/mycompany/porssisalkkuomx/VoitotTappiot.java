@@ -12,6 +12,7 @@ package com.mycompany.porssisalkkuomx;
  */
 public class VoitotTappiot {
     private double voitotTappiot;
+    private int saldo;
      private double limiittitili;
      private double ostohinta;
        private double markkinaArvo;
@@ -47,6 +48,9 @@ public class VoitotTappiot {
     public void setMarkkinaArvo(double markkinaArvo) {
         this.markkinaArvo = markkinaArvo;
     }
-       
+       public double ostotMyynnit(){
+           return voitotTappiot+=this.saldo*markkinaArvo-this.saldo*this.ostohinta;
+           
+       }
     
 }
