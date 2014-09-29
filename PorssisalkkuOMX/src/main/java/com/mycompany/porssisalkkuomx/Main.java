@@ -1,3 +1,5 @@
+package com.mycompany.porssisalkkuomx;
+
 
 import Porssikauppias.Tonnipaivassa;
 import com.mycompany.porssisalkkuomx.Kirjautuminen;
