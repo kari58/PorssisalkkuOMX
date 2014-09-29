@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import com.mycompany.porssisalkkuomx.Limiittitili;
+import com.mycompany.porssisalkkuomx.Omatili;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -16,9 +16,9 @@ import org.junit.Test;
  *
  * @author kromanow
  */
-public class LimiittitiliTest {
+public class OmatiliTest {
 
-    public LimiittitiliTest() {
+    public OmatiliTest() {
     }
 
     @BeforeClass
@@ -38,18 +38,18 @@ public class LimiittitiliTest {
     }
    @Test
      public void konstruktoriLimiittitili(){
-     Limiittitili limiittitili=new Limiittitili();
+     Omatili limiittitili=new Omatili();
      double vastaus=limiittitili.getLimiittitili();
      assertEquals(vastaus,100000.0,0.01);
      }
      
 
-    @Test
-    public void Limiittitili() {
-        Limiittitili limiittitili2 = new Limiittitili();
-        double vastaus = limiittitili2.osta(10.0, 100);
-        assertEquals(vastaus, 99000.0, 0.01);
-    }
+//    @Test
+//    public void Limiittitili() {
+//        Omatili limiittitili2 = new Omatili();
+//        double vastaus = limiittitili2.osta(10.0, 100);
+//        assertEquals(vastaus, 99000.0, 0.01);
+//    }
 }
 /*@Test
  public void konstruktoriTapahtumat(){
