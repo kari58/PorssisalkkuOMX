@@ -11,11 +11,11 @@ package com.mycompany.porssisalkkuomx;
  * @author kromanow
  */
 public class Pankintili extends PorssisalkkuOMX{
-    private double pankintili;
+    private double Isotili;
     private Object Osake;
     private int saldo;
-    public Pankintili(double pankintili){
-        this.pankintili=pankintili;
+    public Pankintili(double Isotili){
+        this.Isotili=Isotili;
     }
 
     public Pankintili(Pankintili pankintili) {
@@ -26,14 +26,14 @@ public class Pankintili extends PorssisalkkuOMX{
     pankki tilittää voitoista ja osingoista 30% verottjalla
     */
     public double myy(String osakkeennimi,int saldo){
-       return  pankintili-=markkinaArvot.get(osakkeennimi)*saldo;
+       return Isotili-=markkinaArvot.get(osakkeennimi)*saldo;
     }
                            //joku haluaa ostaa
     /**
     asiakkaan ostaessa osakkeita pankin tili kasvaa ostolla
     */
     public double osta(String osakkeennimi,int saldo){
-        return pankintili+=markkinaArvot.get(osakkeennimi)*saldo;
+        return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
     }
 }
 
