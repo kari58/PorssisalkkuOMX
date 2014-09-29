@@ -34,9 +34,9 @@ import java.util.Scanner;
  
 public class Kirjautuminen {
     private HashMap<String,Omatili>omattilit;//tunnus on avaimena ja Omatili sisältää salasanan
- 
+    Scanner lukija;
     public void kirjautuminen(){
-        Scanner lukija = new Scanner(System.in);
+        
  
         System.out.print("Anna tunnus: ");
         String tunnus = lukija.nextLine();
@@ -45,7 +45,7 @@ public class Kirjautuminen {
             System.out.print("Anna salasana: ");
             String salasana = lukija.nextLine();
             
-            if (tunnus.equals(omattilit.get(tunnus).getTunnus() )&& (salasana.equals(omattilit.get(salasana).getSalasana()))){
+            if (tunnus.equals(omattilit.get(tunnus).getTunnus() )&& (salasana.equals(omattilit.get(tunnus).getSalasana()))){
                 
                 System.out.println("Olet kirjautunut järjestelmään ja saat käyttää Omatili");
             } else {
@@ -59,8 +59,11 @@ public class Kirjautuminen {
         return "Kirjautuminen{" + '}';
     }
 
-    public Kirjautuminen() {
+    public Kirjautuminen(Scanner lukija) {
         this.omattilit=new HashMap<String,Omatili>();
+        omattilit.put("kari", new Omatili("kari", "ilma"));
+        this.lukija = lukija;
+        
     }
 }
 

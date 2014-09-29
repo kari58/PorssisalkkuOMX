@@ -1,7 +1,9 @@
 
 import Porssikauppias.Tonnipaivassa;
+import com.mycompany.porssisalkkuomx.Kirjautuminen;
 import com.mycompany.porssisalkkuomx.Paivamaara;
 import com.mycompany.porssisalkkuomx.Pankintili;
+import java.util.Scanner;
 import javax.swing.SwingUtilities;
 
 /*
@@ -21,12 +23,14 @@ public class Main {
         
             Paivamaara eka = new Paivamaara(24, 9, 2009);
             Paivamaara toka = new Paivamaara(24, 9, 2014);
+            Kirjautuminen kirjautuminen=new Kirjautuminen(new Scanner(System.in));
             eka.aiemmin(toka);
             Pankintili pankintili=new Pankintili( 100000);
             //pankintili.myy();
             pankintili.getostohinnat();
             pankintili.getmarkkinaArvot();
             pankintili.getsaldot();
-            System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
+            kirjautuminen.kirjautuminen();
+            //System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
         }
     }

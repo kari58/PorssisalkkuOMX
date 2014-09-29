@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @author kromanow
  */
 public class Omatili extends PorssisalkkuOMX {
-    private char tunnus;
+    private String tunnus;
             private String salasana;
 
     private double limiittitili;
@@ -29,7 +29,10 @@ public class Omatili extends PorssisalkkuOMX {
     private double markkinaArvo;
     protected HashMap<String, Integer> saldot;
 
-    public Omatili() {
+    public Omatili(String tunnus,String salasana) {
+        this.tunnus=tunnus;
+        this.salasana=salasana;
+        
         this.limiittitili = 100000.0;
         this.saldot = new HashMap<String, Integer>();
         VoitotTappiot=0;
@@ -45,12 +48,19 @@ public class Omatili extends PorssisalkkuOMX {
     public double getLimiittitili() {
         return limiittitili;
     }
-public char getTunnus(){
+public String getTunnus(){
+    return tunnus;
+}
+public String setTunnus(){
     return tunnus;
 }
 public String getSalasana(){
     return salasana;
 }
+    public String setSalasana(){
+        return salasana;
+    }
+
     public double myy(String osake, int saldo) {
         // vanhinosake()
         Collections.sort(super.osakkeet);
