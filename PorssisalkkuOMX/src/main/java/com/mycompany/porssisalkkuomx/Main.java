@@ -33,6 +33,15 @@ public class Main {
             pankintili.getmarkkinaArvot();
             pankintili.getsaldot();
             kirjautuminen.kirjautuminen();
+            
+            PorssisalkkuOMX salkku=new PorssisalkkuOMX();
+            salkku.ostohinnat.put("Talvivaara",0.05);
+            salkku.osakkeet.add(new Tapahtumat("Talvivaara", 29, 9, 2014));
+            salkku.osakkeet.add(new Tapahtumat("Talvivaara", 30, 9, 2014));
+            salkku.ostohinnat.put("Talvivaara", 0.06);
+            salkku.saldot.put("Talvivaara", 1000);
+            salkku.saldot.put("Talvivaara", salkku.saldot.get("Talvivaara") + 30000);
+            
             //System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
         }
     }

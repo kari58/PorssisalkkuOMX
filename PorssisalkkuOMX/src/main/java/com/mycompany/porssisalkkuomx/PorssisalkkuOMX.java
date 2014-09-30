@@ -61,16 +61,7 @@ ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
  */ 
 
 
-//private boolean lisaaOsakeet(String osake){
-      // return osakkeet.add(osake);
-   // }
-//private int vahennaOsakkeet(String osake){
-    //return osakkeet.remove(.vanhinosake(osake));
-//}
 
-//if limittitili osto osakkeet.add(osake);
-//if limiittitili myy osakkeet.remove(osake.get(osakkeennimi)
-//if limiittitili myy osakkeet.remove(osake.vanhinosake();
      
 
     public PorssisalkkuOMX() {//konstruktori porssisalkkuOMX joka jostain syystä vääntää tätä nimeä

@@ -40,7 +40,8 @@ public class OmatiliTest {
     }
    @Test
      public void konstruktoriLimiittitili(){
-     Omatili limiittitili=new Omatili();
+         
+         Omatili limiittitili=new Omatili("tunnus","salasana");
      double vastaus=limiittitili.getLimiittitili();
      assertEquals(vastaus,100000.0,0.01);
      }
