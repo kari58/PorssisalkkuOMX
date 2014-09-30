@@ -38,20 +38,23 @@ public class Tonnipaivassa implements Runnable{
     }
 
     private void luoKomponentit(Container container) {
-        JLabel kysymys1=new JLabel("Tonni tänään?");
-        JCheckBox kysymys1vastausKylla=new JCheckBox("Tietysti");
-        JCheckBox kysymys1vastausEi= new JCheckBox("Satanen riittää");
+        JLabel kysymys1=new JLabel("Anna tunnus ja salasana?");  //kun nämä ovat oikein , voit ostaa ja myydä
+        JRadioButton kysymys1vastausKylla=new JRadioButton("Tunnus ja salasana oli oikein ");
+        JRadioButton kysymys1vastausEi= new JRadioButton("Yritä uudelleen");
         
-        JLabel kysymys3=new JLabel("Ostetaanko tänään Componentaa ?");
+        JLabel kysymys3=new JLabel("Mitä myydään tänään ?");
        
-        JCheckBox kysymys3vastausEI=new JCheckBox("Ei, kyllä annin jälkeen putoaa reilusti");
-       JRadioButton kysymys3vastaus1=new JRadioButton("10000 kpl riittää");
-        JRadioButton kysymys3vastaus2=new JRadioButton("Ei ,putoaa vielä");
+        JRadioButton kysymys3vastausEI=new JRadioButton("Componentaa");//tämä ei näy missää?
         
-        JLabel kysymys2=new JLabel("Miten meni eilen");
+       JRadioButton kysymys3vastaus1=new JRadioButton("Componentaa 1000 kpl ");
+        JRadioButton kysymys3vastaus2=new JRadioButton("Ei ,nousee vielä");
+        
+        
+        JLabel kysymys2=new JLabel("Mitä ostetaan tänään");
         ButtonGroup kysymys2vastaukset=new ButtonGroup();
-        JRadioButton kysymys2vastaus1=new JRadioButton("Ketuille");
-        JRadioButton kysymys2vastaus2=new JRadioButton("Baissea");
+        JRadioButton kysymys2vastaus1=new JRadioButton("Talvivaaraa 100000 kpl");
+        JRadioButton kysymys2vastaus2=new JRadioButton("Ei mitään");
+        
         
         kysymys2vastaukset.add(kysymys2vastaus1);
         kysymys2vastaukset.add(kysymys2vastaus1);

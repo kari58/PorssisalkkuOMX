@@ -17,6 +17,7 @@ public class Omatili extends PorssisalkkuOMX {
             private String salasana;
 
     private double limiittitili;
+    private PorssisalkkuOMX porssisalkkuOMX;
 
     private String osakkeennimi;
    
@@ -27,7 +28,7 @@ public class Omatili extends PorssisalkkuOMX {
     private int F; //määritellään myöhemmin
     private double ostohinta;
     private double markkinaArvo;
-    protected HashMap<String, Integer> saldot;
+   // protected HashMap<String, Integer> saldot; VOIKO TÄMÄN EHKÄ POISTAA KESKIVIIKKONA
 
     public Omatili(String tunnus,String salasana) {
         this.tunnus=tunnus;
