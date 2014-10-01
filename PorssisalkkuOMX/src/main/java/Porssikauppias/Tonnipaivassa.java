@@ -8,6 +8,7 @@ package Porssikauppias;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -15,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
@@ -76,11 +78,16 @@ public class Tonnipaivassa implements Runnable{
         container.add(kysymys3vastaus1);
         container.add(kysymys3vastaus2);
         container.add(valmis);
+        kysymys1vastausKylla.addActionListener(new ViestinKuuntelija());//jatka tästtä kysy1 vastaEI
+        container.add(kysymys1vastausKylla);
     }
         public JFrame getFrame(){
             return frame;
         }
-    }
+         
+
+        }
+    
     
 
 
