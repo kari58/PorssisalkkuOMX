@@ -2,6 +2,7 @@ package com.mycompany.porssisalkkuomx;
 
 
 import Porssikauppias.Tonnipaivassa;
+import Porssikauppias.ViestinKuuntelija;
 import com.mycompany.porssisalkkuomx.Kirjautuminen;
 import com.mycompany.porssisalkkuomx.Paivamaara;
 import com.mycompany.porssisalkkuomx.Pankintili;
@@ -21,6 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Tonnipaivassa());
+       // SwingUtilities.invokeLater(new ViestinKuuntelija());
 
         
             Paivamaara eka = new Paivamaara(24, 9, 2009);

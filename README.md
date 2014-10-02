@@ -1,3 +1,1 @@
-testi
-
-mmm'/home/kromanow/Firefox_wallpaper.png'
+16.9 testausta

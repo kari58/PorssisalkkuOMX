@@ -46,7 +46,7 @@ public class Tonnipaivassa implements Runnable{
         
         JLabel kysymys3=new JLabel("Mitä myydään tänään ?");
        
-        JRadioButton kysymys3vastausEI=new JRadioButton("Componentaa");//tämä ei näy missää?
+        JRadioButton kysymys3vastausEI=new JRadioButton("Componentaa");//tämä ei näy missää?EI NÄY
         
        JRadioButton kysymys3vastaus1=new JRadioButton("Componentaa 1000 kpl ");
         JRadioButton kysymys3vastaus2=new JRadioButton("Ei ,nousee vielä");
@@ -78,8 +78,23 @@ public class Tonnipaivassa implements Runnable{
         container.add(kysymys3vastaus1);
         container.add(kysymys3vastaus2);
         container.add(valmis);
+        
         kysymys1vastausKylla.addActionListener(new ViestinKuuntelija());//jatka tästtä kysy1 vastaEI
         container.add(kysymys1vastausKylla);
+        kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
+        container.add(kysymys1vastausEi);
+        
+        kysymys2vastaus1.addActionListener(new ViestinKuuntelija());
+        container.add(kysymys2vastaus1);
+        kysymys2vastaus2.addActionListener(new ViestinKuuntelija());
+        container.add(kysymys2vastaus2);
+        
+        kysymys3vastaus1.addActionListener(new ViestinKuuntelija());
+        container.add(kysymys3vastaus1);
+        kysymys3vastaus2.addActionListener(new ViestinKuuntelija());
+        container.add(kysymys3vastaus2);
+        
+        
     }
         public JFrame getFrame(){
             return frame;
@@ -87,7 +102,7 @@ public class Tonnipaivassa implements Runnable{
          
 
         }
-    
+  
     
 
 
