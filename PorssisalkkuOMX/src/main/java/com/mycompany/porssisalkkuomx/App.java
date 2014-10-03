@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
-LAITA KAMAA ERI TIEDOSTOIHIN
+LAITA KAMAA ERI TIEDOSTOIHIN    TÄMÄ VEX MUTTA KYSY ASSARILTA EKANA
 */
 public class App {
 

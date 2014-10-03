@@ -25,7 +25,7 @@ public class Omatili extends PorssisalkkuOMX {
 
     private int saldo;
     private int PE; //P/E
-    private int F; //määritellään myöhemmin
+    private int F; 
     private double ostohinta;
     private double markkinaArvo;
    // protected HashMap<String, Integer> saldot; VOIKO TÄMÄN EHKÄ POISTAA KESKIVIIKKONA
@@ -90,10 +90,15 @@ public String getSalasana(){
      * ostetaan osakeita kun sen kurssin P/E -luku on välillä 7 ja 16 F
      * määritellään myöhemmin, kuitenkin syklisiä osakkeita ostetaan käyrän
      * minimissä ja sama periaate muutenkin muissa ostoissa,keskitytään
-     * ainoastaan osinkja maksaviin ostossa limiittililtä lähetetään rahaa
+     * ainoastaan osinkoa maksaviin.Päälistan osuus >70%, small capin alle 10%
+     * Ostoja tehdään kunkin osakkeen kohdalla aikaerissä esim kuukauden välein,Kuitenkin sopivassa kriisissä ostoja voi
+     * tehdä reilumminostossa limiittililtä lähetetään rahaa
      * välittäjälle
      *
      * @param osake
+     * F on manuaalisesti määritelty desimaaliluku, jota nostaa esim sopiva P/E luku, tulevaisuuden näkymät
+     * analyytikkojen suositukset, kuitenkin jos on huumassa noussut kurssi noudatetaan varovaisuutta, jolloin F saattaa
+     * saada arvoja >5;
      * @param saldo
      * @return
      */

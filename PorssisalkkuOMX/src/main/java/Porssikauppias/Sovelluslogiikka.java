@@ -23,9 +23,7 @@ public class Sovelluslogiikka extends Omatili{
         super(tunnus, salasana);
     }
 
-    /*Sovelluslogiikka() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
+   
  
     public double osta(String osake,double ostohinta, int saldo) {
      return  limiittitili += ostohinta*saldo;

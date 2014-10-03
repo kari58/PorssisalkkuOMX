@@ -41,6 +41,7 @@ public class MainTest {
     /**
      * Test of main method, of class Main.
      */
+    /*
     @Test
     public void testMain() {
         System.out.println("main");
@@ -54,5 +55,5 @@ public class MainTest {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
-    
+   */ 
 }

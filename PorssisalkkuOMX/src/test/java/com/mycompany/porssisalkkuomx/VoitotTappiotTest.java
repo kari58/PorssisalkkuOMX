@@ -13,7 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
+/**TÄMÄN VOISI POISTAA KOSKA KOKO LUOKKA ON SIIREETTY OMATILI
  *
  * @author kromanow
 // */

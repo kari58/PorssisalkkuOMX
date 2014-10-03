@@ -87,10 +87,10 @@ public HashMap<String,Double>getmarkkinaArvot(){
         /**
          * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä
          * markkina-arvot myyntiä tehtäessä
-         * @param osake
-         * @param ostohinta
-         * @param saldo
-         * @param markkinaArvo 
+         * @param osake= tietyn osakkeen nimi
+         * @param ostohinta=ostohetkellä maksettu hinta
+         * @param saldo =kaikkien tietyn osakkeen lukumäärä
+         * @param markkinaArvo =porssin määrittämä sen hetkinen kurssi osakkeelle
          */
         
     public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
@@ -120,18 +120,7 @@ public HashMap<String,Double>getmarkkinaArvot(){
         }
         return this.markkinaArvot.get(osake);
     }
-   // public int myy(String osakkeennimi,int saldo){
-        
-
-           //  if(vanhinosake()&&((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95) ||
-           // ((ostohinnat.get(osakkeennimi)/ markkinaArvot.get(osakkeennimi)) == 1.1))
-
-    
-
-            
-
-               //  }
-
+   
             public String toString() {
                 return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
             }

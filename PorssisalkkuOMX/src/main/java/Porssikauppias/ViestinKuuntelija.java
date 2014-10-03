@@ -59,31 +59,4 @@ public class ViestinKuuntelija implements ActionListener {
 
 }
 
-/*
- @Override
-    public void actionPerformed(ActionEvent ae) {
-        int arvo = 0;
- 
-        try {
-            arvo = Integer.parseInt(syotekentta.getText());
-        } catch (Exception e) {
-        }
- 
-        if (ae.getSource() == plus) {
-            sovellus.plus(arvo);
-        } else if (ae.getSource() == miinus) {
-            sovellus.miinus(arvo);
-        } else {
-            sovellus.nollaa();
-        }
-        int laskunTulos = sovellus.tulos();
-         
-        syotekentta.setText("");
-        tuloskentta.setText("" + laskunTulos);
-        if ( laskunTulos==0) {
-            nollaa.setEnabled(false);
-        } else {
-            nollaa.setEnabled(true);
-        }
-    }
-*/
+

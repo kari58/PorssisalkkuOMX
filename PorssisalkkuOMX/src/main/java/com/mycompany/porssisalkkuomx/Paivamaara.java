@@ -67,9 +67,9 @@ public class Paivamaara {
     }
     /**
      * etsii vanhimman kun ostopäivät selvilla
-     * @param verrattava
+     * @param verrattava=vertaa eri päivämääriä ja etsii vanhimman
      * @return 
-     * TUTKI MIKSI EROTUS TEST 2014-2010=0  EIKÄ 4
+     * 
      */
 
     public int erotusVuosissa(Paivamaara verrattava) {  //vanhin ajassa pitäisi myös saada

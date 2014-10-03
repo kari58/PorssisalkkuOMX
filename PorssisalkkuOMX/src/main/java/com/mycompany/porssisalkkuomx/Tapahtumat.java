@@ -9,7 +9,7 @@ import java.util.Calendar;
  * and open the template in the editor.
  */
 
-/**
+/**Koko luokka toimii ainoastaan FIFO-myyntiä varten
  *
  * @author kromanow
  */
@@ -35,7 +35,7 @@ public class Tapahtumat implements Comparable<Tapahtumat>{
     this.ostopaiva=new Paivamaara(paiva, kuukausi, vuosi);
     
 }
-    /*
+    /**
     FIFO-säännön mukaan myydessä vanhin osake pitää myydä ekana
     */
     public int vanhinosake(){   
@@ -63,7 +63,7 @@ public class Tapahtumat implements Comparable<Tapahtumat>{
     }
 /**
  * palauttaa kok.lukuna, joka on määritelty Paivamaara luokassa
- * @param o
+ * @param o=koskee compareTo, joka toimii vain negatiivisilla kokluvuilla
  * @return 
  */
     @Override
@@ -72,8 +72,3 @@ public class Tapahtumat implements Comparable<Tapahtumat>{
         
     }
 }
-//public class Main{
-   // public static void main(String[]args){
-      //  Ostoja upm= new FIFOOstoja("UPM", 15,9,2014)
-
-  //  }
