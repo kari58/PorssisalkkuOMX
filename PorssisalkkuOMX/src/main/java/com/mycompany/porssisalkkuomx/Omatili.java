@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
+ * Tässä ostetaan sakkeita ja myydään  niitä FIFO-periaatteella
+ * Ostoista ja myyneistä metodien kohdalla javadoc -kuvaukset
  *
  * @author kromanow
  */

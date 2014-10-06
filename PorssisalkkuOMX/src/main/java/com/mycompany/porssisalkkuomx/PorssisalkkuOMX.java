@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Objects;
 
-/**
+/**Luokka toimii arkistona ostohinnoille ,paivamaarille,tapahtumille, ja saldoille
  *
  * @author kromanow
  */

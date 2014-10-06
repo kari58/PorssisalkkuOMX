@@ -7,6 +7,8 @@ package com.mycompany.porssisalkkuomx;
  */
 
 /**
+ * Luokan tarkoitus on säilöä oston päivä.Myynnissä FIFO-periaatteella tarvitaan
+ * vanhin päivä
  *
  * @author kromanow
  * 
@@ -49,7 +51,7 @@ public class Paivamaara {
     
     /**
      * Kuvaus metodista aiemmin.etsii aikaisimman eli vanhimman
-     * @param verrattava
+     * @param verrattava vertaa vanhinta ostoa
      * @return 
      */
     public boolean aiemmin(Paivamaara verrattava) {

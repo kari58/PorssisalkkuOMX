@@ -7,6 +7,11 @@
 package com.mycompany.porssisalkkuomx;
 
 /**
+ * Pankintili kasvaa ja vähenee, kun ostetaan tai myydään
+ * Pankintili toimii välittäjänä ostolle, jossa myyjä voi olla 
+ * myös joku muu kuin tämä pankki eli siis toinen pankki
+ * Sax-järjestelmään tuodaan myytävät osakkeet eri välittäjilta
+ * osto() tehdään kun ostokurssitarjous osuu haarukan sisään
  *
  * @author kromanow
  */
@@ -28,7 +33,7 @@ public class Pankintili extends PorssisalkkuOMX{
     public double myy(String osakkeennimi,int saldo){
        return Isotili-=markkinaArvot.get(osakkeennimi)*saldo;
     }
-                           //joku haluaa ostaa
+                          
     /**
     asiakkaan ostaessa osakkeita pankin tili kasvaa ostolla
     */

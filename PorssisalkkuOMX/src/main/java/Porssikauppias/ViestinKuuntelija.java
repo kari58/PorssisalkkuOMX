@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- *
+ *  Tärkeää olisi saada ohjelman ydin eli 
+ * osakkeiden myynti ja osto toimimaan käyttöliittymän kautta. 
+ * , johon voi syöttää osakkeen nimen, 
+ *  jolloin ohjelma kertoo osakkeen hinnan. 
  * @author kromanow
  */
 public class ViestinKuuntelija implements ActionListener {
@@ -28,7 +31,7 @@ public class ViestinKuuntelija implements ActionListener {
         this.tulostusLabel = tulostusLabel;
         this.osta=osta;
         this.myy=myy;
-        //this.sovellus = new Sovelluslogiikka();
+       // this.sovellus = new Sovelluslogiikka();
 
     }
 
@@ -51,10 +54,11 @@ public class ViestinKuuntelija implements ActionListener {
         } catch (Exception ex) {
         }
          if(ae.getSource()==sovellus.osta){
-             sovellus.osta(null, ostohinta, saldo2);
+            sovellus.osta(null, ostohinta, saldo2);
+             System.out.println("Ostettu!");
          } else if(ae.getSource()==sovellus.myy){
-             sovellus.myy(null, arvo2, saldo2);
-         }
+            sovellus.myy(null, arvo2, saldo2);
+        }
     }
 
 }

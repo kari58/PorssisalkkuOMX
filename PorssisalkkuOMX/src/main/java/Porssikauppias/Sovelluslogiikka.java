@@ -23,6 +23,7 @@ public class Sovelluslogiikka extends Omatili{
         super(tunnus, salasana);
     }
 
+  
    
  
     public double osta(String osake,double ostohinta, int saldo) {
