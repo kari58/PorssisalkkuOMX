@@ -5,6 +5,7 @@
  */
 package Porssikauppias;
 
+import com.mycompany.porssisalkkuomx.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -22,11 +23,13 @@ public class ViestinKuuntelija implements ActionListener {
 
     private JTextField syoteTextField;
     private JLabel tulostusLabel;
-    private Sovelluslogiikka sovellus;
+    private Omatili sovellus;
     private JButton osta;
     private JButton myy;
+    private JTextField nimiKentta ;
+      JTextField ostoKentta;
 
-    ViestinKuuntelija(JTextField syoteTextField, JLabel tulostusLabel, Sovelluslogiikka sovellus,JButton osta,JButton myy) {
+    /*ViestinKuuntelija(JTextField syoteTextField, JLabel tulostusLabel, Sovelluslogiikka sovellus,JButton osta,JButton myy) {
         this.syoteTextField = syoteTextField;
         this.tulostusLabel = tulostusLabel;
         this.osta=osta;
@@ -34,9 +37,20 @@ public class ViestinKuuntelija implements ActionListener {
        // this.sovellus = new Sovelluslogiikka();
 
     }
+*/
+    ViestinKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta) {
+        this.osta=osta;
+        this.nimiKentta=nimiKentta;
+        this.ostoKentta=ostoKentta;
+        this.sovellus = new Omatili("kari","ilma");
 
-    ViestinKuuntelija() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    ViestinKuuntelija(){
+         this.syoteTextField = syoteTextField;
+        this.tulostusLabel = tulostusLabel;
+        //this.osta=osta;
+        this.myy=myy;
+        
     }
 
     @Override
@@ -50,14 +64,14 @@ public class ViestinKuuntelija implements ActionListener {
         int saldo2;saldo2=0;
         double arvo2=saldo2*markkinaArvo;
          try {
-            arvo = Integer.parseInt(syoteTextField.getText());
+            saldo = Integer.parseInt(ostoKentta.getText());
         } catch (Exception ex) {
         }
-         if(ae.getSource()==sovellus.osta){
-            sovellus.osta(null, ostohinta, saldo2);
+         if(ae.getSource()==this.osta){
+            sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");
-         } else if(ae.getSource()==sovellus.myy){
-            sovellus.myy(null, arvo2, saldo2);
+        // } else if(ae.getSource()==sovellus.myy){
+           // sovellus.myy(null, arvo2, saldo2); tee huomenna
         }
     }
 

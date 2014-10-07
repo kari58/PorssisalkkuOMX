@@ -54,8 +54,7 @@ public class Main {
             
            
            
-            //myydään 
-             //Omatili omatili=new Omatili(new Tapahtumat("Talvivaara",1000));   //this.saldot = new HashMap<String, Integer>();
+            
             salkku.markkinaArvot.put("Talvivaara", 0.07);
             salkku.osakkeet.add(new Tapahtumat("Talvivaara",31,9,2014));
            

@@ -120,7 +120,7 @@ public class Tonnipaivassa implements Runnable {
         JTextField ostoKentta=new JTextField();
         
         JButton lisaaNappi=new JButton("Osta osake !");
-        lisaaNappi.addActionListener(new ViestinKuuntelija());
+        lisaaNappi.addActionListener(new ViestinKuuntelija(lisaaNappi,nimiKentta,   ostoKentta));
        //tähän pitäsi saada kutsu Omatili.osta(UPM) ???????????????
         
         container.add(lisaaNappi);
