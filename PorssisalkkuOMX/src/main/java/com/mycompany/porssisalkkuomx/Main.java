@@ -33,7 +33,7 @@ public class Main {
             Kirjautuminen kirjautuminen=new Kirjautuminen(new Scanner(System.in));
             eka.aiemmin(toka);
             Pankintili pankintili=new Pankintili( 100000);
-            //pankintili.myy();
+      
             pankintili.getostohinnat();
             pankintili.getmarkkinaArvot();
             pankintili.getsaldot();

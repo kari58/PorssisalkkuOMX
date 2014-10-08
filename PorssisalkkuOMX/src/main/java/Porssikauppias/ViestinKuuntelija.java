@@ -28,6 +28,7 @@ public class ViestinKuuntelija implements ActionListener {
     private JButton myy;
     private JTextField nimiKentta ;
       JTextField ostoKentta;
+      private  JTextField nimiKenttaMyy;
 
     /*ViestinKuuntelija(JTextField syoteTextField, JLabel tulostusLabel, Sovelluslogiikka sovellus,JButton osta,JButton myy) {
         this.syoteTextField = syoteTextField;
@@ -45,11 +46,12 @@ public class ViestinKuuntelija implements ActionListener {
         this.sovellus = new Omatili("kari","ilma");
 
     }
-    ViestinKuuntelija(){
+    ViestinKuuntelija(  JTextField nimiKenttaMyy){
          this.syoteTextField = syoteTextField;
         this.tulostusLabel = tulostusLabel;
-        //this.osta=osta;
+        
         this.myy=myy;
+        this.nimiKenttaMyy=nimiKenttaMyy;
         
     }
 
@@ -70,8 +72,9 @@ public class ViestinKuuntelija implements ActionListener {
          if(ae.getSource()==this.osta){
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");
-        // } else if(ae.getSource()==sovellus.myy){
-           // sovellus.myy(null, arvo2, saldo2); tee huomenna
+        } else if(ae.getSource()==this.myy){
+            sovellus.myy(nimiKenttaMyy.getName(), saldo2); 
+             System.out.println("Myyty !");
         }
     }
 

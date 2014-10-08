@@ -41,6 +41,13 @@ public class Tonnipaivassa implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
+    /**
+     * Vaikkakin luoKomponentit(tunnus, salasana, mitä ostetaan tänään ym)on ilman metodin toimintaa, 
+     * en niitä poista
+     * koska niiden tekemiseen meni useampi päivä ja ovat mielestäni 
+     * hyödyllista kehitettävää ja katseltavaa
+     * @param container 
+     */
 
     private void luoKomponentit(Container container) {
         JLabel kysymys1 = new JLabel("Anna tunnus ja salasana?");  //kun nämä ovat oikein , voit ostaa ja myydä
@@ -51,13 +58,13 @@ public class Tonnipaivassa implements Runnable {
 
       
 
-        JRadioButton kysymys3vastaus1 = new JRadioButton("Componentaa 1000 kpl ");//tässä syötetään myynti, pitääkö olla
-       // näkyvissä laatikossa ????
+        JRadioButton kysymys3vastaus1 = new JRadioButton("Componentaa 1000 kpl ");
+       
         JRadioButton kysymys3vastaus2 = new JRadioButton("Ei mitään ,nousee vielä");
 
         JLabel kysymys2 = new JLabel("Mitä ostetaan tänään");
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-        JRadioButton kysymys2vastaus1 = new JRadioButton("Talvivaaraa 100000 kpl");//tässä syötetään OSTO
+        JRadioButton kysymys2vastaus1 = new JRadioButton("Talvivaaraa 100000 kpl");
         JRadioButton kysymys2vastaus2 = new JRadioButton("Ei mitään");
 
         kysymys2vastaukset.add(kysymys2vastaus1);
@@ -68,9 +75,9 @@ public class Tonnipaivassa implements Runnable {
 
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
-
-        container.add(kysymys1);
-        kysymys1vastausKylla.addActionListener(new ViestinKuuntelija());
+/*
+        container.add(kysymys1);  MIKÄHÄN TÄSSÄ MENI PIELEEN, VIESTINKUUNTELIJA TILTTAA???
+        kysymys1vastausKylla.addActionListener(new ViestinKuuntelija1());
         container.add(kysymys1vastausKylla);
         kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
         container.add(kysymys1vastausEi);
@@ -100,7 +107,7 @@ public class Tonnipaivassa implements Runnable {
 
 
 
-      
+  */    
 
         
         
@@ -114,21 +121,36 @@ public class Tonnipaivassa implements Runnable {
         GridLayout layout= new GridLayout(3,2);
         container.setLayout(layout);
         
+        JButton lisaaNappi=new JButton("Osta osake !");
         JLabel nimiTeksti=new JLabel("Anna osakkkeen nimi");
         JTextField nimiKentta =new JTextField();
         JLabel osto=new JLabel("Osto, montako ?");
         JTextField ostoKentta=new JTextField();
         
-        JButton lisaaNappi=new JButton("Osta osake !");
+        
         lisaaNappi.addActionListener(new ViestinKuuntelija(lisaaNappi,nimiKentta,   ostoKentta));
-       //tähän pitäsi saada kutsu Omatili.osta(UPM) ???????????????
+        
+        
+       
+    JLabel nimiTekstiMyy=new JLabel("Mikä myydään ?");
+        JTextField nimiKenttaMyy=new JTextField();
+        JLabel myy=new JLabel("Myydään , montako ?");
+        JTextField myyntiKentta=new JTextField();
+        
+        JButton lisaaNappiMyy=new JButton("Myy osake ");
+        lisaaNappi.addActionListener(new ViestinKuuntelija(lisaaNappi,nimiKentta, myyntiKentta));
         
         container.add(lisaaNappi);
         container.add(nimiTeksti);
         container.add(nimiKentta);
         container.add(osto);
         container.add(ostoKentta);
-     
+        
+   container.add(lisaaNappiMyy);
+        container.add(nimiTekstiMyy);
+        container.add(nimiKenttaMyy);
+        container.add(myy);
+        container.add(myyntiKentta);
         
     }
 
