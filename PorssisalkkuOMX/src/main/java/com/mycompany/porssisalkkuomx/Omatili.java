@@ -11,7 +11,9 @@ import java.util.HashMap;
 /**
  * Tässä ostetaan sakkeita ja myydään  niitä FIFO-periaatteella
  * Ostoista ja myyneistä metodien kohdalla javadoc -kuvaukset
- *
+ *FIFO:n ymmärtää parhaiten :osto 9 eur 1' kpl, toinen osto samaa sarjaa 7 eur 1' kpl
+ * ja markkinaArvon ollessa 8 eur ja halutessa/joutuessa myymään 1' kpl , tappiota tulee 
+ * 8-9= -1000 eur, siis ei voi myydä 8-7=+1000  1' kpl myynnissä, jos myy 2' kpl voitto=0 eur
  * @author kromanow
  */
 public class Omatili extends PorssisalkkuOMX {
@@ -26,11 +28,11 @@ public class Omatili extends PorssisalkkuOMX {
     private double VoitotTappiot;
 
     private int saldo;
-    private int PE; //P/E
+    private int PE; //   P/E
     private int F; 
     private double ostohinta;
     private double markkinaArvo;
-   // protected HashMap<String, Integer> saldot; VOIKO TÄMÄN EHKÄ POISTAA KESKIVIIKKONA
+   
 
     public Omatili(String tunnus,String salasana) {
         this.tunnus=tunnus;
@@ -65,7 +67,7 @@ public String getSalasana(){
     }
 
     public double myy(String osake, int saldo) {
-        // vanhinosake()
+   
         Collections.sort(super.osakkeet);
 
         if (saldot.containsKey(osake)) {

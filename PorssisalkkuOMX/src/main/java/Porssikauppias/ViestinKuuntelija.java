@@ -30,15 +30,7 @@ public class ViestinKuuntelija implements ActionListener {
       JTextField ostoKentta;
       private  JTextField nimiKenttaMyy;
 
-    /*ViestinKuuntelija(JTextField syoteTextField, JLabel tulostusLabel, Sovelluslogiikka sovellus,JButton osta,JButton myy) {
-        this.syoteTextField = syoteTextField;
-        this.tulostusLabel = tulostusLabel;
-        this.osta=osta;
-        this.myy=myy;
-       // this.sovellus = new Sovelluslogiikka();
-
-    }
-*/
+ 
     ViestinKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta) {
         this.osta=osta;
         this.nimiKentta=nimiKentta;

@@ -53,7 +53,7 @@ public class Tonnipaivassa implements Runnable {
         JLabel kysymys1 = new JLabel("Anna tunnus ja salasana?");  //kun nämä ovat oikein , voit ostaa ja myydä
         JRadioButton kysymys1vastausKylla = new JRadioButton("Tunnus ja salasana oli oikein ");
         JRadioButton kysymys1vastausEi = new JRadioButton("Yritä uudelleen");
-
+ JButton lisaaNappi2=new JButton("Anna tunnus ja salasana ");
         JLabel kysymys3 = new JLabel("Mitä myydään tänään ?");
 
       
@@ -75,28 +75,28 @@ public class Tonnipaivassa implements Runnable {
 
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
-/*
-        container.add(kysymys1);  MIKÄHÄN TÄSSÄ MENI PIELEEN, VIESTINKUUNTELIJA TILTTAA???
-        kysymys1vastausKylla.addActionListener(new ViestinKuuntelija1());
+
+        container.add(kysymys1); // MIKÄHÄN TÄSSÄ MENI PIELEEN, VIESTINKUUNTELIJA TILTTAA???
+        //kysymys1vastausKylla.addActionListener(new ViestinKuuntelija(lisaaNappi2,kysymys1,kysymys1vastausKylla));
         container.add(kysymys1vastausKylla);
-        kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
+        //kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
         container.add(kysymys1vastausEi);
         
         
         
         
         container.add(kysymys2);
-        kysymys2vastaus1.addActionListener(new ViestinKuuntelija());
+       // kysymys2vastaus1.addActionListener(new ViestinKuuntelija());
         container.add(kysymys2vastaus1);
-        kysymys2vastaus2.addActionListener(new ViestinKuuntelija());
+        //kysymys2vastaus2.addActionListener(new ViestinKuuntelija());
         container.add(kysymys2vastaus2);
         
         
 
         container.add(kysymys3);
-        kysymys3vastaus1.addActionListener(new ViestinKuuntelija());
+        //kysymys3vastaus1.addActionListener(new ViestinKuuntelija());
          container.add(kysymys3vastaus1);
-         kysymys3vastaus2.addActionListener(new ViestinKuuntelija());
+        // kysymys3vastaus2.addActionListener(new ViestinKuuntelija());
           container.add(kysymys3vastaus2);
           
           container.add(valmis);
@@ -107,7 +107,7 @@ public class Tonnipaivassa implements Runnable {
 
 
 
-  */    
+    
 
         
         

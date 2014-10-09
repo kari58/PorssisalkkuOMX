@@ -58,7 +58,7 @@ public class Main {
             salkku.markkinaArvot.put("Talvivaara", 0.07);
             salkku.osakkeet.add(new Tapahtumat("Talvivaara",31,9,2014));
            
-                    omatili.myy("Talvivaara", 1000);// tässä pitää olla FIFO eli 29.9 ostettuja
+                    omatili.myy("Talvivaara", 1000);
             
             System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
             System.out.println("Ostettiin 30.9"+salkku.osakkeet);
