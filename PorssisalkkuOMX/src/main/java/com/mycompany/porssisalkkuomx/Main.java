@@ -2,7 +2,7 @@ package com.mycompany.porssisalkkuomx;
 
 
 import Porssikauppias.Tonnipaivassa;
-import Porssikauppias.ViestinKuuntelija;
+import Porssikauppias.OstaKuuntelija;
 import com.mycompany.porssisalkkuomx.Kirjautuminen;
 import com.mycompany.porssisalkkuomx.Paivamaara;
 import com.mycompany.porssisalkkuomx.Pankintili;
@@ -15,6 +15,7 @@ import javax.swing.SwingUtilities;
  * and open the template in the editor.
  */
 /**
+ * Aloittaa projektin, tässä on mukana muutama kokeilu ohjelman toimimisesta
  *
  * @author kromanow
  */
@@ -60,7 +61,7 @@ public class Main {
            
                     omatili.myy("Talvivaara", 1000);
             
-            System.out.println(eka + " ja" + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
-            System.out.println("Ostettiin 30.9"+salkku.osakkeet);
+            System.out.println(eka + " ja " + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
+            System.out.println("Ostettiin 30.9 "+salkku.osakkeet);
         }
     }

@@ -82,7 +82,7 @@ public class Paivamaara {
     }
 
     private int laskeErotus(Paivamaara verrattava) {
-        System.out.println("vuodet: " + vuosi + " " + verrattava.vuosi);
+        System.out.println("Vuodet: " + vuosi + " " + verrattava.vuosi);
         int vuosiPois = 0;
         if (this.kuukausi < verrattava.kuukausi) {
             vuosiPois = 1;

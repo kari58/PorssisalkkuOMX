@@ -19,33 +19,26 @@ import javax.swing.JTextField;
  *  jolloin ohjelma kertoo osakkeen hinnan. 
  * @author kromanow
  */
-public class ViestinKuuntelija implements ActionListener {
+public class OstaKuuntelija implements ActionListener {
 
     private JTextField syoteTextField;
     private JLabel tulostusLabel;
     private Omatili sovellus;
     private JButton osta;
-    private JButton myy;
+  
     private JTextField nimiKentta ;
       JTextField ostoKentta;
-      private  JTextField nimiKenttaMyy;
+   
 
  
-    ViestinKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta) {
+    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta, Omatili sovellus) {
         this.osta=osta;
         this.nimiKentta=nimiKentta;
         this.ostoKentta=ostoKentta;
-        this.sovellus = new Omatili("kari","ilma");
+        this.sovellus = sovellus;
 
     }
-    ViestinKuuntelija(  JTextField nimiKenttaMyy){
-         this.syoteTextField = syoteTextField;
-        this.tulostusLabel = tulostusLabel;
-        
-        this.myy=myy;
-        this.nimiKenttaMyy=nimiKenttaMyy;
-        
-    }
+
 
     @Override
     public void actionPerformed(ActionEvent ae)  {
@@ -54,9 +47,9 @@ public class ViestinKuuntelija implements ActionListener {
         int saldo;saldo = 0;
         double arvo=ostohinta*saldo;
         
-        double markkinaArvo=0;
-        int saldo2;saldo2=0;
-        double arvo2=saldo2*markkinaArvo;
+      //  double markkinaArvo=0;
+     //   int saldo2;saldo2=0;
+       // double arvo2=saldo2*markkinaArvo;
          try {
             saldo = Integer.parseInt(ostoKentta.getText());
         } catch (Exception ex) {
@@ -64,10 +57,7 @@ public class ViestinKuuntelija implements ActionListener {
          if(ae.getSource()==this.osta){
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");
-        } else if(ae.getSource()==this.myy){
-            sovellus.myy(nimiKenttaMyy.getName(), saldo2); 
-             System.out.println("Myyty !");
-        }
+        } 
     }
 
 }

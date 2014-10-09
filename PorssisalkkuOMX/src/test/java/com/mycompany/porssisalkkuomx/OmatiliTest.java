@@ -43,7 +43,7 @@ public class OmatiliTest {
          
          Omatili limiittitili=new Omatili("tunnus","salasana");
      double vastaus=limiittitili.getLimiittitili();
-     assertEquals(vastaus,100000.0,0.01);
+     assertEquals(vastaus,1000.0,0.01);
      }
      
 

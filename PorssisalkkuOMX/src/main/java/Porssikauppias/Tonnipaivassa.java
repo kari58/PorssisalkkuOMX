@@ -5,6 +5,7 @@
  */
 package Porssikauppias;
 
+import com.mycompany.porssisalkkuomx.Omatili;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -21,10 +22,13 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
- *
+ *Ainoastaan luoKomponentit2 sisältää toimintaa, luoKomponentit
+ * sisältää vain visuaalista ja hauskaaa kaupankäyntiä
  * @author kromanow
  */
 public class Tonnipaivassa implements Runnable {
+    private String tunnus;
+    private String salasana;
 
     private JFrame frame;
 
@@ -47,7 +51,7 @@ public class Tonnipaivassa implements Runnable {
      * koska niiden tekemiseen meni useampi päivä ja ovat mielestäni 
      * hyödyllista kehitettävää ja katseltavaa
      * @param container 
-     */
+         */
 
     private void luoKomponentit(Container container) {
         JLabel kysymys1 = new JLabel("Anna tunnus ja salasana?");  //kun nämä ovat oikein , voit ostaa ja myydä
@@ -77,7 +81,7 @@ public class Tonnipaivassa implements Runnable {
         container.setLayout(layout);
 
         container.add(kysymys1); // MIKÄHÄN TÄSSÄ MENI PIELEEN, VIESTINKUUNTELIJA TILTTAA???
-        //kysymys1vastausKylla.addActionListener(new ViestinKuuntelija(lisaaNappi2,kysymys1,kysymys1vastausKylla));
+        //kysymys1vastausKylla.addActionListener(new ViestinKuuntelija());
         container.add(kysymys1vastausKylla);
         //kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
         container.add(kysymys1vastausEi);
@@ -123,12 +127,13 @@ public class Tonnipaivassa implements Runnable {
         
         JButton lisaaNappi=new JButton("Osta osake !");
         JLabel nimiTeksti=new JLabel("Anna osakkkeen nimi");
-        JTextField nimiKentta =new JTextField();
+        JTextField nimiKenttaOsto =new JTextField();
         JLabel osto=new JLabel("Osto, montako ?");
         JTextField ostoKentta=new JTextField();
+        Omatili omatili=new Omatili(tunnus,salasana);
         
         
-        lisaaNappi.addActionListener(new ViestinKuuntelija(lisaaNappi,nimiKentta,   ostoKentta));
+        lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi,nimiKenttaOsto,ostoKentta,omatili));
         
         
        
@@ -138,11 +143,11 @@ public class Tonnipaivassa implements Runnable {
         JTextField myyntiKentta=new JTextField();
         
         JButton lisaaNappiMyy=new JButton("Myy osake ");
-        lisaaNappi.addActionListener(new ViestinKuuntelija(lisaaNappi,nimiKentta, myyntiKentta));
+        lisaaNappiMyy.addActionListener(new MyyKuuntelija(lisaaNappiMyy,nimiKenttaMyy, myyntiKentta,omatili));
         
         container.add(lisaaNappi);
         container.add(nimiTeksti);
-        container.add(nimiKentta);
+        container.add(nimiKenttaOsto);
         container.add(osto);
         container.add(ostoKentta);
         
