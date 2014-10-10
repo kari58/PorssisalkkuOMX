@@ -29,11 +29,12 @@ import java.util.Scanner;
  * Omatilia, kun tunnus ja salasana oli oikein
  * @param annataan tunnus ja salasana
  * @return palauttaa tunnuksen ja salasanan
+ * //tunnus on avaimena ja Omatili sisältää salasanan
  * @author kromanow
  */
  
 public class Kirjautuminen {
-    private HashMap<String,Omatili>omattilit;//tunnus on avaimena ja Omatili sisältää salasanan
+    private HashMap<String,Omatili>omattilit;
     Scanner lukija;
     public void kirjautuminen(){
         

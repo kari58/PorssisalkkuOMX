@@ -42,14 +42,12 @@ public class OstaKuuntelija implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae)  {
-        //tulostusLabel.setText(syoteTextField.getText());
+       
         double ostohinta=0;
         int saldo;saldo = 0;
         double arvo=ostohinta*saldo;
         
-      //  double markkinaArvo=0;
-     //   int saldo2;saldo2=0;
-       // double arvo2=saldo2*markkinaArvo;
+    
          try {
             saldo = Integer.parseInt(ostoKentta.getText());
         } catch (Exception ex) {
