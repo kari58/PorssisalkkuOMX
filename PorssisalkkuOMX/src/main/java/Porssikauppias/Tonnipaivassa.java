@@ -60,18 +60,18 @@ public class Tonnipaivassa implements Runnable {
         JRadioButton kysymys1vastausKylla = new JRadioButton("Tunnus ja salasana oli oikein ");
         JRadioButton kysymys1vastausEi = new JRadioButton("Yritä uudelleen");
  JButton lisaaNappi2=new JButton("Anna tunnus ja salasana ");
-        JLabel kysymys3 = new JLabel("Mitä myydään tänään ?");
+        JLabel kysymys3 = new JLabel(" Et voi myydä noin paljon");
 
       
 
-        JRadioButton kysymys3vastaus1 = new JRadioButton("Componentaa 1000 kpl ");
+        JRadioButton kysymys3vastaus1 = new JRadioButton("Voit myydä sen mitä omistat ");
        
-        JRadioButton kysymys3vastaus2 = new JRadioButton("Ei mitään ,nousee vielä");
+        JRadioButton kysymys3vastaus2 = new JRadioButton("OK");
 
-        JLabel kysymys2 = new JLabel("Mitä ostetaan tänään");
+        JLabel kysymys2 = new JLabel("Et voi myydä osaketta, koska et omista sitä");
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-        JRadioButton kysymys2vastaus1 = new JRadioButton("Talvivaaraa 100000 kpl");
-        JRadioButton kysymys2vastaus2 = new JRadioButton("Ei mitään");
+        JRadioButton kysymys2vastaus1 = new JRadioButton("Osta ensin osake");
+        JRadioButton kysymys2vastaus2 = new JRadioButton("OK");
 
         kysymys2vastaukset.add(kysymys2vastaus1);
         kysymys2vastaukset.add(kysymys2vastaus1);
@@ -165,3 +165,10 @@ public class Tonnipaivassa implements Runnable {
     }
 
 }
+/*
+Testailin ohjelmaa hieman, ja huomasin, että olemattomiakin osakkeita voi myydä (ts. osakkeita, 
+joita ei ole käyttöliittymän kautta ostettu). Myös ostettuja osakkeita voi myydä enemmän kuin niitä on olemassa.
+Ohjelman olisi hyvä ilmoittaa, mikäli olematonta osaketta yritetään myydä, 
+tai sitä yritetään myydä enemmän kuin sitä omistetaan. 
+Käyttöliittymässä voitaisiin myöskin näyttää Omatilin saldo ja osakkeet.
+*/

@@ -60,4 +60,19 @@ public class OstaKuuntelija implements ActionListener {
 
 }
 
+/*
+KUNNOSTETAAN TALLETUS THIS.SALDOT.PUT("upm",100)
+ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
+ public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
+        this.ostohinnat.put(osake, ostohinta);
+        this.saldot.put(osake, saldo);
+        this.markkinaArvot.put(osake, markkinaArvo);
+Testailin ohjelmaa hieman, ja huomasin, että olemattomiakin osakkeita voi myydä (ts. osakkeita, 
+joita ei ole käyttöliittymän kautta ostettu). Myös ostettuja osakkeita voi myydä enemmän kuin niitä on olemassa.
+Ohjelman olisi hyvä ilmoittaa, mikäli olematonta osaketta yritetään myydä, 
+tai sitä yritetään myydä enemmän kuin sitä omistetaan. 
+Käyttöliittymässä voitaisiin myöskin näyttää Omatilin saldo ja osakkeet.
+*/
+
+    
 

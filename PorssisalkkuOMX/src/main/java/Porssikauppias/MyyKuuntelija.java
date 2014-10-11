@@ -44,3 +44,16 @@ public class MyyKuuntelija implements ActionListener {
     }
         
 }
+/*
+KUN MYYDÄÄN PITÄISI TARKISTAA SALDOT.GET(OSAKKEENNIMI,SALDO)>=SALDO2?
+Testailin ohjelmaa hieman, ja huomasin, että olemattomiakin osakkeita voi myydä (ts. osakkeita,
+joita ei ole käyttöliittymän kautta ostettu). Myös ostettuja osakkeita voi myydä enemmän kuin niitä on olemassa. 
+Ohjelman olisi hyvä ilmoittaa, mikäli olematonta osaketta yritetään myydä, tai sitä yritetään myydä enemmän kuin sitä omistetaan.
+Käyttöliittymässä voitaisiin myöskin näyttää Omatilin saldo ja osakkeet.
+
+public double myy(String osake, int saldo) {
+
+        Collections.sort(super.osakkeet);   EN YMMÄRRÄ VIIMEISTÄ LAUSETTA
+
+        if (saldot.containsKey(osake)) {
+*/
