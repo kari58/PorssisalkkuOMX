@@ -64,7 +64,7 @@ public class Tonnipaivassa implements Runnable {
 
       
 
-        JRadioButton kysymys3vastaus1 = new JRadioButton("Voit myydä sen mitä omistat ");
+        JRadioButton kysymys3vastaus1 = new JRadioButton("Voit myydä vain sen mitä omistat ");
        
         JRadioButton kysymys3vastaus2 = new JRadioButton("OK");
 

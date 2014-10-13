@@ -44,7 +44,8 @@ public class OstaKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent ae)  {
        
         double ostohinta=0;
-        int saldo;saldo = 0;
+        int saldo;saldo = Integer.parseInt(ostoKentta.getText());
+        String osake;osake=nimiKentta.getText();
         double arvo=ostohinta*saldo;
         
     
@@ -53,8 +54,11 @@ public class OstaKuuntelija implements ActionListener {
         } catch (Exception ex) {
         }
          if(ae.getSource()==this.osta){
+            sovellus.lisaaOsake(osake, ostohinta, saldo, arvo);
+             //osakkeet.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
+          sovellus.getsaldot(); 
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
-             System.out.println("Ostettu!");
+             System.out.println("Ostettu!");   //TÄHÄN EHKÄ sovellus.
         } 
     }
 
@@ -62,6 +66,9 @@ public class OstaKuuntelija implements ActionListener {
 
 /*
 KUNNOSTETAAN TALLETUS THIS.SALDOT.PUT("upm",100)
+PorssisalkkuOMX sisältää nämä
+Omatili extends PorsisalkkuOMX
+private Omatili sovellus;
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
  public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
