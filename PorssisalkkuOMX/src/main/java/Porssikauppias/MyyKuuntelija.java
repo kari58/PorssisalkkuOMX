@@ -12,7 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 /**
- *
+ *MyyKuuntelija myydään osakkeita, joita PorsisalkkuOMX sisältää, et voi myydä enempää
+ * kuin sinulla on. Jos et omista Lemminkäistä, et sitä myöskään voi  myydä
  * @author kromanow
  */
 public class MyyKuuntelija implements ActionListener {

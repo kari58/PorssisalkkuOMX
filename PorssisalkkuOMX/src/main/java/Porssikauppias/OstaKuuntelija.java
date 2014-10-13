@@ -17,6 +17,8 @@ import javax.swing.JTextField;
  * osakkeiden myynti ja osto toimimaan käyttöliittymän kautta. 
  * , johon voi syöttää osakkeen nimen, 
  *  jolloin ohjelma kertoo osakkeen hinnan. 
+ * Tätä varten sovellus.lisaaOsake(osake, ostohinta, saldo, arvo);
+ * kerää tiedot osakkeennimestä saldosta
  * @author kromanow
  */
 public class OstaKuuntelija implements ActionListener {
@@ -58,28 +60,13 @@ public class OstaKuuntelija implements ActionListener {
              //osakkeet.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
           sovellus.getsaldot(); 
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
-             System.out.println("Ostettu!");   //TÄHÄN EHKÄ sovellus.
+             System.out.println("Ostettu!");   
         } 
     }
 
 }
 
-/*
-KUNNOSTETAAN TALLETUS THIS.SALDOT.PUT("upm",100)
-PorssisalkkuOMX sisältää nämä
-Omatili extends PorsisalkkuOMX
-private Omatili sovellus;
-ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
- public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
-        this.ostohinnat.put(osake, ostohinta);
-        this.saldot.put(osake, saldo);
-        this.markkinaArvot.put(osake, markkinaArvo);
-Testailin ohjelmaa hieman, ja huomasin, että olemattomiakin osakkeita voi myydä (ts. osakkeita, 
-joita ei ole käyttöliittymän kautta ostettu). Myös ostettuja osakkeita voi myydä enemmän kuin niitä on olemassa.
-Ohjelman olisi hyvä ilmoittaa, mikäli olematonta osaketta yritetään myydä, 
-tai sitä yritetään myydä enemmän kuin sitä omistetaan. 
-Käyttöliittymässä voitaisiin myöskin näyttää Omatilin saldo ja osakkeet.
-*/
+
 
     
 
