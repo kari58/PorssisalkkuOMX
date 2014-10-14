@@ -5,6 +5,7 @@
  */
 package com.mycompany.porssisalkkuomx;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -22,7 +23,7 @@ import java.util.HashMap;
  * @author kromanow
  */
 public class Omatili extends PorssisalkkuOMX {
-
+private Paivamaara ostopaiva;
     private String tunnus;
     private String salasana;
 
@@ -74,6 +75,9 @@ public class Omatili extends PorssisalkkuOMX {
     public String setSalasana() {
         return salasana;
     }
+    public ArrayList getOsakkeet(){
+        return osakkeet;
+    }
 
     public double myy(String osake, int saldo) {
 
@@ -121,8 +125,9 @@ public class Omatili extends PorssisalkkuOMX {
 
         }
         lisaaOsake(osake, (double) ostohinta, saldo, (double) ostohinta);
-        return limiittitili -= ostohinta * saldo;
-
+       
+        super.osakkeet.add(new Tapahtumat(osakkeennimi,14,10,2014));
+         return limiittitili -= ostohinta * saldo;
     }
 
     public String toString() {

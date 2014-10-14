@@ -6,6 +6,7 @@
 package Porssikauppias;
 
 import com.mycompany.porssisalkkuomx.Omatili;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -28,8 +29,10 @@ import javax.swing.WindowConstants;
  * @author kromanow
  */
 public class Tonnipaivassa implements Runnable {
+    
     private String tunnus;
     private String salasana;
+    Omatili omatili=new Omatili(tunnus,salasana);
 
     private JFrame frame;
 
@@ -60,22 +63,26 @@ public class Tonnipaivassa implements Runnable {
         JRadioButton kysymys1vastausKylla = new JRadioButton("Tunnus ja salasana oli oikein ");
         JRadioButton kysymys1vastausEi = new JRadioButton("Yritä uudelleen");
  JButton lisaaNappi2=new JButton("Anna tunnus ja salasana ");
-        JLabel kysymys3 = new JLabel(" Et voi myydä noin paljon");
+        
 
       
 
-        JRadioButton kysymys3vastaus1 = new JRadioButton("Voit myydä vain sen mitä omistat ");
+      
        
-        JRadioButton kysymys3vastaus2 = new JRadioButton("OK");
+      
 
-        JLabel kysymys2 = new JLabel("Et voi myydä osaketta, koska et omista sitä");
+        JLabel kysymys2 = new JLabel("Omistat nämä osakkeet");//1
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-        JRadioButton kysymys2vastaus1 = new JRadioButton("Osta ensin osake");
-        JRadioButton kysymys2vastaus2 = new JRadioButton("OK");
+       // JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
+     for(int i=0;i<omatili.getOsakkeet().size();i++){
+         JRadioButton kysymys2vastaus1=new JRadioButton("Osakkeen nimi");
+     
+     
 
         kysymys2vastaukset.add(kysymys2vastaus1);
         kysymys2vastaukset.add(kysymys2vastaus1);
-
+           container.add(kysymys2vastaus1);}
+     
        JButton valmis = new JButton("Tervetuloa  sijoittajamesuille 12-13.11 Wanhaan satamaan");
          JButton valmis2=new JButton("Ilmaisia lippuja saa www.sijoitus-invest.fi"); 
              
@@ -86,30 +93,25 @@ public class Tonnipaivassa implements Runnable {
         container.add(valmis2);
 
         container.add(kysymys1); 
-        //kysymys1vastausKylla.addActionListener(new ViestinKuuntelija());
+        
         container.add(kysymys1vastausKylla);
-        //kysymys1vastausEi.addActionListener(new ViestinKuuntelija());
+        
         container.add(kysymys1vastausEi);
         
         
         
         
         container.add(kysymys2);
-       // kysymys2vastaus1.addActionListener(new ViestinKuuntelija());
-        container.add(kysymys2vastaus1);
-        //kysymys2vastaus2.addActionListener(new ViestinKuuntelija());
-        container.add(kysymys2vastaus2);
+       
+        //container.add(kysymys2vastaus1);
+       
         
         
 
-        container.add(kysymys3);
-        //kysymys3vastaus1.addActionListener(new ViestinKuuntelija());
-         container.add(kysymys3vastaus1);
-        // kysymys3vastaus2.addActionListener(new ViestinKuuntelija());
-          container.add(kysymys3vastaus2);
+       
+       
           
-        //  container.add(valmis);
-
+        
 
        
        
@@ -165,10 +167,3 @@ public class Tonnipaivassa implements Runnable {
     }
 
 }
-/*
-Testailin ohjelmaa hieman, ja huomasin, että olemattomiakin osakkeita voi myydä (ts. osakkeita, 
-joita ei ole käyttöliittymän kautta ostettu). Myös ostettuja osakkeita voi myydä enemmän kuin niitä on olemassa.
-Ohjelman olisi hyvä ilmoittaa, mikäli olematonta osaketta yritetään myydä, 
-tai sitä yritetään myydä enemmän kuin sitä omistetaan. 
-Käyttöliittymässä voitaisiin myöskin näyttää Omatilin saldo ja osakkeet.
-*/

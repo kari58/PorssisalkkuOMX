@@ -31,7 +31,7 @@ public class OstaKuuntelija implements ActionListener {
     private JTextField nimiKentta ;
       JTextField ostoKentta;
    
-
+//component.repaint();  ?????????omistat nämä osakkeet lissää ostetun
  
     OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta, Omatili sovellus) {
         this.osta=osta;
@@ -57,7 +57,7 @@ public class OstaKuuntelija implements ActionListener {
         }
          if(ae.getSource()==this.osta){
             sovellus.lisaaOsake(osake, ostohinta, saldo, arvo);
-             //osakkeet.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
+            // sovellus.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
           sovellus.getsaldot(); 
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");   
