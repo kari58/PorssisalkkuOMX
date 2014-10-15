@@ -74,9 +74,9 @@ public class Paivamaara {
      * 
      */
 
-    public int erotusVuosissa(Paivamaara verrattava) {  //vanhin ajassa pitäisi myös saada
+    public int erotusVuosissa(Paivamaara verrattava) {  
         if (aiemmin(verrattava)) {
-            return verrattava.erotusVuosissa(this); // (this)
+            return verrattava.erotusVuosissa(this); 
         }
         return laskeErotus(verrattava);
     }

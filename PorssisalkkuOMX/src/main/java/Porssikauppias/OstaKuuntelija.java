@@ -31,7 +31,7 @@ public class OstaKuuntelija implements ActionListener {
     private JTextField nimiKentta ;
       JTextField ostoKentta;
    
-//component.repaint();  ?????????omistat nämä osakkeet lissää ostetun
+
  
     OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta, Omatili sovellus) {
         this.osta=osta;

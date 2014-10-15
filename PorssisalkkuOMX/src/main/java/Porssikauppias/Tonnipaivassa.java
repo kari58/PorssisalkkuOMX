@@ -73,7 +73,7 @@ public class Tonnipaivassa implements Runnable {
 
         JLabel kysymys2 = new JLabel("Omistat nämä osakkeet");//1
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-       // JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
+        //JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
      for(int i=0;i<omatili.getOsakkeet().size();i++){
          JRadioButton kysymys2vastaus1=new JRadioButton("Osakkeen nimi");
      
@@ -102,8 +102,8 @@ public class Tonnipaivassa implements Runnable {
         
         
         container.add(kysymys2);
+      // container.add(kysymys2vastaus1);
        
-        //container.add(kysymys2vastaus1);
        
         
         
