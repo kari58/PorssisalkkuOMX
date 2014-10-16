@@ -6,7 +6,7 @@ package com.mycompany.porssisalkkuomx;
  * and open the template in the editor.
  */
 
-import com.mycompany.porssisalkkuomx.Omatili;
+import PorssisalkkuOMX.Omatili;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;

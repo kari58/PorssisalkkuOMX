@@ -5,7 +5,7 @@
  */
 package Porssikauppias;
 
-import com.mycompany.porssisalkkuomx.Omatili;
+import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

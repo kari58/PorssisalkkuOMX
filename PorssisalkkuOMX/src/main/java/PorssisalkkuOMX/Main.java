@@ -1,11 +1,11 @@
-package com.mycompany.porssisalkkuomx;
+package PorssisalkkuOMX;
 
 
 import Porssikauppias.Tonnipaivassa;
 import Porssikauppias.OstaKuuntelija;
-import com.mycompany.porssisalkkuomx.Kirjautuminen;
-import com.mycompany.porssisalkkuomx.Paivamaara;
-import com.mycompany.porssisalkkuomx.Pankintili;
+import PorssisalkkuOMX.Kirjautuminen;
+import PorssisalkkuOMX.Paivamaara;
+import PorssisalkkuOMX.Pankintili;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
 
@@ -61,7 +61,7 @@ public class Main {
            
                     omatili.myy("Talvivaara", 1000);
             
-            System.out.println(eka + " ja " + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
-            System.out.println("Ostettiin 30.9 "+salkku.osakkeet);
+            //System.out.println(eka + " ja " + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
+           // System.out.println("Ostettiin 30.9 "+salkku.osakkeet);
         }
     }

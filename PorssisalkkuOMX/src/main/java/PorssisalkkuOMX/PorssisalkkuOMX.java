@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.porssisalkkuomx;
+package PorssisalkkuOMX;
 
 import java.util.ArrayList;
 import java.util.Calendar;

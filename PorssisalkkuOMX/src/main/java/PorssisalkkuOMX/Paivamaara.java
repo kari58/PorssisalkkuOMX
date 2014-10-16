@@ -1,4 +1,4 @@
-package com.mycompany.porssisalkkuomx;
+package PorssisalkkuOMX;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

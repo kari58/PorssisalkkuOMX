@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.porssisalkkuomx;
+package PorssisalkkuOMX;
 
 /**
  * Pankintili kasvaa ja vähenee, kun ostetaan tai myydään

@@ -1,4 +1,4 @@
-package com.mycompany.porssisalkkuomx;
+package PorssisalkkuOMX;
 
 
 import java.util.Calendar;

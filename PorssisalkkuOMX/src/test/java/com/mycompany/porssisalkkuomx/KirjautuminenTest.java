@@ -5,6 +5,7 @@
  */
 package com.mycompany.porssisalkkuomx;
 
+import PorssisalkkuOMX.Kirjautuminen;
 import java.io.InputStream;
 import java.util.Scanner;
 import org.junit.After;

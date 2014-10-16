@@ -6,7 +6,7 @@ package com.mycompany.porssisalkkuomx;
  * and open the template in the editor.
  */
 
-import com.mycompany.porssisalkkuomx.Paivamaara;
+import PorssisalkkuOMX.Paivamaara;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -6,7 +6,7 @@ package com.mycompany.porssisalkkuomx;
  * and open the template in the editor.
  */
 
-import com.mycompany.porssisalkkuomx.Tapahtumat;
+import PorssisalkkuOMX.Tapahtumat;
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
