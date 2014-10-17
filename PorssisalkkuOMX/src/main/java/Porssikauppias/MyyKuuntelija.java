@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 /**
  * Olethan huomioinut   tunnus salasana=ilma ja tunnus=kari
  * muuten ei toimi
+ * 
+ * testti testi
  *MyyKuuntelija myydään osakkeita, joita PorsisalkkuOMX sisältää, et voi myydä enempää
  * kuin sinulla on. Jos et omista Lemminkäistä, et sitä myöskään voi  myydä
  * @author kromanow
