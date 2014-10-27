@@ -51,7 +51,7 @@ public class Main {
             
             salkku.ostohinnat.put("Talvivaara", 0.035);
             salkku.osakkeet.add(new Tapahtumat("Talvivaara", 30, 9, 2014));
-             salkku.saldot.put("Talvivaara", salkku.saldot.get("Talvivaara") + 30000);
+             //salkku.saldot.put("Talvivaara", salkku.saldot.get("Talvivaara") + 30000);
             
             
             
@@ -63,7 +63,7 @@ public class Main {
            
                     omatili.myy("Talvivaara", 1000);
             
-            //System.out.println(eka + " ja " + toka + " ero vuosissa on "+ eka.erotusVuosissa(toka));
+            //System.out.println(eka + " ja " +  tokana + " ero vuosissa on "+ eka.erotusVuosissa(toka));
            // System.out.println("Ostettiin 30.9 "+salkku.osakkeet);
         }
     }
