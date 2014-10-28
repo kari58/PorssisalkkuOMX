@@ -66,9 +66,9 @@ public class Tonnipaivassa implements Runnable {
         
                         
 
-       // JLabel kysymys2 = new JLabel("Ostamasi osakkeet löytyy tästä ");//1//tässä pitää olla nappi kuten osta osake
+      
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-        // container.add(kysymys2);//OSTOON LIITTYVÄ
+      
         JButton lisaaNappi=new JButton("Ostamasi osakkeet löytyy tästä !");
         container.add(lisaaNappi);
         //JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
