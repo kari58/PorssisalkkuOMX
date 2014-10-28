@@ -60,13 +60,18 @@ public class OstaKuuntelija implements ActionListener {
             // sovellus.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
           sovellus.getsaldot(); 
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
-             System.out.println("Ostettu!");   
+             System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
+             //JOptionPane.showMessageDialog(null, "Ostettu", "100 kpl", JOptionPane.ERROR_MESSAGE);
         } 
     }
 
 }
 
-
+/*
+if (!sovellus.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
+            System.out.println("Et voi myydä, et omista noin paljon");
+            JOptionPane.showMessageDialog(null, "Ett omista", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
+*/
 
     
 

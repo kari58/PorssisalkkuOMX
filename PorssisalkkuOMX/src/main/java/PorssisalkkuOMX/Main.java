@@ -20,6 +20,20 @@ import javax.swing.SwingUtilities;
  * Aloittaa projektin, tässä on mukana muutama kokeilu ohjelman toimimisesta
  *
  * @author kromanow
+ * Kirjautuminen onnistuu, mutta ohjelman olisi syytä toimia kokonaan graafisena, 
+ * on hämäävää kun osan syötteestä voi antaa graafisen käyttöliittymän kautta 
+ * ja osa taas on annettava komentoriviltä.
+
+Osakkeiden ostaminen vaikuttaa toimivalta, ohjelma ei kuitenkaan näytä mitenkään omistuksessa olevia osakkeita. 
+* Osakkeiden myynti- ja ostohinnat eivät nyt näy käyttäjälle mitenkään.
+
+Osakkeen myyntitoiminnallisuus toimii sikäli virheellisesti 
+* että jos osaa esim. yhden nokian osakkeen, voi sen myydä mielevaltaisen monta kertaa.
+
+Puutteelisen/virheellisen toiminnallisuuden lisäksi ohjelman dokumentaation,
+* erityisesti aihemäärittelyn ja käyttöohjeen tulisi olla selkeämpiä.
+
+Matti
  */
 public class Main {
 

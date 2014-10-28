@@ -48,16 +48,16 @@ public class MyyKuuntelija implements ActionListener {
         } catch (Exception ex) {
         }
         if (!sovellus.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
-            System.out.println("Et voi myydä, et omista noin paljon");
-            JOptionPane.showMessageDialog(null, "Et omista", "et voi myydä", JOptionPane.ERROR_MESSAGE); 
+            System.out.println("Et voi myydä, et omista noin yhtään  näitä");
+            JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
         } 
         else {
             if(sovellus.getsaldot().get(nimiKenttaMyy.getText())>= Integer.parseInt(myyntiKentta.getText())){
             sovellus.myy(nimiKenttaMyy.getName(), (int) arvo2);
-            System.out.println("Myyty !");
+            System.out.println("Myyty !");//tähän pitää saada hinta
             }
             else{
-                JOptionPane.showMessageDialog(null, "Et omista", "et voi myydä", JOptionPane.ERROR_MESSAGE); 
+                JOptionPane.showMessageDialog(null, "Et omista noin monta tarkista määräsi", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
                 System.out.println("Et voi myydä");
             }
         }

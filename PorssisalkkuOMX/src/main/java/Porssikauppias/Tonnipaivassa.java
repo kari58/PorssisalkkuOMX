@@ -64,33 +64,27 @@ public class Tonnipaivassa implements Runnable {
         JRadioButton kysymys1vastausEi = new JRadioButton("Yritä uudelleen");
  JButton lisaaNappi2=new JButton("Anna tunnus ja salasana ");
         
+                        
 
-      
-
-      
-       
-      
-
-        JLabel kysymys2 = new JLabel("Omistat nämä osakkeet");//1
+       // JLabel kysymys2 = new JLabel("Ostamasi osakkeet löytyy tästä ");//1//tässä pitää olla nappi kuten osta osake
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
-       
+        // container.add(kysymys2);//OSTOON LIITTYVÄ
+        JButton lisaaNappi=new JButton("Ostamasi osakkeet löytyy tästä !");
+        container.add(lisaaNappi);
         //JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
      for(int i=0;i<omatili.getOsakkeet().size();i++){
          JRadioButton kysymys2vastaus1=new JRadioButton("Osakkeen nimi");
      
-     
-
         kysymys2vastaukset.add(kysymys2vastaus1);
            container.add(kysymys2vastaus1);}
      
-       JButton valmis = new JButton("Tervetuloa  sijoittajamesuille 12-13.11 Wanhaan satamaan");
-         JButton valmis2=new JButton("Ilmaisia lippuja saa www.sijoitus-invest.fi"); 
+
+     ; 
              
 
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
-        container.add(valmis);
-        container.add(valmis2);
+      
 
         container.add(kysymys1); 
         
@@ -100,27 +94,9 @@ public class Tonnipaivassa implements Runnable {
         
      
         
-        container.add(kysymys2);
+       
      
-       
-       
-        
-        
-
-       
-       
-          
-        
-
-       
-       
-
-
-
-    
-
-        
-        
+                                                                                         
        
     }
 
@@ -140,7 +116,15 @@ public class Tonnipaivassa implements Runnable {
         
         
         lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi,nimiKenttaOsto,ostoKentta,omatili));
-        
+  /*
+         JLabel kysymys2 = new JLabel("Omistat nämä osakkeet");//1
+        ButtonGroup kysymys2vastaukset = new ButtonGroup();
+       
+        //JRadioButton kysymys2vastaus1 = new JRadioButton("ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();");//2
+     for(int i=0;i<omatili.getOsakkeet().size();i++){
+         JRadioButton kysymys2vastaus1=new JRadioButton("Osakkeen nimi");
+     
+        */      
         
        
     JLabel nimiTekstiMyy=new JLabel("Mikä myydään ?");
