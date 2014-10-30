@@ -79,7 +79,7 @@ public class Tonnipaivassa implements Runnable {
            container.add(kysymys2vastaus1);}
      
 
-     ; 
+      
              
 
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
@@ -109,13 +109,17 @@ public class Tonnipaivassa implements Runnable {
         
         JButton lisaaNappi=new JButton("Osta osake !");
         JLabel nimiTeksti=new JLabel("Anna osakkkeen nimi");
+        
+        JLabel nimiTeksti2=new JLabel("Ostohinta");
+        JTextField ostohintaKentta=new JTextField();
         JTextField nimiKenttaOsto =new JTextField();
         JLabel osto=new JLabel("Osto, montako ?");
         JTextField ostoKentta=new JTextField();
+        
         Omatili omatili=new Omatili(tunnus,salasana);
         
         
-        lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi,nimiKenttaOsto,ostoKentta,omatili));
+        lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi,nimiKenttaOsto,ostoKentta,ostohintaKentta,omatili));
   /*
          JLabel kysymys2 = new JLabel("Omistat nämä osakkeet");//1
         ButtonGroup kysymys2vastaukset = new ButtonGroup();
@@ -128,24 +132,34 @@ public class Tonnipaivassa implements Runnable {
         
        
     JLabel nimiTekstiMyy=new JLabel("Mikä myydään ?");
-        JTextField nimiKenttaMyy=new JTextField();
+        JTextField nimiKenttaMyy=new JTextField(); 
+        
         JLabel myy=new JLabel("Myydään , montako ?");
         JTextField myyntiKentta=new JTextField();
         
+        JLabel hinta=new JLabel("Myyntihinta");
+        JTextField hintaKentta=new JTextField();
+        
         JButton lisaaNappiMyy=new JButton("Myy osake ");
-        lisaaNappiMyy.addActionListener(new MyyKuuntelija(lisaaNappiMyy,nimiKenttaMyy, myyntiKentta,omatili));
+        lisaaNappiMyy.addActionListener(new MyyKuuntelija(lisaaNappiMyy,nimiKenttaMyy, myyntiKentta,hintaKentta,omatili));
         
         container.add(lisaaNappi);
+        
         container.add(nimiTeksti);
         container.add(nimiKenttaOsto);
         container.add(osto);
         container.add(ostoKentta);
+        
+        container.add(nimiTeksti2);
+        container.add(ostohintaKentta);
         
    container.add(lisaaNappiMyy);
         container.add(nimiTekstiMyy);
         container.add(nimiKenttaMyy);
         container.add(myy);
         container.add(myyntiKentta);
+        container.add(hinta);
+        container.add(hintaKentta);
         
     }
 

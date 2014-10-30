@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,14 +31,16 @@ public class OstaKuuntelija implements ActionListener {
   
     private JTextField nimiKentta ;
       JTextField ostoKentta;
+     JTextField ostohintaKentta;// TÄMÄ LISÄTTY MUTTA TILTTAA TONNOPAIVASSA
    
 
  
-    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta, Omatili sovellus) {
+    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta,JTextField ostohintaKentta, Omatili sovellus) {
         this.osta=osta;
         this.nimiKentta=nimiKentta;
         this.ostoKentta=ostoKentta;
-        this.sovellus = sovellus;
+        this.ostohintaKentta=ostohintaKentta;
+          this.sovellus = sovellus;
 
     }
 
