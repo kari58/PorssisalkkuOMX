@@ -1,8 +1,8 @@
 package PorssisalkkuOMX;
 
 
-import Porssikauppias.Tonnipaivassa;
-import Porssikauppias.OstaKuuntelija;
+import Kayttoliittyma.Tonnipaivassa;
+import Kayttoliittyma.OstaKuuntelija;
 import PorssisalkkuOMX.Kirjautuminen;
 import PorssisalkkuOMX.Paivamaara;
 import PorssisalkkuOMX.Pankintili;

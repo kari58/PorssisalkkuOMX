@@ -46,10 +46,7 @@ public class PorssisalkkuOMX {
         }
         return true;
     }
-     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("testi");
-    }
+     
     protected HashMap<String, Double> ostohinnat;
    protected HashMap<String, Integer> saldot;
     protected HashMap<String, Double> markkinaArvot;

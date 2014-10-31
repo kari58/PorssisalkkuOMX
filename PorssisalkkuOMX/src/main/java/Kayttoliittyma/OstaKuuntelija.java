@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Porssikauppias;
+package Kayttoliittyma;
 
 import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
@@ -27,21 +27,21 @@ public class OstaKuuntelija implements ActionListener {
 
     private JTextField syoteTextField;
     private JLabel tulostusLabel;
-    private Omatili sovellus;
+    private Omatili omatili;  //sovellus on muutettu omatili
     private JButton osta;
   
     private JTextField nimiKentta ;
       JTextField ostoKentta;
-     JTextField ostohintaKentta;// TÄMÄ LISÄTTY MUTTA TILTTAA TONNOPAIVASSA
+     JTextField ostohintaKentta;
    
 
  
-    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta,JTextField ostohintaKentta, Omatili sovellus) {
+    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta,JTextField ostohintaKentta, Omatili omatili) {
         this.osta=osta;
         this.nimiKentta=nimiKentta;
         this.ostoKentta=ostoKentta;
         this.ostohintaKentta=ostohintaKentta;
-          this.sovellus = sovellus;
+          this.omatili = omatili;
 
     }
 
@@ -60,10 +60,10 @@ public class OstaKuuntelija implements ActionListener {
         } catch (Exception ex) {
         }
          if(ae.getSource()==this.osta){
-            sovellus.lisaaOsake(osake, ostohinta, saldo, arvo);
+            omatili.lisaaOsake(osake, ostohinta, saldo, arvo);
             // sovellus.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
-          sovellus.getsaldot(); 
-            sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
+          omatili.getsaldot(); 
+            omatili.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
              JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
              //kävisikö tähän  System.out.println(" Ostettu !" +sovellus.getsaldot()+sovellus.getostohinnat();
@@ -72,11 +72,7 @@ public class OstaKuuntelija implements ActionListener {
 
 }
 
-/*
-if (!sovellus.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
-            System.out.println("Et voi myydä, et omista noin paljon");
-            JOptionPane.showMessageDialog(null, "Ett omista", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
-*/
+
 
     
 
