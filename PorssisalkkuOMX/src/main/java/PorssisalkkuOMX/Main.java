@@ -59,12 +59,12 @@ public class Main {
             PorssisalkkuOMX salkku=new PorssisalkkuOMX();
             Omatili omatili=new Omatili("String tunnus","String salasana");
             
-            salkku.ostohinnat.put("Talvivaara",0.05);
-            salkku.osakkeet.add(new Tapahtumat("Talvivaara", 29, 9, 2014));
-            salkku.saldot.put("Talvivaara", 1000);
+           // salkku.ostohinnat.put("Talvivaara",0.05);
+           // salkku.osakkeet.add(new Tapahtumat("Talvivaara", 29, 9, 2014));
+           // salkku.saldot.put("Talvivaara", 1000);
             
-            salkku.ostohinnat.put("Talvivaara", 0.035);
-            salkku.osakkeet.add(new Tapahtumat("Talvivaara", 30, 9, 2014));
+           // salkku.ostohinnat.put("Talvivaara", 0.035);
+           // salkku.osakkeet.add(new Tapahtumat("Talvivaara", 30, 9, 2014));
              //salkku.saldot.put("Talvivaara", salkku.saldot.get("Talvivaara") + 30000);
             
             
@@ -72,10 +72,10 @@ public class Main {
            
            
             
-            salkku.markkinaArvot.put("Talvivaara", 0.07);
-            salkku.osakkeet.add(new Tapahtumat("Talvivaara",31,9,2014));
+            //salkku.markkinaArvot.put("Talvivaara", 0.07);
+            //salkku.osakkeet.add(new Tapahtumat("Talvivaara",31,9,2014));
            
-                    omatili.myy("Talvivaara", 1000);
+                  //  omatili.myy("Talvivaara", 1000);
             
             //System.out.println(eka + " ja " +  tokana + " ero vuosissa on "+ eka.erotusVuosissa(toka));
            // System.out.println("Ostettiin 30.9 "+salkku.osakkeet);

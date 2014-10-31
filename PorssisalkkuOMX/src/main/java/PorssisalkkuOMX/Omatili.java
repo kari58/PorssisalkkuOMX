@@ -101,28 +101,17 @@ private Paivamaara ostopaiva;
         vahennaOsake( osake,saldo,(double) markkinaArvo);
         System.out.println("osake: "+osake);
         for (Tapahtumat osakkeet1 : super.osakkeet) {
+            System.out.println(osakkeet1.getOsakkeennimi());
+            System.out.println(osake);
             if(osakkeet1.getOsakkeennimi().equals(osake)) {
                 super.osakkeet.remove(osakkeet1);
             }
         }
       
         
-        saldot.put(osake,saldot.get(osake)- saldo);//TÄHÄN PITÄÄ LAITTAA SALDOT. HashMap<String,Integer>saldot  1000-100
+//        saldot.put(osake,saldot.get(osake)- saldo);//TÄHÄN PITÄÄ LAITTAA SALDOT. HashMap<String,Integer>saldot  1000-100
         return limiittitili;
-        /*
-            public boolean ota(String tuote) {
-        if (!this.saldot.containsKey(tuote)) {
-            return false;
-        }
- 
-        int saldo = this.saldot.get(tuote);
-        if (saldo == 0) {
-            return false;
-        }
- 
-        this.saldot.put(tuote, saldo - 1);
-        return true;
-        */
+       
 
     }
 

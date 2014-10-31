@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -64,7 +65,7 @@ public class OstaKuuntelija implements ActionListener {
           sovellus.getsaldot(); 
             sovellus.osta(nimiKentta.getName(), ostohinta,saldo);
              System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
-             //JOptionPane.showMessageDialog(null, "Ostettu", "100 kpl", JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
              //kävisikö tähän  System.out.println(" Ostettu !" +sovellus.getsaldot()+sovellus.getostohinnat();
         } 
     }

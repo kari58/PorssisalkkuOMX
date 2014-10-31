@@ -97,7 +97,7 @@ public HashMap<String,Double>getmarkkinaArvot(){
         this.ostohinnat.put(osake, ostohinta);
         this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
-
+//Pitäisikö olla    this.saldot.put(osake, saldot.get(osake)+saldo);31.10
     }
 
     public double ostohinta(String osake) {
@@ -121,7 +121,7 @@ public HashMap<String,Double>getmarkkinaArvot(){
         return this.markkinaArvot.get(osake);
     }
     public void vahennaOsake(String osake,int saldo,double markkinaArvo){ //lisätty 29.10
-        this.saldot.put(osake, saldo);
+        this.saldot.put(osake, saldot.get(osake)-saldo);
     }
    
             public String toString() {

@@ -56,15 +56,16 @@ public class MyyKuuntelija implements ActionListener {
         } 
         else {
             if(sovellus.getsaldot().get(nimiKenttaMyy.getText())>= Integer.parseInt(myyntiKentta.getText())){
-            sovellus.myy(nimiKenttaMyy.getName(), (int) arvo2);
+           
+            sovellus.myy(nimiKenttaMyy.getText(), (int) arvo2);
            // saldot.put(osake,saldot.get(osake)- saldo);
         
-            sovellus.vahennaOsake(nimiKenttaMyy.getName(), saldo2, markkinaArvo);
+//            sovellus.vahennaOsake(nimiKenttaMyy.getText(), saldo2, markkinaArvo);
             //TÄHÄN PITÄÄ SAADA sovellus.getsaldot().get(nimiKenttaMyy.getText())-sovellus.myy(nimiKenttaMyy.getName(), (int) arvo2);
             System.out.println("Myyty !");//tähän pitää saada hinta
             }
             else{
-                if(sovellus.getsaldot().get(nimiKenttaMyy.getText())<Integer.parseInt(myyntiKentta.getText()))
+//                if(sovellus.getsaldot().get(nimiKenttaMyy.getText())<Integer.parseInt(myyntiKentta.getText()))
                 JOptionPane.showMessageDialog(null, "Et voi myydä","Et omista!",JOptionPane.ERROR_MESSAGE);
             }
           //  else{
