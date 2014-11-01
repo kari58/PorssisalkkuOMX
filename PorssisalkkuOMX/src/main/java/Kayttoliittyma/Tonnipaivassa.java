@@ -72,27 +72,36 @@ public class Tonnipaivassa implements Runnable {
 
     private void luoKomponentit(Container container) {
 
-        JLabel kysymys1 = new JLabel("Anna tunnus ja salasana?");
-        JRadioButton kysymys1vastausKylla = new JRadioButton("Tunnus ja salasana oli oikein ");
-        JRadioButton kysymys1vastausEi = new JRadioButton("Yritä uudelleen");
-        JButton lisaaNappi2 = new JButton("Anna tunnus ja salasana ");
-
-        ButtonGroup kysymys2vastaukset = new ButtonGroup();
+       
+        JButton kysymys1=new JButton("AnnaTunnusJaSalasana");
+        container.add(kysymys1);
+        JLabel nimiTeksti = new JLabel("Anna tunnus");
+        container.add(nimiTeksti);
+        JTextField nimiTekstiKentta = new JTextField();
+        container.add(nimiTekstiKentta);
+        
+        JLabel salasanaTeksti=new JLabel("Anna salasana");
+        container.add(salasanaTeksti);
+        JTextField salasanaTekstiKentta=new JTextField();
+        container.add(salasanaTekstiKentta);
+        
+      //  kysymys1.addActionListener(new SalasanaKuuntelija( nimiTekstiKentta, nimiTeksti,omatili,kysymys1,tunnusKentta,salasanaTekstiKentta,));
+//JATKA TÄSTÄ  jteXTfIELD TUNNUSKENTTA JOTAIN VIKAA  LAUANATAI
+     //JTextField syoteTextField,JLabel tulostusLabel,Omatili omatili,JButton AnnaTunnusJaSalasana,JTextField tunnusKentta,JTextField salasanaKentta){  
+        
 
         JButton ostamasiNappi = new JButton("Ostamasi osakkeet löytyy tästä !");
         container.add(ostamasiNappi);
-        JLabel nimi = new JLabel("ostettu");
-        ostamasiNappi.addActionListener(new OstamasiKuuntelija(ostamasiNappi, nimi, this));
+      JLabel nimi = new JLabel("ostettu");
+        JTextField ostamasi = new JTextField();
+        container.add(ostamasi);
+        ostamasiNappi.addActionListener(new OstamasiKuuntelija(ostamasiNappi,nimi, this));
 
         BoxLayout layout = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(layout);
 
-        container.add(kysymys1);
 
-        container.add(kysymys1vastausKylla);
-
-        container.add(kysymys1vastausEi);
-
+       
     }
 
     public JFrame getFrame() {
