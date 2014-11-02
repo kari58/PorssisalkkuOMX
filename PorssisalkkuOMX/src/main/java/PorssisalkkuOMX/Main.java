@@ -42,7 +42,7 @@ public class Main {
 
         SwingUtilities.invokeLater(tonni);
         
-       // SwingUtilities.invokeLater(new ViestinKuuntelija());
+      
 
         
             Paivamaara eka = new Paivamaara(24, 9, 2009);

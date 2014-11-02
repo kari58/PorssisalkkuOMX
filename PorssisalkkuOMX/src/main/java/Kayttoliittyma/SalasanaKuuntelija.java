@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -35,6 +36,7 @@ public class SalasanaKuuntelija implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //JOptionPane.showMessageDialog(null, "Väärä tunnus tai salasana", JOptionPane.ERROR_MESSAGE); 
     }
     
 }
