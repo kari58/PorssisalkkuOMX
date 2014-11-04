@@ -39,10 +39,15 @@ private Paivamaara ostopaiva;
     private int F;
     private double ostohinta;
     private double markkinaArvo;
-
+    
+//omatili.getsaldot()   ei toimi
+    
+    
     public Omatili(String tunnus, String salasana) {
         this.tunnus = tunnus;
         this.salasana = salasana;
+       // this.saldo=saldo;
+      //  this.ostohinta=ostohinta;
 
         this.limiittitili = 1000.0;
         this.saldot = new HashMap<String, Integer>();
@@ -78,7 +83,9 @@ private Paivamaara ostopaiva;
     public ArrayList getOsakkeet(){
         return osakkeet;
     }
-
+//public int getsaldot(){  //lisätty 4.11
+   // return saldo;
+//}
     public double myy(String osake, int saldo) {
 
         Collections.sort(super.osakkeet);
@@ -137,7 +144,7 @@ private Paivamaara ostopaiva;
 
         }
         lisaaOsake(osake, (double) ostohinta, saldo, (double) ostohinta);
-       
+       saldot.put(osake, saldo);//lisätty 4.11
         super.osakkeet.add(new Tapahtumat(osake,14,10,2014));
          return limiittitili -= ostohinta * saldo;
     }

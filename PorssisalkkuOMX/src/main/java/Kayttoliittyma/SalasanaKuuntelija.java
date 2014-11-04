@@ -5,9 +5,11 @@
  */
 package Kayttoliittyma;
 
+import PorssisalkkuOMX.Kirjautuminen;
 import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,28 +26,38 @@ public class SalasanaKuuntelija implements ActionListener{
     private JButton AnnaTunnusJaSalasana;
     private JTextField tunnusKentta;
             JTextField salasanaKentta;
-            public SalasanaKuuntelija(JTextField syoteTextField,JLabel tulostusLabel,Omatili omatili,JButton AnnaTunnusJaSalasana,JTextField tunnusKentta,JTextField salasanaKentta){
+            private HashMap<String,Omatili>omattilit;
+            
+            public SalasanaKuuntelija(JTextField syoteTextField,JLabel tulostusLabel,Omatili omatili,JButton AnnaTunnusJaSalasana,JTextField tunnusKentta,JTextField salasanaKentta,HashMap<String,Omatili>omattilit){
                 this.syoteTextField=syoteTextField;
                 this.tulostusLabel=tulostusLabel;
                 this.omatili=omatili;
                 this.AnnaTunnusJaSalasana=AnnaTunnusJaSalasana;
                 this.tunnusKentta=tunnusKentta;
                 this.salasanaKentta=salasanaKentta;
-                
+                this.omattilit=omattilit;
             }
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //JOptionPane.showMessageDialog(null, "Väärä tunnus tai salasana", JOptionPane.ERROR_MESSAGE); 
+       
+        
+ 
+        
+        String tunnus = tunnusKentta.getText();
+        if (!omattilit.containsKey(tunnus)){
+             JOptionPane.showMessageDialog(null, "VÄÄRÄ", "TUNNUStaiSALASANA", JOptionPane.ERROR_MESSAGE);
+} else {
+            System.out.print("Anna salasana: ");
+            String salasana = salasanaKentta.getText();
+            
+            if (tunnus.equals(omattilit.get(tunnus).getTunnus() )&& (salasana.equals(omattilit.get(tunnus).getSalasana()))){
+                JOptionPane.showMessageDialog(null, "Olet kirjautunut järjestelmään", "Saat käyttää omatiliä", JOptionPane.ERROR_MESSAGE);
+               
+            } else {
+                System.out.println("Virheellinen tunnus tai salasana!");
+            }
+        }
+    }
     }
     
-}
-/*
- private String tunnus;
-    private String salasana;
-    Omatili omatili = new Omatili(tunnus, salasana);
 
-
-    }
-
-*/

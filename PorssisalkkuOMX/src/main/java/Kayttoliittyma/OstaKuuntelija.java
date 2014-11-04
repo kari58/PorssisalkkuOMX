@@ -27,7 +27,7 @@ public class OstaKuuntelija implements ActionListener {
 
     private JTextField syoteTextField;
     private JLabel tulostusLabel;
-    private Omatili omatili;  //sovellus on muutettu omatili
+    private Omatili omatili; 
     private JButton osta;
   
     private JTextField nimiKentta ;
@@ -61,15 +61,18 @@ public class OstaKuuntelija implements ActionListener {
         }
          if(ae.getSource()==this.osta){
             omatili.lisaaOsake(osake, ostohinta, saldo, arvo);
-            // sovellus.add(String osakkeennimi,int paiva,int kuukausi,int vuosi);
-          omatili.getsaldot(); 
+            
+         
             omatili.osta(nimiKentta.getName(), ostohinta,saldo);
+            omatili.getsaldot().put(nimiKentta.getName(),saldo);
+ omatili.getsaldot(); //tämä ei tallennu arraylist
+         //  saldot.jatka huomenna
              System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
              JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
-             //kävisikö tähän  System.out.println(" Ostettu !" +sovellus.getsaldot()+sovellus.getostohinnat();
-        } 
+            
     }
 
+    }
 }
 
 

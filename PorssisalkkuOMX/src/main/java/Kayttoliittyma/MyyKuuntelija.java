@@ -28,12 +28,12 @@ public class MyyKuuntelija implements ActionListener {
    private     JTextField hintaKentta;
         
     private JButton myy;
-    private Omatili sovellus;
+    private Omatili omatili;
 
     MyyKuuntelija(JButton myy, JTextField nimiKenttaMyy, JTextField myyntiKentta,JTextField hintaKentta, Omatili sovellus) {
         this.nimiKenttaMyy = nimiKenttaMyy;
         this.myyntiKentta = myyntiKentta;
-        this.sovellus = sovellus;
+        this.omatili = sovellus;
         this.myy = myy;
         this.nimiKenttaMyy = nimiKenttaMyy;
         this.hintaKentta=hintaKentta;
@@ -50,14 +50,14 @@ public class MyyKuuntelija implements ActionListener {
             arvo2 = Integer.parseInt(myyntiKentta.getText());
         } catch (Exception ex) {
         }
-        if (!sovellus.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
+        if (!omatili.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
             System.out.println("Et voi myydä, et omista  yhtään  näitä");
             JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
         } 
         else {
-            if(sovellus.getsaldot().get(nimiKenttaMyy.getText())>= Integer.parseInt(myyntiKentta.getText())){
+            if(omatili.getsaldot().get(nimiKenttaMyy.getText())>= Integer.parseInt(myyntiKentta.getText())){
            
-            sovellus.myy(nimiKenttaMyy.getText(), (int) arvo2);
+            omatili.myy(nimiKenttaMyy.getText(), (int) arvo2);
            // saldot.put(osake,saldot.get(osake)- saldo);
         
 //            sovellus.vahennaOsake(nimiKenttaMyy.getText(), saldo2, markkinaArvo);
@@ -66,7 +66,7 @@ public class MyyKuuntelija implements ActionListener {
             }
             else{
 //                if(sovellus.getsaldot().get(nimiKenttaMyy.getText())<Integer.parseInt(myyntiKentta.getText()))
-                JOptionPane.showMessageDialog(null, "Et voi myydä","Et omista!",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Et voi myydä","Et omista noin paljon !",JOptionPane.ERROR_MESSAGE);
             }
           //  else{
               //  JOptionPane.showMessageDialog(null, "Et omista noin monta tarkista määräsi", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 

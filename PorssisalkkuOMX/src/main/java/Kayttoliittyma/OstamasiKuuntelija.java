@@ -5,6 +5,7 @@
  */
 package Kayttoliittyma;
 
+import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -18,16 +19,18 @@ public class OstamasiKuuntelija implements ActionListener {
     private JButton ostamasiNappi;
     private JLabel nimi;
     private Tonnipaivassa tonnipaivassa;
-
-    public OstamasiKuuntelija(JButton ostamasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa) {
+private Omatili omatili;
+    public OstamasiKuuntelija(JButton ostamasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,Omatili omatili) {
         this.ostamasiNappi=ostamasiNappi;
         this.nimi=nimi;
         this.tonnipaivassa=tonnipaivassa;
+        this.omatili=omatili;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaOstamasiOsakkeet();
+         omatili.getsaldot(); 
         
        
     }

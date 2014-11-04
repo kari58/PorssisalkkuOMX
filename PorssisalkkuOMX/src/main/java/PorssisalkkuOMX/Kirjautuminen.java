@@ -36,6 +36,9 @@ import java.util.Scanner;
 public class Kirjautuminen {
     private HashMap<String,Omatili>omattilit;
     Scanner lukija;
+
+    public Kirjautuminen(String tunnus, String salasana) {
+    }
     public void kirjautuminen(){
         
  
