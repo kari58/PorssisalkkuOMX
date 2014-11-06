@@ -8,11 +8,12 @@ package Kayttoliittyma;
 import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- *
+ *MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
  * @author kromanow@cs
  */
 public class OstamasiKuuntelija implements ActionListener {
@@ -20,18 +21,27 @@ public class OstamasiKuuntelija implements ActionListener {
     private JLabel nimi;
     private Tonnipaivassa tonnipaivassa;
 private Omatili omatili;
-    public OstamasiKuuntelija(JButton ostamasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,Omatili omatili) {
+private HashMap<String,Omatili>omattilit;
+    public OstamasiKuuntelija(JButton ostamasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,
+            Omatili omatili,HashMap<String,Omatili>omattilit) {
         this.ostamasiNappi=ostamasiNappi;
         this.nimi=nimi;
         this.tonnipaivassa=tonnipaivassa;
         this.omatili=omatili;
+        this.omattilit=omattilit;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaOstamasiOsakkeet();
-         omatili.getsaldot(); 
+         omatili.getsaldot();
+         omatili.getostohinnat();
+         omatili.getmarkkinaArvot();
+        omattilit.values();
         
+        
+        int size = omattilit.size();
+        omattilit.containsValue(e);
        
     }
     

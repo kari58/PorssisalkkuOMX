@@ -48,7 +48,7 @@ public class PorssisalkkuOMX {
     }
      
     protected HashMap<String, Double> ostohinnat;
-   protected HashMap<String, Integer> saldot;
+    protected HashMap<String, Integer> saldot;
     protected HashMap<String, Double> markkinaArvot;
     double markkinaArvo=11.0;   //testiä varten
 ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
@@ -92,9 +92,9 @@ public HashMap<String,Double>getmarkkinaArvot(){
         
     public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
-        this.saldot.put(osake, saldo);
+       this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
-//Pitäisikö olla    this.saldot.put(osake, saldot.get(osake)+saldo);31.10
+   //this.saldot.put(osake, saldot.get(osake)+saldo);
     }
 
     public double ostohinta(String osake) {

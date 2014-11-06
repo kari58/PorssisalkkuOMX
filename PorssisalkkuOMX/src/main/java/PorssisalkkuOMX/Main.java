@@ -60,8 +60,7 @@ public class Main {
             pankintili.getsaldot();
             kirjautuminen.kirjautuminen();
             
-            PorssisalkkuOMX salkku=new PorssisalkkuOMX();
-            Omatili omatili=new Omatili("String tunnus","String salasana");
+           // PorssisalkkuOMX salkku=new PorssisalkkuOMX();
             
            // salkku.ostohinnat.put("Talvivaara",0.05);
            // salkku.osakkeet.add(new Tapahtumat("Talvivaara", 29, 9, 2014));

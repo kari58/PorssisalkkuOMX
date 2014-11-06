@@ -83,19 +83,18 @@ private Paivamaara ostopaiva;
     public ArrayList getOsakkeet(){
         return osakkeet;
     }
-//public int getsaldot(){  //lisätty 4.11
-   // return saldo;
-//}
+
+
     public double myy(String osake, int saldo) {
 
         Collections.sort(super.osakkeet);
 
         if (saldot.containsKey(osake)) {
-            if (((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) == 0.95)
-                    && ((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 1.1)) {
-            } else {
+           // if (((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95)//== vaihdettu  < merkiksi
+                    //&& ((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 1.1)) {
+           // } else {
                 limiittitili += markkinaArvo * saldo;
-            }
+            //}
         }
         for (Double osake1 : markkinaArvot.values()) {
             for (Double osake2 : ostohinnat.values()) {
@@ -144,7 +143,7 @@ private Paivamaara ostopaiva;
 
         }
         lisaaOsake(osake, (double) ostohinta, saldo, (double) ostohinta);
-       saldot.put(osake, saldo);//lisätty 4.11
+       saldot.put(osake, saldot.get(osake)+saldo);//lisätty 4.11
         super.osakkeet.add(new Tapahtumat(osake,14,10,2014));
          return limiittitili -= ostohinta * saldo;
     }

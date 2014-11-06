@@ -13,6 +13,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -25,27 +27,29 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
- 
+ MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
  *
  * @author kromanow
  */
 /*
-ILMEISESTI LUOKOMPONENTIT PITÄÄ POISTAA JA KAIKKI KAMA LUOKOMNPONENTIT2 ALLE
+
 */
 public class Tonnipaivassa implements Runnable {
 
     private String tunnus;
     private String salasana;
-    Omatili omatili = new Omatili(tunnus, salasana);
+    private Omatili omatili;
    private HashMap<String,Omatili>omattilit;
    private JTextField ostamasi;
    public Tonnipaivassa(){
+       this.omatili = new Omatili(tunnus, salasana);
        this.omattilit=new HashMap<String,Omatili>();
    }
 //omattilit ei tallenna ostoa tutkittu debuger
     private JFrame frame;
 
     public Tonnipaivassa(HashMap<String, Omatili> omattilit) {
+        this.omatili = new Omatili(tunnus, salasana);
        this.omattilit= omattilit;//To change body of generated methods, choose Tools | Templates.
     }
 
@@ -56,24 +60,38 @@ public class Tonnipaivassa implements Runnable {
         frame.setPreferredSize(new Dimension(300, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-       // luoKomponentit2(frame.getContentPane());
         luoKomponentit(frame.getContentPane());
 
         frame.pack();
         frame.setVisible(true);
     }
-// omatilit ei sisällä ostettuja osakkeita tutkittu debuggerilla
     public void lisaaOstamasiOsakkeet() {
-        System.out.println("lisaaOstamasiOsakkeet -metodia kutsuttu");
-        String teksti = ""+omatili.getsaldot().keySet().size() + " ";
-        // omattilit.get("simo");
-        for(String avain : omatili.getsaldot().keySet()){
-           teksti += avain + " ";
-        }
-//eikö tässä pitäisi ///getOsakkeet() vaihtoolla omatili.getsaldot().size()????
-//       for (int i = 0; i < omatili.getsaldot().size(); i++) {//omatili.getOsakkeet() ei toimi
-//            teksti += omatili.getsaldot().get(i) + "\n";
-//       }
+        
+    String teksti = "";
+    Iterator entries = omatili.getsaldot().entrySet().iterator();
+    while (entries.hasNext()) {
+      Entry thisEntry = (Entry) entries.next();
+      Object key = thisEntry.getKey();
+      Object value = thisEntry.getValue();
+      teksti += value + " " + key  +", ";
+      //omatili.getostohinnat().get(key).doubleValue()
+      
+    }
+
+
+       
+        
+//        int saldot = 0;
+//        for (int saldo : omatili.getsaldot().values()) {
+//            saldot += saldo;
+//        }
+//        String teksti = ""+saldot + " ";
+//
+//        
+//        for(String avain : omatili.getsaldot().keySet()){
+//           teksti += avain + " ,";
+//        }
+
         ostamasi.setText(teksti);
     }
 
@@ -106,7 +124,8 @@ public class Tonnipaivassa implements Runnable {
         JTextField syoteTextField=new JTextField();
         
         
-       kysymys1.addActionListener(new SalasanaKuuntelija( syoteTextField,nimiTeksti,omatili,kysymys1,tunnusKentta,salasanaTekstiKentta,omattilit));
+       kysymys1.addActionListener(new SalasanaKuuntelija( syoteTextField,nimiTeksti,omatili,
+               kysymys1,tunnusKentta,salasanaTekstiKentta,omattilit));
      
      
 
@@ -121,9 +140,8 @@ public class Tonnipaivassa implements Runnable {
         JLabel osto = new JLabel("Osto, montako ?");
         JTextField ostoKentta = new JTextField();
 
-        Omatili omatili = new Omatili(tunnus, salasana);
-
-        lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi, nimiKenttaOsto, ostoKentta, ostohintaKentta, omatili));
+        lisaaNappi.addActionListener(new OstaKuuntelija(lisaaNappi, nimiKenttaOsto, ostoKentta,
+                ostohintaKentta, omatili,omattilit));
 
         JLabel nimiTekstiMyy = new JLabel("Mikä myydään ?");
         JTextField nimiKenttaMyy = new JTextField();
@@ -135,7 +153,8 @@ public class Tonnipaivassa implements Runnable {
         JTextField hintaKentta = new JTextField();
 
         JButton lisaaNappiMyy = new JButton("Myy osake ");
-        lisaaNappiMyy.addActionListener(new MyyKuuntelija(lisaaNappiMyy, nimiKenttaMyy, myyntiKentta, hintaKentta, omatili));
+        lisaaNappiMyy.addActionListener(new MyyKuuntelija(lisaaNappiMyy, nimiKenttaMyy, myyntiKentta, 
+                hintaKentta, omatili));
 
        
 
@@ -164,7 +183,8 @@ public class Tonnipaivassa implements Runnable {
       JLabel nimi = new JLabel("ostettu");
         ostamasi = new JTextField();
         container.add(ostamasi);
-        ostamasiNappi.addActionListener(new OstamasiKuuntelija(ostamasiNappi,nimi, this,omatili));
+        ostamasiNappi.addActionListener(new OstamasiKuuntelija(ostamasiNappi,nimi, this,
+                omatili,omattilit));
         BoxLayout layout1 = new BoxLayout(container, BoxLayout.Y_AXIS);
 container.setLayout(layout1);
 

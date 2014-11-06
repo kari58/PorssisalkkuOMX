@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- *
+ *MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
  * @author kromanow@cs
  */
 public class SalasanaKuuntelija implements ActionListener{
@@ -28,7 +28,8 @@ public class SalasanaKuuntelija implements ActionListener{
             JTextField salasanaKentta;
             private HashMap<String,Omatili>omattilit;
             
-            public SalasanaKuuntelija(JTextField syoteTextField,JLabel tulostusLabel,Omatili omatili,JButton AnnaTunnusJaSalasana,JTextField tunnusKentta,JTextField salasanaKentta,HashMap<String,Omatili>omattilit){
+            public SalasanaKuuntelija(JTextField syoteTextField,JLabel tulostusLabel,Omatili omatili,JButton AnnaTunnusJaSalasana,JTextField tunnusKentta,
+                    JTextField salasanaKentta,HashMap<String,Omatili>omattilit){
                 this.syoteTextField=syoteTextField;
                 this.tulostusLabel=tulostusLabel;
                 this.omatili=omatili;
@@ -54,7 +55,8 @@ public class SalasanaKuuntelija implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Olet kirjautunut järjestelmään", "Saat käyttää omatiliä", JOptionPane.ERROR_MESSAGE);
                
             } else {
-                System.out.println("Virheellinen tunnus tai salasana!");
+                 JOptionPane.showMessageDialog(null, "VÄÄRÄ", "TUNNUStaiSALASANA", JOptionPane.ERROR_MESSAGE);
+                
             }
         }
     }

@@ -9,6 +9,7 @@ package Kayttoliittyma;
 import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -33,15 +34,18 @@ public class OstaKuuntelija implements ActionListener {
     private JTextField nimiKentta ;
       JTextField ostoKentta;
      JTextField ostohintaKentta;
+     private HashMap<String,Omatili>omattilit;
    
 
  
-    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta,JTextField ostohintaKentta, Omatili omatili) {
+    OstaKuuntelija(JButton osta,JTextField nimiKentta,  JTextField ostoKentta,JTextField ostohintaKentta,
+            Omatili omatili,HashMap<String,Omatili>omattilit) {
         this.osta=osta;
         this.nimiKentta=nimiKentta;
         this.ostoKentta=ostoKentta;
         this.ostohintaKentta=ostohintaKentta;
           this.omatili = omatili;
+          this.omattilit=omattilit;
 
     }
 
@@ -50,8 +54,8 @@ public class OstaKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent ae)  {
        
         double ostohinta=0;
-        int saldo;saldo = Integer.parseInt(ostoKentta.getText());
-        String osake;osake=nimiKentta.getText();
+        int saldo = Integer.parseInt(ostoKentta.getText());
+        String osake=nimiKentta.getText();
         double arvo=ostohinta*saldo;
         
     
@@ -63,10 +67,11 @@ public class OstaKuuntelija implements ActionListener {
             omatili.lisaaOsake(osake, ostohinta, saldo, arvo);
             
          
-            omatili.osta(nimiKentta.getName(), ostohinta,saldo);
-            omatili.getsaldot().put(nimiKentta.getName(),saldo);
+            omatili.osta(nimiKentta.getText(), ostohinta,saldo);
+            omatili.getsaldot().put(nimiKentta.getText(),saldo);
  omatili.getsaldot(); //tämä ei tallennu arraylist
-         //  saldot.jatka huomenna
+        omattilit.put(nimiKentta.getText(), omatili);
+       
              System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
              JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
             
@@ -77,5 +82,7 @@ public class OstaKuuntelija implements ActionListener {
 
 
 
-    
+    /*
+MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
+*/
 
