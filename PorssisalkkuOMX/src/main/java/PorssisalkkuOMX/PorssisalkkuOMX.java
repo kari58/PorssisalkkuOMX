@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package PorssisalkkuOMX;
 
 import java.util.ArrayList;
@@ -11,11 +10,18 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Objects;
 
-/**Luokka toimii arkistona ostohinnoille ,paivamaarille,tapahtumille, ja saldoille
+/**
+ * Luokka toimii arkistona ostohinnoille ,paivamaarille,tapahtumille, ja
+ * saldoille
  *
  * @author kromanow
  */
 public class PorssisalkkuOMX {
+
+    protected HashMap<String, Double> ostohinnat;
+    protected HashMap<String, Integer> saldot;
+    protected HashMap<String, Double> markkinaArvot;
+    protected HashMap<String, Integer> myydytOsakkeet;
 
     @Override
     public int hashCode() {
@@ -46,55 +52,57 @@ public class PorssisalkkuOMX {
         }
         return true;
     }
-     
-    protected HashMap<String, Double> ostohinnat;
-    protected HashMap<String, Integer> saldot;
-    protected HashMap<String, Double> markkinaArvot;
-    double markkinaArvo=11.0;   //testiä varten
-ArrayList<Tapahtumat>osakkeet =new ArrayList<Tapahtumat>();
 
-/**
- * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
- */ 
+    ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
 
-
-
-     
-
-    public PorssisalkkuOMX() {//konstruktori porssisalkkuOMX joka jostain syystä vääntää tätä nimeä
-        this.ostohinnat = new HashMap<String, Double>();
-        this.saldot = new HashMap<String, Integer>();
-        this.markkinaArvot = new HashMap<String, Double>();
-    }
     /**
-     * ostohinta kuvaa osakkeen hinnan ostossa, saldot oston määrän saldot salkussa
-     * markkinahinta on tämän päivän kurssi ja sitä käytetään myyntiä arvioitaessa
-     * ostohetken kurssi on tietysti myyjälle markkinahinta
-     * @return 
+     * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
      */
-public HashMap<String,Double> getostohinnat(){
-    return ostohinnat;
-}
-public HashMap<String,Integer>getsaldot(){
-    return saldot;
-}
-public HashMap<String,Double>getmarkkinaArvot(){
-    return markkinaArvot;
-}
-        /**
-         * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä
-         * markkina-arvot myyntiä tehtäessä
-         * @param osake= tietyn osakkeen nimi
-         * @param ostohinta=ostohetkellä maksettu hinta
-         * @param saldo =kaikkien tietyn osakkeen lukumäärä
-         * @param markkinaArvo =porssin määrittämä sen hetkinen kurssi osakkeelle
-         */
-        
-    public void lisaaOsake(String osake, double ostohinta, int saldo,double markkinaArvo) {
+    public PorssisalkkuOMX() {
+        this.ostohinnat = new HashMap<>();
+        this.saldot = new HashMap<>();
+        this.markkinaArvot = new HashMap<>();
+        this.myydytOsakkeet=new HashMap<>();
+    }
+
+    public HashMap<String, Integer> getMyydytOsakkeet() {
+        return myydytOsakkeet;
+    }
+
+    /**
+     * ostohinta kuvaa osakkeen hinnan ostossa, saldot oston määrän saldot
+     * salkussa markkinahinta on tämän päivän kurssi ja sitä käytetään myyntiä
+     * arvioitaessa ostohetken kurssi on tietysti myyjälle markkinahinta
+     *
+     * @return
+     */
+
+    public HashMap<String, Double> getostohinnat() {
+        return ostohinnat;
+    }
+
+    public HashMap<String, Integer> getsaldot() {
+        return saldot;
+    }
+
+    public HashMap<String, Double> getmarkkinaArvot() {
+        return markkinaArvot;
+    }
+
+    /**
+     * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä markkina-arvot
+     * myyntiä tehtäessä
+     *
+     * @param osake= tietyn osakkeen nimi
+     * @param ostohinta=ostohetkellä maksettu hinta
+     * @param saldo =kaikkien tietyn osakkeen lukumäärä
+     * @param markkinaArvo =porssin määrittämä sen hetkinen kurssi osakkeelle
+     */
+    public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
-       this.saldot.put(osake, saldo);
+        this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
-   //this.saldot.put(osake, saldot.get(osake)+saldo);
+        //this.saldot.put(osake, saldot.get(osake)+saldo);
     }
 
     public double ostohinta(String osake) {
@@ -117,12 +125,13 @@ public HashMap<String,Double>getmarkkinaArvot(){
         }
         return this.markkinaArvot.get(osake);
     }
-    public void vahennaOsake(String osake,int saldo,double markkinaArvo){ //lisätty 29.10
-        this.saldot.put(osake, saldot.get(osake)-saldo);
+
+    public void vahennaOsake(String osake, int saldo, double markkinaArvo) { //lisätty 29.10
+        this.saldot.put(osake, saldot.get(osake) - saldo);
     }
-   
-            public String toString() {
-                return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
-            }
-    
+
+    public String toString() {
+        return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
+    }
+
 }

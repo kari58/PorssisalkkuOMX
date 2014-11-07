@@ -40,7 +40,7 @@ import javax.swing.WindowConstants;
 */
 
 /**
- MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
+ 
  *
  * @author kromanow
  */
@@ -87,7 +87,8 @@ public class Tonnipaivassa implements Runnable {
       Entry thisEntry = (Entry) entries.next();
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
-      teksti += value + " " + key  +", ";
+      teksti += value + " " + key  +", " + omatili.getostohinnat().get(key.toString())+" €  ";
+        
       //omatili.getostohinnat().get(key).doubleValue()
     /*
       public HashMap<String,Double> getostohinnat(){
@@ -98,7 +99,7 @@ public class Tonnipaivassa implements Runnable {
     }
     public void lisaaMyymasiOsakkeet(){
            String teksti = "";
-    Iterator entries = omatili.getsaldot().entrySet().iterator();
+    Iterator entries = omatili.getMyydytOsakkeet().entrySet().iterator();
     while (entries.hasNext()) {
       Entry thisEntry = (Entry) entries.next();
       Object key = thisEntry.getKey();
@@ -214,7 +215,7 @@ JButton myymasiNappi = new JButton("Myymäsi osakkeet löytyy tästä !");
       JLabel nimi1 = new JLabel("ostettu");
         myymasi = new JTextField();
         container.add(myymasi);
-        myymasiNappi.addActionListener(new OstamasiKuuntelija(myymasiNappi,nimi1, this,
+        myymasiNappi.addActionListener(new MyymasiKuuntelija(myymasiNappi,nimi1, this,
                 omatili,omattilit));
         BoxLayout layout12 = new BoxLayout(container, BoxLayout.Y_AXIS);
 container.setLayout(layout1);

@@ -34,7 +34,7 @@ private HashMap<String,Omatili>omattilit;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        tonnipaivassa.lisaaOstamasiOsakkeet();
+        tonnipaivassa.lisaaMyymasiOsakkeet();
          omatili.getsaldot();
          omatili.getostohinnat();
          omatili.getmarkkinaArvot();

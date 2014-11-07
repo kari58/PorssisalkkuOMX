@@ -37,7 +37,7 @@ private HashMap<String,Omatili>omattilit;
          omatili.getsaldot();
          omatili.getostohinnat();
          omatili.getmarkkinaArvot();
-        omattilit.values();
+       
         
         
         //int size = omattilit.size();

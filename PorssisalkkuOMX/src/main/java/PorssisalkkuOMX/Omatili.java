@@ -23,12 +23,13 @@ import java.util.HashMap;
  * @author kromanow
  */
 public class Omatili extends PorssisalkkuOMX {
-private Paivamaara ostopaiva;
+
+    private Paivamaara ostopaiva;
     private String tunnus;
     private String salasana;
 
     private double limiittitili;
-    private PorssisalkkuOMX porssisalkkuOMX;
+    //  private PorssisalkkuOMX porssisalkkuOMX;
 
     private String osakkeennimi;
 
@@ -38,16 +39,14 @@ private Paivamaara ostopaiva;
     private int PE; //   P/E
     private int F;
     private double ostohinta;
-    private double markkinaArvo;
-    
+    //private double markkinaArvo;
+
 //omatili.getsaldot()   ei toimi
-    
-    
     public Omatili(String tunnus, String salasana) {
         this.tunnus = tunnus;
         this.salasana = salasana;
        // this.saldo=saldo;
-      //  this.ostohinta=ostohinta;
+        //  this.ostohinta=ostohinta;
 
         this.limiittitili = 1000.0;
         this.saldot = new HashMap<String, Integer>();
@@ -80,44 +79,44 @@ private Paivamaara ostopaiva;
     public String setSalasana() {
         return salasana;
     }
-    public ArrayList getOsakkeet(){
+
+    public ArrayList getOsakkeet() {
         return osakkeet;
     }
-
 
     public double myy(String osake, int saldo) {
 
         Collections.sort(super.osakkeet);
 
+        double markkinaArvo = markkinaArvot.get(osake);
+        
         if (saldot.containsKey(osake)) {
            // if (((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95)//== vaihdettu  < merkiksi
-                    //&& ((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 1.1)) {
-           // } else {
-                limiittitili += markkinaArvo * saldo;
+            //&& ((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 1.1)) {
+            // } else {
+            limiittitili += markkinaArvo * saldo;
             //}
         }
+        
         for (Double osake1 : markkinaArvot.values()) {
             for (Double osake2 : ostohinnat.values()) {
                 for (Integer osake3 : saldot.values()) {
-
                     VoitotTappiot += saldo * markkinaArvo - saldo * ostohinta;
                 }
             }
         }
-        vahennaOsake( osake,saldo,(double) markkinaArvo);
-        System.out.println("osake: "+osake);
-        for (Tapahtumat osakkeet1 : super.osakkeet) {
+        vahennaOsake(osake, saldo, (double) markkinaArvo);
+        System.out.println("osake: " + osake);
+        for (Tapahtumat osakkeet1 : new ArrayList<>(super.osakkeet)) {
             System.out.println(osakkeet1.getOsakkeennimi());
             System.out.println(osake);
-            if(osakkeet1.getOsakkeennimi().equals(osake)) {
+            if (osakkeet1.getOsakkeennimi().equals(osake)) {
                 super.osakkeet.remove(osakkeet1);
             }
         }
-      
-        
+
 //        saldot.put(osake,saldot.get(osake)- saldo);//TÄHÄN PITÄÄ LAITTAA SALDOT. HashMap<String,Integer>saldot  1000-100
         return limiittitili;
-       
 
     }
 
@@ -137,15 +136,15 @@ private Paivamaara ostopaiva;
      * @param saldo
      * @return
      */
-    public double osta(String osake, double ostohinta, int saldo) {
+    public double osta(String osake, int saldo, double ostohinta) {
         if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {
             return limiittitili -= this.saldo * ostohinta;
 
         }
-        lisaaOsake(osake, (double) ostohinta, saldo, (double) ostohinta);
-       saldot.put(osake, saldot.get(osake)+saldo);//lisätty 4.11
-        super.osakkeet.add(new Tapahtumat(osake,14,10,2014));
-         return limiittitili -= ostohinta * saldo;
+        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);
+        saldot.put(osake, saldot.get(osake) + saldo);//lisätty 4.11
+        super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
+        return limiittitili -= ostohinta * saldo;
     }
 
     public String toString() {
