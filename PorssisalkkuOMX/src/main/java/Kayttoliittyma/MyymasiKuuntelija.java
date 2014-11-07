@@ -13,18 +13,19 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- *MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
+ *
  * @author kromanow@cs
  */
-public class OstamasiKuuntelija implements ActionListener {
-    private JButton ostamasiNappi;
+public class MyymasiKuuntelija implements ActionListener{
+    
+    private JButton myymasiNappi;
     private JLabel nimi;
     private Tonnipaivassa tonnipaivassa;
 private Omatili omatili;
 private HashMap<String,Omatili>omattilit;
-    public OstamasiKuuntelija(JButton ostamasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,
+    public MyymasiKuuntelija(JButton myymasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,
             Omatili omatili,HashMap<String,Omatili>omattilit) {
-        this.ostamasiNappi=ostamasiNappi;
+        this.myymasiNappi=myymasiNappi;
         this.nimi=nimi;
         this.tonnipaivassa=tonnipaivassa;
         this.omatili=omatili;
@@ -38,11 +39,32 @@ private HashMap<String,Omatili>omattilit;
          omatili.getostohinnat();
          omatili.getmarkkinaArvot();
         omattilit.values();
+    }
+}
+        
+     /*
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        tonnipaivassa.lisaaOstamasiOsakkeet();
+         omatili.getsaldot();
+         omatili.getostohinnat();
+         omatili.getmarkkinaArvot();
+        omattilit.values();
         
         
-        //int size = omattilit.size();
-       // omattilit.containsValue(e);
        
     }
     
 }
+
+*/  
+       
+    
+    
+
+
+    
+

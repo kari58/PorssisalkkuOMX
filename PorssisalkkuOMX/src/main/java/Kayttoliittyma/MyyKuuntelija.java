@@ -42,10 +42,10 @@ public class MyyKuuntelija implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        double markkinaArvo = 0;
-        int saldo2;
-        saldo2 = 0;
-        double arvo2 = saldo2 * markkinaArvo;
+       // double markkinaArvo = 0;
+        
+       int saldo2 = 0;
+        double arvo2 = saldo2 ;// tässä pitäisi olla saldo eli kpl  ei myynnin bruttoarvoa
         try {
             arvo2 = Integer.parseInt(myyntiKentta.getText());
         } catch (Exception ex) {
