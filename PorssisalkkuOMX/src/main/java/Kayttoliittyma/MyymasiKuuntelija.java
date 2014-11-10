@@ -36,31 +36,20 @@ private HashMap<String,Omatili>omattilit;
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaMyymasiOsakkeet();
          omatili.getsaldot();
-         omatili.getostohinnat();
+       
          omatili.getmarkkinaArvot();
-        omattilit.values();
-    }
-}
-        
-     /*
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        tonnipaivassa.lisaaOstamasiOsakkeet();
-         omatili.getsaldot();
-         omatili.getostohinnat();
-         omatili.getmarkkinaArvot();
-        omattilit.values();
-        
-        
        
     }
-    
 }
+     /*
+tonnipaivassa.lisaaOstamasiOsakkeet();
+        omatili.getsaldot();
+        omatili.getostohinnat();
+        omatili.getmarkkinaArvot();
+*/   
+ 
 
-*/  
+ 
        
     
     

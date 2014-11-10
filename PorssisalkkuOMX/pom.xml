@@ -22,28 +22,9 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>2.2</version>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>shade</goal>
-                    </goals>
-                    <configuration>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>PorssisalkkuOMX.Main</mainClass>
-                            </transformer>
-                        </transformers>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -61,12 +42,15 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>0.30</version>
+                <configuration>
+                    <targetClasses>
+                        <param>PorssisalkkuOMX.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>PorssisalkkuOMX.*</param>
+                    </targetTests>
+                </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-            </plugin> 
         </plugins>
     </build>
 </project>

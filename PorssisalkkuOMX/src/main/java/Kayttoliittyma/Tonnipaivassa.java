@@ -59,12 +59,12 @@ public class Tonnipaivassa implements Runnable {
        this.omatili = new Omatili(tunnus, salasana);
        this.omattilit=new HashMap<String,Omatili>();
    }
-//omattilit ei tallenna ostoa tutkittu debuger
+
     private JFrame frame;
 
     public Tonnipaivassa(HashMap<String, Omatili> omattilit) {
         this.omatili = new Omatili(tunnus, salasana);
-       this.omattilit= omattilit;//To change body of generated methods, choose Tools | Templates.
+       this.omattilit= omattilit;
     }
 
     @Override
@@ -89,11 +89,7 @@ public class Tonnipaivassa implements Runnable {
       Object value = thisEntry.getValue();
       teksti += value + " " + key  +", " + omatili.getostohinnat().get(key.toString())+" €  ";
         
-      //omatili.getostohinnat().get(key).doubleValue()
-    /*
-      public HashMap<String,Double> getostohinnat(){
-    return ostohinnat;
-      */  
+ 
     }
      ostamasi.setText(teksti);
     }
@@ -104,9 +100,10 @@ public class Tonnipaivassa implements Runnable {
       Entry thisEntry = (Entry) entries.next();
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
-      teksti += value + " " + key  +", ";
-      //omatili.getostohinnat().get(key).doubleValue()
-      
+    
+     //teksti += value + " " + key  +", "+omatili.getMyydytOsakkeet().get(key.toString())+" €  ";
+        teksti += value + " " + key  +", "+omatili.getmarkkinaArvot().get(key.toString())+" €  ";
+     
     }
     myymasi.setText(teksti);
         
@@ -117,9 +114,19 @@ public class Tonnipaivassa implements Runnable {
 
 
     /**
-     * Vaikkakin luoKomponentit(tunnus, salasana, mitä ostetaan tänään ym)on
-     * ilman metodin toimintaa, en niitä poista koska niiden tekemiseen meni
-     * useampi päivä ja ovat mielestäni hyödyllista kehitettävää ja katseltavaa
+     *  public void lisaaMyymasiOsakkeet(){
+String teksti = "";
+Iterator entries = omatili.getMyydytOsakkeet().entrySet().iterator();
+while (entries.hasNext()) {
+Entry thisEntry = (Entry) entries.next();
+Object key = thisEntry.getKey();
+Object value = thisEntry.getValue();
+teksti += value + " " + key +", ";
+//omatili.getostohinnat().get(key).doubleValue()
+}
+myymasi.setText(teksti);
+}
+
      *
      * @param container
      */
@@ -212,7 +219,7 @@ container.setLayout(layout1);
 
 JButton myymasiNappi = new JButton("Myymäsi osakkeet löytyy tästä !");
         container.add(myymasiNappi);
-      JLabel nimi1 = new JLabel("ostettu");
+      JLabel nimi1 = new JLabel("Myyty ");
         myymasi = new JTextField();
         container.add(myymasi);
         myymasiNappi.addActionListener(new MyymasiKuuntelija(myymasiNappi,nimi1, this,

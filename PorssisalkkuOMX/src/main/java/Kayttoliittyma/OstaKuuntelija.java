@@ -59,16 +59,16 @@ public class OstaKuuntelija implements ActionListener {
         } catch (Exception ex) {
         }
         if (ae.getSource() == this.osta) {
-            omatili.lisaaOsake(osake, saldo, ostohinta, arvo);//saldo ja ostohinta vaihdettu paikkkaa
+            omatili.lisaaOsake(osake, saldo, ostohinta, arvo);
 
             omatili.osta(nimiKentta.getText(), saldo, ostohinta);
             omatili.getsaldot().put(nimiKentta.getText(), saldo);
             omatili.getostohinnat().put(nimiKentta.getText(),ostohinta);
-            System.out.println(ostohinta);
-            omatili.getsaldot(); //tämä ei tallennu arraylist
+           
+            omatili.getsaldot();
             omattilit.put(nimiKentta.getText(), omatili);
 
-            System.out.println("Ostettu!");  //TÄHÄN PITÄÄ LISÄTÄ OSTETTU 100 KPL HINTAAN A 10EUR 
+             
             JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -76,6 +76,3 @@ public class OstaKuuntelija implements ActionListener {
     }
 }
 
-/*
- MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
- */

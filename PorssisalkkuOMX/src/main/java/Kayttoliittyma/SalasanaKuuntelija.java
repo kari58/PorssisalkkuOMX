@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- *MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
+ 
  * @author kromanow@cs
  */
 public class SalasanaKuuntelija implements ActionListener{

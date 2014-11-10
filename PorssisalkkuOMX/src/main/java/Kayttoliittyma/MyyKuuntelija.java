@@ -35,47 +35,55 @@ public class MyyKuuntelija implements ActionListener {
         this.myyntiKentta = myyntiKentta;
         this.omatili = sovellus;
         this.myy = myy;
-        this.nimiKenttaMyy = nimiKenttaMyy;
-        this.hintaKentta = hintaKentta;
+     this.hintaKentta = hintaKentta;
 
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        double myyntihinta = Double.parseDouble(hintaKentta.getText());
+        double markkinaArvo = Double.parseDouble(hintaKentta.getText());
         int kappaleMaara = Integer.parseInt(myyntiKentta.getText());
-        double arvo = kappaleMaara;// tässä pitäisi olla saldo eli kpl  ei myynnin bruttoarvoa
+        double arvo = kappaleMaara;
         try {
             arvo = Integer.parseInt(myyntiKentta.getText());
         } catch (Exception ex) {
         }
         if (!omatili.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
-            // System.out.println("Et voi myydä, et omista  yhtään  näitä");
+
             JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE);
         } else {
             if (omatili.getsaldot().get(nimiKenttaMyy.getText()) >= Integer.parseInt(myyntiKentta.getText())) {
 
                 String osake = nimiKenttaMyy.getText();
-                omatili.myy(osake, kappaleMaara);
-
+                omatili.myy(osake, kappaleMaara,markkinaArvo);
+//omatili.myy(osake,kappaleMaara,markkinaHinnat)    OMATILI  ei sisällä markkinaArvo myy metodiussa
+                //  public double myy(String osake, int saldo) {
+                // double markkinaArvo = markkinaArvot.get(osake);
+              //  omatili.getmarkkinaArvot().put(hintaKentta.getText(),markkinaArvot);
                 if (omatili.getMyydytOsakkeet().containsKey(osake)) {
                     kappaleMaara += omatili.getMyydytOsakkeet().get(osake);
                 }
 
                 omatili.getMyydytOsakkeet().put(osake, kappaleMaara);
+                JOptionPane.showMessageDialog(null, "ONNISTUI", "MYYNTI", JOptionPane.ERROR_MESSAGE);
 
-           // saldot.put(osake,saldot.get(osake)- saldo);
-//            sovellus.vahennaOsake(nimiKenttaMyy.getText(), saldo2, markkinaArvo);
-                //TÄHÄN PITÄÄ SAADA sovellus.getsaldot().get(nimiKenttaMyy.getText())-sovellus.myy(nimiKenttaMyy.getName(), (int) arvo2);
-                System.out.println("Myyty !");//tähän pitää saada hinta
             } else {
-//                if(sovellus.getsaldot().get(nimiKenttaMyy.getText())<Integer.parseInt(myyntiKentta.getText()))
+
                 JOptionPane.showMessageDialog(null, "Et voi myydä", "Et omista noin paljon !", JOptionPane.ERROR_MESSAGE);
             }
-          //  else{
-            //  JOptionPane.showMessageDialog(null, "Et omista noin monta tarkista määräsi", "Et voi myydä", JOptionPane.ERROR_MESSAGE); 
-            //  System.out.println("Et voi myydä");//tässä yritetään myydä enemmän kuin on
+
         }
     }
 }
+/*
+omatili.lisaaOsake(osake, saldo, ostohinta, arvo);
+
+            omatili.osta(nimiKentta.getText(), saldo, ostohinta);
+     omatili.osta(nimiKentta.getText(), saldo, ostohinta);
+            omatili.getsaldot().put(nimiKentta.getText(), saldo);
+            omatili.getostohinnat().put(nimiKentta.getText(),ostohinta);
+           
+            omatili.getsaldot();
+            omattilit.put(nimiKentta.getText(), omatili);
+*/

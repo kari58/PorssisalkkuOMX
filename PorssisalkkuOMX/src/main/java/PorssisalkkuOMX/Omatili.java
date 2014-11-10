@@ -39,7 +39,7 @@ public class Omatili extends PorssisalkkuOMX {
     private int PE; //   P/E
     private int F;
     private double ostohinta;
-    //private double markkinaArvo;
+    private double markkinaArvo;
 
 //omatili.getsaldot()   ei toimi
     public Omatili(String tunnus, String salasana) {
@@ -84,11 +84,11 @@ public class Omatili extends PorssisalkkuOMX {
         return osakkeet;
     }
 
-    public double myy(String osake, int saldo) {
+    public double myy(String osake, int saldo,double markkinaArvo ) {
 
         Collections.sort(super.osakkeet);
 
-        double markkinaArvo = markkinaArvot.get(osake);
+        //double markkinaArvo = markkinaArvot.get(osake);
         
         if (saldot.containsKey(osake)) {
            // if (((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95)//== vaihdettu  < merkiksi
@@ -114,7 +114,7 @@ public class Omatili extends PorssisalkkuOMX {
                 super.osakkeet.remove(osakkeet1);
             }
         }
-
+markkinaArvot.put(osake, markkinaArvo);
 //        saldot.put(osake,saldot.get(osake)- saldo);//TÄHÄN PITÄÄ LAITTAA SALDOT. HashMap<String,Integer>saldot  1000-100
         return limiittitili;
 
