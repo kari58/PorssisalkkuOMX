@@ -85,7 +85,7 @@ public class PaivamaaraTest {
      @Test
     public void testAiemminuusi() {
         System.out.println("aiemmin");
-        Paivamaara verrattava = new Paivamaara(14,8,2014);// vuosi kuukausi,päivä 
+        Paivamaara verrattava = new Paivamaara(13,8,2014);// vuosi kuukausi,päivä 
         Paivamaara instance = new Paivamaara(15,8,2014);
         boolean expResult = false;
         boolean result = instance.aiemmin(verrattava);
@@ -98,8 +98,8 @@ public class PaivamaaraTest {
     @Test
     public void testPalautakokolukuna() {
         System.out.println("palautakokolukuna");
-        Paivamaara instance = new Paivamaara(15,8,2014);
-        int expResult = 15082014;
+        Paivamaara instance = new Paivamaara(14,11,2014);
+        int expResult = 14112014;
         int result = instance.palautakokolukuna();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

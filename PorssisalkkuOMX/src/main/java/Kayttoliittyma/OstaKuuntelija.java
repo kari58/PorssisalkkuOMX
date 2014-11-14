@@ -16,10 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * Tärkeää olisi saada ohjelman ydin eli osakkeiden myynti ja osto toimimaan
- * käyttöliittymän kautta. , johon voi syöttää osakkeen nimen, jolloin ohjelma
- * kertoo osakkeen hinnan. Tätä varten sovellus.lisaaOsake(osake, ostohinta,
- * saldo, arvo); kerää tiedot osakkeennimestä saldosta
+ 
  *
  * @author kromanow
  */

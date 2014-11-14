@@ -5,7 +5,6 @@ package PorssisalkkuOMX;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import PorssisalkkuOMX.Omatili;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -38,21 +37,28 @@ public class OmatiliTest {
     @After
     public void tearDown() {
     }
-   @Test
-     public void konstruktoriLimiittitili(){
-         
-         Omatili limiittitili=new Omatili("tunnus","salasana");
-     double vastaus=limiittitili.getLimiittitili();
-     assertEquals(vastaus,1000.0,0.01);
-     }
-     
 
-//    @Test
-//    public void Limiittitili() {
-//        Omatili limiittitili2 = new Omatili();
-//        double vastaus = limiittitili2.osta(10.0, 100);
-//        assertEquals(vastaus, 99000.0, 0.01);
-//    }
+    @Test
+    public void konstruktoriLimiittitili() {
+
+        Omatili limiittitili = new Omatili("tunnus", "salasana");
+        double vastaus = limiittitili.getLimiittitili();
+        assertEquals(vastaus, 1000.0, 0.01);
+    }
+
+    @Test
+    public void Limiittitili() {
+       Omatili limiittitili2 = new Omatili();
+        double vastaus;
+        vastaus = limiittitili2.osta("osake",10, 100.0);
+      assertEquals(vastaus, 0.0, 0.01);
+    }
+    /*
+     public double osta(String osake, int saldo, double ostohinta) {
+        if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {
+            return limiittitili -= this.saldo * ostohinta;
+
+    */
 }
 /*@Test
  public void konstruktoriTapahtumat(){

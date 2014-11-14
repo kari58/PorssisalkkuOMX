@@ -25,7 +25,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
-/*
+/**
+ toinen versio lisaaMyymasiosakkeet()
         
 //        int saldot = 0;
 //        for (int saldo : omatili.getsaldot().values()) {

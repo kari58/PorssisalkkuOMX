@@ -1,13 +1,11 @@
 Rakennekuvaus PorssisalkkuOMX
 1) Kun painetaan Myy osake nappia, ohjelmassa on mainissa lisätty Talvivaaraa ja ohjelma ilmoittaa että myyty,PorssisalkkuOMX sisältää osakkeet, ostohinnat, joiden HashMap on siis lisätty 1000 Talvivaaraa.
-Voit myydä vain sen mitä omistat!
-2) Kun painetaan Osta osake esim. UPM ja 100 kpl, ohjelma ilmoitta ostettu
+Voit myydä vain sen mitä omistat! Myymasi osakkeet ilmoittaa myyntihinnan, myydyn määrän ja osakkeen nimen.
+2) Kun painetaan Osta osake esim. UPM ja 100 kpl, ohjelma ilmoitta osto onnistui. Ostamasi kuuntelija ilmoitetaan oston määrä ja ostohinta.Ostamasi osakkeet painamalla löytyy osakkeen nimi, saldo ja ostohinta
 3)Ohjelma kysyy tunnusta =kari ja salasanaa=ilma ja sen jälkeen voi tehdä kauppaa
 4) Kirjautuminen luokassa annetaan tunnus ja salasana
-5) Omatili luokassa on voitot  ja tappiot, osat metodi ja myy metodi, joiden kuvaus on annettu javadocissa
+5) Omatili luokassa on voitot  ja tappiot, osta metodi ja myy metodi, joiden kuvaus on annettu javadocissa
 6) Paivamaara luokka palvelee omatilin myy metodia, jossa FIFO-peraatten mukaan firstinfirtstout myydään osake
 7)Tapahtumat luokka kerää tiedon Paivamaarasta ja edellisen tavoin Omatilin myy metodin FIFO tapahtumiin luo tiedot
 8)Pankintilin Isotili kasvaa Omatilin ostaessa , jolloin taasen Omatilin limiittitili pieneneen ostolla. Limittitilin katetta ei tarkastella tässä,oikeassa kaupankäynnisssä kylläkin.
-9) Graafisen paketin Porssikauppias MyyKuuntelijassa myydään osakkeita, joita on talletettu mainissa ja PorssisalkkuOMX. MyyKuuntelijan toiminta on Tonnipaivassa.java ja luokomponentit2
-10) OstaKuuntelijassa on edellisen tapaan osta-nappi
-  
+

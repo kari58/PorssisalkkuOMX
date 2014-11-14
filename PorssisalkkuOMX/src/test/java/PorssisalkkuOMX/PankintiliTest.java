@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package PorssisalkkuOMX;
 
 import PorssisalkkuOMX.Pankintili;
@@ -19,23 +18,25 @@ import static org.junit.Assert.*;
  * @author kromanow
  */
 public class PankintiliTest {
-        Pankintili instance = new Pankintili(100000.0);  
+
+    Pankintili instance = new Pankintili(100000.0);
+
     public PankintiliTest() {
-              instance.getmarkkinaArvot().put("UPM",11.0);
+        instance.getmarkkinaArvot().put("UPM", 11.0);
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -46,22 +47,22 @@ public class PankintiliTest {
     @Test
     public void testMyy() {
         System.out.println("myy");
-        
-        double result = instance.myy("UPM",100);
+
+        double result = instance.myy("UPM", 100);
         assertEquals(result, 98900, 0.01);
-       /*
-         @Test
-    public void Limiittitili() {
-        Limiittitili limiittitili2 = new Limiittitili();
-        double vastaus = limiittitili2.osta(10.0, 100);
-        assertEquals(vastaus, 99000.0, 0.01);
+    }
+    /*
+     @Test
+     public void Limiittitili() {
+     Limiittitili limiittitili2 = new Limiittitili();
+     double vastaus = limiittitili2.osta(10.0, 100);
+     assertEquals(vastaus, 99000.0, 0.01);
         
-        public double myy(String osakkeennimi,int saldo){
-       return  pankintili-=markkinaArvot.get(osakkeennimi)*saldo;
-    }
-    }
-        */
-    }
+     public double myy(String osakkeennimi,int saldo){
+     return  pankintili-=markkinaArvot.get(osakkeennimi)*saldo;
+     }
+     }
+     */
 
     /**
      * Test of osta method, of class Pankintili.
@@ -69,13 +70,26 @@ public class PankintiliTest {
     @Test
     public void testOsta() {
         System.out.println("osta");
-       
-        
-        double result = instance.osta("UPM",100);
-        assertEquals(result, 101100, 0.0);
-        
+
+        double result = instance.osta("UPM", 1);
+        assertEquals(result, 100011, 0.0);
+
     }
-    
+/*
+    public double osta(String osakkeennimi,int saldo){
+        return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
+    }
+    */
+    @Test
+    public void testErotusVuosissa() {
+        System.out.println("erotusVuosissa");
+        Paivamaara verrattava = new Paivamaara(16, 8, 2044);
+        Paivamaara instance = new Paivamaara(16, 8, 2014);
+        int expResult = 30;
+        int result = instance.erotusVuosissa(verrattava);
+        assertEquals(expResult, result);
+
+    }
 }
 /*
     @Test
@@ -94,17 +108,19 @@ public class PankintiliTest {
         assertEquals(expResult, result, 10);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
-    }
     
-}
+    
+
 /* 
-    }
+   
+
  @Test
     public void testErotusVuosissa() {
         System.out.println("erotusVuosissa");
-        Paivamaara verrattava = new Paivamaara(16,8,2011);
+        Paivamaara verrattava = new Paivamaara(16,8,2012);
         Paivamaara instance = new Paivamaara(16,8,2014);
         int expResult = 3;
         int result = instance.erotusVuosissa(verrattava);
         assertEquals(expResult, result);
+
 */

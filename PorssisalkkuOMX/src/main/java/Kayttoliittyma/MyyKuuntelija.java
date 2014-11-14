@@ -57,10 +57,7 @@ public class MyyKuuntelija implements ActionListener {
 
                 String osake = nimiKenttaMyy.getText();
                 omatili.myy(osake, kappaleMaara,markkinaArvo);
-//omatili.myy(osake,kappaleMaara,markkinaHinnat)    OMATILI  ei sisällä markkinaArvo myy metodiussa
-                //  public double myy(String osake, int saldo) {
-                // double markkinaArvo = markkinaArvot.get(osake);
-              //  omatili.getmarkkinaArvot().put(hintaKentta.getText(),markkinaArvot);
+
                 if (omatili.getMyydytOsakkeet().containsKey(osake)) {
                     kappaleMaara += omatili.getMyydytOsakkeet().get(osake);
                 }
@@ -76,14 +73,3 @@ public class MyyKuuntelija implements ActionListener {
         }
     }
 }
-/*
-omatili.lisaaOsake(osake, saldo, ostohinta, arvo);
-
-            omatili.osta(nimiKentta.getText(), saldo, ostohinta);
-     omatili.osta(nimiKentta.getText(), saldo, ostohinta);
-            omatili.getsaldot().put(nimiKentta.getText(), saldo);
-            omatili.getostohinnat().put(nimiKentta.getText(),ostohinta);
-           
-            omatili.getsaldot();
-            omattilit.put(nimiKentta.getText(), omatili);
-*/

@@ -2,6 +2,6 @@ Aihe: Porssikauppaan liittyvä atk-ohjelma, jossa vuoden lopussa katsotaan ostoj
 Kayttäjät opiskelija ja muut innokkaat
 Tarvitaan arvo-osuutili ,salasanat
 tietyilla säännöillä salkkuun ostetaan pörssieriä, joita myydään kurssien laskujen/nousujen mukaan tietyllä kertoimella
-Uusien osakkeiden lisäys, limiitti, kappalemäärä ja arvo
+uusien osakkeiden lisäys, limiitti, kappalemäärä ja arvo
 ostojen ja myyntien FIRSTINFIRSTOUT sääntöä noudattaen tuotto. Graafiseen ikkunaan suoritetaan osto-ja myyntihinnat, kappalemäärät ja osakkeiden nimet.
 Graafisessa ikkunassa annetaan salasanat ja tunnukset. Osta kenttään annetaan nimi, ostohinta ja kappalemäärä. Samat myyntikenttään. Ostamasi tai myymäsi näyttää tehdyt toiminnat.

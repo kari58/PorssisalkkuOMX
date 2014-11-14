@@ -41,12 +41,7 @@ private HashMap<String,Omatili>omattilit;
        
     }
 }
-     /*
-tonnipaivassa.lisaaOstamasiOsakkeet();
-        omatili.getsaldot();
-        omatili.getostohinnat();
-        omatili.getmarkkinaArvot();
-*/   
+     
  
 
  
