@@ -88,8 +88,9 @@ public class Tonnipaivassa implements Runnable {
       Entry thisEntry = (Entry) entries.next();
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
-      teksti += value + " " + key  +", " + omatili.getostohinnat().get(key.toString())+" €  ";
-        
+     // teksti += value + " " + key  +", " + omatili.getostohinnat().get(key.toString())+" €  ";YRITYS KEY JA VALUE VAIHTO JÄRJESTYS
+       teksti += key + " " + value  + " kpl "+", " + omatili.getostohinnat().get(key.toString())+" €  ";
+         
  
     }
      ostamasi.setText(teksti);
@@ -102,8 +103,8 @@ public class Tonnipaivassa implements Runnable {
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
     
-     //teksti += value + " " + key  +", "+omatili.getMyydytOsakkeet().get(key.toString())+" €  ";
-        teksti += value + " " + key  +", "+omatili.getmarkkinaArvot().get(key.toString())+" €  ";
+     //ekan erän hinta ja suoritus omaan ja jatkoksi tokan erän hinta KORJAA SE           KORJAA SE
+        teksti += key + " " + value  +" kpl"+" ,  "+omatili.getmarkkinaArvot().get(key.toString())+" €  ";
      
     }
     myymasi.setText(teksti);

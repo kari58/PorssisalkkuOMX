@@ -37,7 +37,7 @@ public class Pankintili extends PorssisalkkuOMX{
     /**
     asiakkaan ostaessa osakkeita pankin tili kasvaa ostolla
     */
-    public double osta(String osakkeennimi,int saldo){
+    public double osta(String osakkeennimi,int saldo)throws Exception{
         return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
     }
 }

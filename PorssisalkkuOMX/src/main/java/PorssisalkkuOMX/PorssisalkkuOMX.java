@@ -126,9 +126,12 @@ public class PorssisalkkuOMX {
         return this.markkinaArvot.get(osake);
     }
 
-    public void vahennaOsake(String osake, int saldo, double markkinaArvo) { //lisätty 29.10
-        this.saldot.put(osake, saldot.get(osake) - saldo);
-    }
+  
+    
+    
+    
+    
+    
 
     public String toString() {
         return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";

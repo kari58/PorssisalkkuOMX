@@ -67,7 +67,8 @@ public class PankintiliTest {
     /**
      * Test of osta method, of class Pankintili.
      */
-    @Test
+  /*
+      @Test
     public void testOsta() {
         System.out.println("osta");
 
@@ -75,6 +76,7 @@ public class PankintiliTest {
         assertEquals(result, 100011, 0.0);
 
     }
+    */
 /*
     public double osta(String osakkeennimi,int saldo){
         return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
@@ -90,37 +92,29 @@ public class PankintiliTest {
         assertEquals(expResult, result);
 
     }
-}
-/*
+
+
     @Test
-    public void testOsta() {
+    public void testOsta() throws Exception{
         System.out.println("osta");
         String osake = "UPM";
         int saldo = 100;
-        double ostohinta=10;
-        double limiittitili=100000;
-        double pankintili=1000000;
+        double ostohinta=10.0;
+        double limiittitili=100000.0;
+        double pankintili=1000000.0;
         int PE=12;
         int F=4;
-        Ostoja instance = new Ostoja(osake, saldo, ostohinta,limiittitili, pankintili,PE, F);
-        double expResult = 99000;
-        double result = instance.osta(osake, saldo);
+        Pankintili i= new Pankintili(pankintili);
+        //osake, saldo, ostohinta,limiittitili, pankintili,PE, F olivat konsruktorissa
+        double expResult = 1001000;
+        double result = i.osta(osake, saldo);
         assertEquals(expResult, result, 10);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     
-    
+    }
 
-/* 
+}
+
    
 
- @Test
-    public void testErotusVuosissa() {
-        System.out.println("erotusVuosissa");
-        Paivamaara verrattava = new Paivamaara(16,8,2012);
-        Paivamaara instance = new Paivamaara(16,8,2014);
-        int expResult = 3;
-        int result = instance.erotusVuosissa(verrattava);
-        assertEquals(expResult, result);
-
-*/
