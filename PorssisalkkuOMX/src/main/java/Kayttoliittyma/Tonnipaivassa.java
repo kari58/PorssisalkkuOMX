@@ -26,6 +26,13 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 /**
+ * KORVAA
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ * 
+ * 
+ * 
+ * 
  toinen versio lisaaMyymasiosakkeet()
         
 //        int saldot = 0;
@@ -88,7 +95,7 @@ public class Tonnipaivassa implements Runnable {
       Entry thisEntry = (Entry) entries.next();
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
-     // teksti += value + " " + key  +", " + omatili.getostohinnat().get(key.toString())+" €  ";YRITYS KEY JA VALUE VAIHTO JÄRJESTYS
+        //System.out.println("ooo"+omatili.getostohinnat().get(key.toString()));   a osto ja a osto ei tulosta molempia  mutta a ja b tulostuu
        teksti += key + " " + value  + " kpl "+", " + omatili.getostohinnat().get(key.toString())+" €  ";
          
  
@@ -103,7 +110,7 @@ public class Tonnipaivassa implements Runnable {
       Object key = thisEntry.getKey();
       Object value = thisEntry.getValue();
     
-     //ekan erän hinta ja suoritus omaan ja jatkoksi tokan erän hinta KORJAA SE           KORJAA SE
+     
         teksti += key + " " + value  +" kpl"+" ,  "+omatili.getmarkkinaArvot().get(key.toString())+" €  ";
      
     }

@@ -93,9 +93,9 @@ public class PankintiliTest {
 
     }
 
-
+/*
     @Test
-    public void testOsta() throws Exception{
+    public void testOsta() {
         System.out.println("osta");
         String osake = "UPM";
         int saldo = 100;
@@ -109,12 +109,11 @@ public class PankintiliTest {
         double expResult = 1001000;
         double result = i.osta(osake, saldo);
         assertEquals(expResult, result, 10);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
-    
+    */
+  
     }
 
-}
+
 
    
 

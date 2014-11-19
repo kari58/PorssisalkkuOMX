@@ -10,6 +10,12 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+   * KORVAA  SALDOT
+ * 
+ * 
+ * 
  * Tässä ostetaan sakkeita ja myydään niitä FIFO-periaatteella Ostoista ja
  * myyneistä metodien kohdalla javadoc -kuvaukset FIFO:n ymmärtää parhaiten
  * :osto 9 eur 1' kpl, toinen osto samaa sarjaa 7 eur 1' kpl ja markkinaArvon
@@ -27,19 +33,13 @@ public class Omatili extends PorssisalkkuOMX {
     private Paivamaara ostopaiva;
     private String tunnus;
     private String salasana;
-
     private double limiittitili;
-    //  private PorssisalkkuOMX porssisalkkuOMX;
-
     private String osakkeennimi;
-
-    private double VoitotTappiot;
-
     private int saldo;
-    private int PE; //   P/E
-    private int F;
+ 
     private double ostohinta;
     private double markkinaArvo;
+//    private ArrayList<Omatili>samatOstot=new ArrayList<Omatili>();
 
 
     public Omatili(String tunnus, String salasana) {
@@ -47,7 +47,7 @@ public class Omatili extends PorssisalkkuOMX {
         this.salasana = salasana;
         this.limiittitili = 1000.0;
         this.saldot = new HashMap<String, Integer>();
-        VoitotTappiot = 0;
+      
     }
 
     public Omatili() {
@@ -92,20 +92,12 @@ public class Omatili extends PorssisalkkuOMX {
        
         
         if (saldot.containsKey(osake)) {
-           // if (((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) < 0.95)//== vaihdettu  < merkiksi
-            //&& ((ostohinnat.get(osakkeennimi) / markkinaArvot.get(osakkeennimi)) >= 1.1)) {
-            // } else {
+          
             limiittitili += markkinaArvo * saldo;
             
         }
         
-        for (Double osake1 : markkinaArvot.values()) {
-            for (Double osake2 : ostohinnat.values()) {
-                for (Integer osake3 : saldot.values()) {
-                    VoitotTappiot += saldo * markkinaArvo - saldo * ostohinta;
-                }
-            }
-        }
+       
         vahennaOsake(osake, saldo, (double) markkinaArvo);
         System.out.println("osake: " + osake);
         for (Tapahtumat osakkeet1 : new ArrayList<>(super.osakkeet)) {
@@ -138,19 +130,14 @@ markkinaArvot.put(osake, markkinaArvo);
      * @return
      */
     public double osta(String osake, int saldo, double ostohinta) {
-        if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {
-            return limiittitili -= this.saldo * ostohinta;
-
-        }
-        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);
-        saldot.put(osake, saldot.get(osake) + saldo);//lisätty 4.11
+     
+        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);//ostohinta ostohinta tuplana ÅÅÅÅÅÅÅÅ
+        saldot.put(osake, saldot.get(osake) + saldo);
         super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
+       //  this.samatOstot.add(saldo, osake);   lisätty   18.11
+        
         return limiittitili -= ostohinta * saldo;
     }
 
-    public String toString() {
-        System.out.println("Tappiota tuli vuonna 2013" + VoitotTappiot);
-        return "" + VoitotTappiot;
-
-    }
+  
 }

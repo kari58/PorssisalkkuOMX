@@ -7,6 +7,8 @@
 package PorssisalkkuOMX;
 
 /**
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
  * Pankintili kasvaa ja vähenee, kun ostetaan tai myydään
  * Pankintili toimii välittäjänä ostolle, jossa myyjä voi olla 
  * myös joku muu kuin tämä pankki eli siis toinen pankki
@@ -20,7 +22,9 @@ public class Pankintili extends PorssisalkkuOMX{
     private Object Osake;
     private int saldo;
     public Pankintili(double Isotili){
+        super();
         this.Isotili=Isotili;
+        this.saldo=100;
     }
 
     public Pankintili(Pankintili pankintili) {
@@ -35,10 +39,16 @@ public class Pankintili extends PorssisalkkuOMX{
     }
                           
     /**
-    asiakkaan ostaessa osakkeita pankin tili kasvaa ostolla
+     *  this.markkinaArvot.put(osake, markkinaArvo);
+    asiakkaan ostaessa osakkeita pankin tili kasvaa ostoll
     */
-    public double osta(String osakkeennimi,int saldo)throws Exception{
-        return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
+    public double osta(String osakkeennimi,int saldo){
+        saldot.put(osakkeennimi, saldo);
+        
+        markkinaArvot.put(osakkeennimi,markkinaArvot.get(Osake));
+       return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
+     //  return Isotili+= markkinaArvot.get(Osake).doubleValue()*saldo;
+        
     }
 }
 

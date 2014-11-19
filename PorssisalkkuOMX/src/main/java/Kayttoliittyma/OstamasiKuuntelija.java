@@ -13,7 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- * MITÄ V TEKEE OMATTILIT?????,VOISIKO SEN POISTAA JOKAPUOLELTA
+ * KORVAA
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
  *
  * @author kromanow@cs
  */

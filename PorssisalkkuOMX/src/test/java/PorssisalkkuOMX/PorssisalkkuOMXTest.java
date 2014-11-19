@@ -18,7 +18,6 @@ import static org.junit.Assert.*;
  * @author kromanow@cs
  */
 public class PorssisalkkuOMXTest {
-    private Object saldot;
     
     public PorssisalkkuOMXTest() {
     }
@@ -38,14 +37,25 @@ public class PorssisalkkuOMXTest {
     @After
     public void tearDown() {
     }
-@Test
+    
+    @Test
 public void konstruktoriPorssisalkkuOMX(){
     PorssisalkkuOMX ostohinnat=new PorssisalkkuOMX();
         HashMap<String, Double> vastaus=ostohinnat.getostohinnat();
-        assertEquals(vastaus,0.0);
-    
+        boolean b = ostohinnat.ostohinnat.containsKey("UPM");
+        assertTrue(b);
 }
-    // TODO add test methods here. public PorssisalkkuOMX() {
+   /*     
+     @Test
+    public void konstruktoriTapahtumat(){
+        Tapahtumat tapahtumat=new Tapahtumat("UPM" ,11, 9, 2014);
+        String vastaus=tapahtumat.getOsakkeennimi();
+        assertEquals("UPM",vastaus);
+    }
+}
+ 
+    */
+   // TODO add test methods here. public PorssisalkkuOMX() {
        // this.ostohinnat = new HashMap<>();
     // The methods must be annotated with annotation @Test. For example:
     @Test
@@ -55,15 +65,38 @@ public void konstruktoriPorssisalkkuOMX(){
         double vastaus = limiittitili.getLimiittitili();
         assertEquals(vastaus, 1000.0, 0.01);
     }
-    /*
-      public void vahennaOsake(String osake, int saldo, double markkinaArvo) { //lisätty 29.10
+    
+     /* public void vahennaOsake(String osake, int saldo, double markkinaArvo) { //lisätty 29.10
         this.saldot.put(osake, saldot.get(osake) - saldo);
+    
     }
+   
     */
-    @Test
+       @Test
     public void  vahennaOsake(){
         PorssisalkkuOMX salkku=new PorssisalkkuOMX();
-        int vastaus = this.saldot.hashCode();
-                assertEquals(vastaus, 0);
+     salkku.vahennaOsake("UPM", 100, 12.0);
+     HashMap<String,Integer> saldot=salkku.getsaldot();
+                assertEquals((Integer)0, saldot.get("UPM"));
     }
+    @Test
+    public void lisaaOsake(){
+        PorssisalkkuOMX salkku=new PorssisalkkuOMX();
+        salkku.lisaaOsake("UPM", 100, 11.0, 11.0);
+        HashMap<String,Integer> saldot=salkku.getsaldot();
+        assertEquals((Integer)100,saldot.get("UPM"));
+//        int vastaus=this.saldot.hashCode();
+//        assertEquals(vastaus, 1);
+    }
+   
+ 
 }
+
+
+/*
+ public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
+        this.ostohinnat.put(osake, ostohinta);
+        this.saldot.put(osake, saldo);
+        this.markkinaArvot.put(osake, markkinaArvo);
+
+*/

@@ -13,6 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
+ * KORVAA
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
  *
  * @author kromanow@cs
  */
@@ -35,7 +38,7 @@ private HashMap<String,Omatili>omattilit;
     @Override
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaMyymasiOsakkeet();
-         omatili.getsaldot();
+        
        
          omatili.getmarkkinaArvot();
        

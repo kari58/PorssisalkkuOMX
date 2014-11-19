@@ -9,6 +9,7 @@ package Kayttoliittyma;
 import PorssisalkkuOMX.Omatili;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,13 +17,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- 
- *
+ KORVAA
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ *ÄLÄ KORVAA LIIAN USEIN ETTEI TILT
  * @author kromanow
  */
 public class OstaKuuntelija implements ActionListener {
 
-    private JTextField syoteTextField;
+   
     private JLabel tulostusLabel;
     private Omatili omatili;
     private JButton osta;
@@ -31,6 +34,7 @@ public class OstaKuuntelija implements ActionListener {
     JTextField ostoKentta;
     JTextField ostohintaKentta;
     private HashMap<String, Omatili> omattilit;
+    private ArrayList<Integer> ArrayList;
 
     OstaKuuntelija(JButton osta, JTextField nimiKentta, JTextField ostoKentta, JTextField ostohintaKentta,
             Omatili omatili, HashMap<String, Omatili> omattilit) {
@@ -61,7 +65,7 @@ public class OstaKuuntelija implements ActionListener {
             omatili.osta(nimiKentta.getText(), saldo, ostohinta);
             omatili.getsaldot().put(nimiKentta.getText(), saldo);
             omatili.getostohinnat().put(nimiKentta.getText(),ostohinta);
-           
+       //   omatili.getsamaaOstettuUseammin().put(nimiKentta.getText(),ArrayList<Integer>);
             omatili.getsaldot();
             omattilit.put(nimiKentta.getText(), omatili);
 

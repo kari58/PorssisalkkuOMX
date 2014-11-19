@@ -11,6 +11,12 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
+ * KORVAA
+ * tutki erityisesti TORSTAINA SALDOT GRAAFISESSSA JA POISTA  VAIHE VAIHEELTA
+ *   protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+   * 
+   * MYYDYT SAMA HOMMA  
  * Luokka toimii arkistona ostohinnoille ,paivamaarille,tapahtumille, ja
  * saldoille
  *
@@ -18,10 +24,12 @@ import java.util.Objects;
  */
 public class PorssisalkkuOMX {
 
-    protected HashMap<String, Double> ostohinnat;
+   protected HashMap<String, Double> ostohinnat;
     protected HashMap<String, Integer> saldot;
+   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin; //lisätty 18.11
     protected HashMap<String, Double> markkinaArvot;
     protected HashMap<String, Integer> myydytOsakkeet;
+     //lisätty 18.11  a ja a ei tulostu oamlle riville
 
     @Override
     public int hashCode() {
@@ -42,7 +50,7 @@ public class PorssisalkkuOMX {
         }
         final PorssisalkkuOMX other = (PorssisalkkuOMX) obj;
         if (!Objects.equals(this.ostohinnat, other.ostohinnat)) {
-            return false;
+           return false;
         }
         if (!Objects.equals(this.saldot, other.saldot)) {
             return false;
@@ -59,10 +67,14 @@ public class PorssisalkkuOMX {
      * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
      */
     public PorssisalkkuOMX() {
-        this.ostohinnat = new HashMap<>();
+      this.ostohinnat = new HashMap<>();
         this.saldot = new HashMap<>();
         this.markkinaArvot = new HashMap<>();
-        this.myydytOsakkeet=new HashMap<>();
+        this.myydytOsakkeet = new HashMap<>();
+        this.samaaOstettuUseammin=new HashMap<>();
+        ostohinnat.put("UPM", 11.0);
+        markkinaArvot.put("UPM", 12.0);
+        saldot.put("UPM", 100);
     }
 
     public HashMap<String, Integer> getMyydytOsakkeet() {
@@ -76,7 +88,6 @@ public class PorssisalkkuOMX {
      *
      * @return
      */
-
     public HashMap<String, Double> getostohinnat() {
         return ostohinnat;
     }
@@ -88,6 +99,9 @@ public class PorssisalkkuOMX {
     public HashMap<String, Double> getmarkkinaArvot() {
         return markkinaArvot;
     }
+    public HashMap<String, ArrayList<Integer>> getsamaaOstettuUseammin(){
+   return samaaOstettuUseammin;
+}
 
     /**
      * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä markkina-arvot
@@ -100,10 +114,29 @@ public class PorssisalkkuOMX {
      */
     public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
-        this.saldot.put(osake, saldo);
+        
+       
+           this.saldot.put(osake, saldo); 
+        
+        
         this.markkinaArvot.put(osake, markkinaArvo);
-        //this.saldot.put(osake, saldot.get(osake)+saldo);
+    
+       if (!samaaOstettuUseammin.isEmpty()&&samaaOstettuUseammin.containsKey(osake)) {  //lisätty 18.11
+
+            ArrayList<Integer> aikaisemmatOstot = samaaOstettuUseammin.get(osake);
+            
+            aikaisemmatOstot.add(saldo);
+            this.samaaOstettuUseammin.put(osake, aikaisemmatOstot);
+
+        }
+        else{
+            ArrayList<Integer>ostot=new ArrayList<Integer>();
+            ostot.add(saldo);
+            this.samaaOstettuUseammin.put(osake, ostot);  
+           //lisätty 18.11
+        }
     }
+  
 
     public double ostohinta(String osake) {
         if (!this.ostohinnat.containsKey(osake)) {
@@ -126,15 +159,15 @@ public class PorssisalkkuOMX {
         return this.markkinaArvot.get(osake);
     }
 
-  
-    
-    
-    
-    
-    
-
-    public String toString() {
-        return "Osakkeita myytiin " + saldot.values() + "hävittiin vuoden aikana ";
+    public void vahennaOsake(String osake, int saldo, double markkinaArvo) { 
+       
+        this.saldot.put(osake, saldot.get(osake) - saldo);
+        this.markkinaArvot.put(osake, markkinaArvo);
+        this.myydytOsakkeet.put(osake, saldo);
+      
     }
 
+   
+
 }
+

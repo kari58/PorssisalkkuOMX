@@ -9,6 +9,18 @@ import PorssisalkkuOMX.Pankintili;
 import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
+/*
+Projektista löytyy paljon turhaa koodia ja moni asia on tehty monimutkaisemmin kuin on tarve. 
+Ohjelma kuitenkin toimii ainakin pinnallisella tasolla ja käyttöliittymä on jossain määrin saatu integroitua ohjelmalogiikkaan. 
+Testien tekeminen vaikuttaisi olevan hieman haastavaa, 
+todennäköisesti osittain johtuen siitä syystä että itse ohjelmakoodi on paikoittain hyvinkin sekavaa
+eikä näin ole helppoa saada syvällistä ymmärrystä siitä, miten ohjelma oikeastaan toimii.
+Suosittelisin vahvasti että projektin tekemisen ohella kertaisit perusasioita 
+ja etenkin sitä miten ohjelmasi eri osa-alueet toimivat keskenään.
+Oman ohjelman koodaus perustuu hyvin vahvasti soveltamiseen, joka vaatii syvää ymmärrystä perusasioista. Mikäli mahdollista,
+github -repositorion siivoaminen olisi myös aiheellistä, joskaan ei tärkeysjärjestyksessä ensimmäisenä.
+
+*/
 
 /*
 
