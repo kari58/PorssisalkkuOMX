@@ -93,10 +93,4 @@ public void konstruktoriPorssisalkkuOMX(){
 }
 
 
-/*
- public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
-        this.ostohinnat.put(osake, ostohinta);
-        this.saldot.put(osake, saldo);
-        this.markkinaArvot.put(osake, markkinaArvo);
 
-*/

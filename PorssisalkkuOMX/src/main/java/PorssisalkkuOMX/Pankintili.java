@@ -35,6 +35,7 @@ public class Pankintili extends PorssisalkkuOMX{
     pankki tilittää voitoista ja osingoista 30% verottjalla
     */
     public double myy(String osakkeennimi,int saldo){
+     
        return Isotili-=markkinaArvot.get(osakkeennimi)*saldo;
     }
                           
@@ -43,11 +44,9 @@ public class Pankintili extends PorssisalkkuOMX{
     asiakkaan ostaessa osakkeita pankin tili kasvaa ostoll
     */
     public double osta(String osakkeennimi,int saldo){
-        saldot.put(osakkeennimi, saldo);
-        
-        markkinaArvot.put(osakkeennimi,markkinaArvot.get(Osake));
+      
        return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
-     //  return Isotili+= markkinaArvot.get(Osake).doubleValue()*saldo;
+     
         
     }
 }

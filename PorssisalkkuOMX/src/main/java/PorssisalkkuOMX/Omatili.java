@@ -131,7 +131,7 @@ markkinaArvot.put(osake, markkinaArvo);
      */
     public double osta(String osake, int saldo, double ostohinta) {
      
-        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);//ostohinta ostohinta tuplana ÅÅÅÅÅÅÅÅ
+        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);//ostohinta ostohinta tuplana ÅÅÅÅÅÅÅÅ, poisto rikkooo graafista
         saldot.put(osake, saldot.get(osake) + saldo);
         super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
        //  this.samatOstot.add(saldo, osake);   lisätty   18.11

@@ -98,8 +98,8 @@ public class PaivamaaraTest {
     @Test
     public void testPalautakokolukuna() {
         System.out.println("palautakokolukuna");
-        Paivamaara instance = new Paivamaara(14,11,2014);
-        int expResult = 14112014;
+        Paivamaara instance = new Paivamaara(14,11,2016);
+        int expResult = 14112016;
         int result = instance.palautakokolukuna();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

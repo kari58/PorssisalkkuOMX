@@ -14,7 +14,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**TÄMÄN VOISI POISTAA KOSKA KOKO LUOKKA ON SIIREETTY OMATILI
- *
+ *ÄLÄ  SIIRRÄ VIELÄ ROSKIIN , KOSAK VOIT KATSELLA JUNIT TESTIIN NMALLIAA
  * @author kromanow
 // */
 //public class VoitotTappiotTest {

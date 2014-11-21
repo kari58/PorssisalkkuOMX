@@ -72,7 +72,7 @@ public class PorssisalkkuOMX {
         this.markkinaArvot = new HashMap<>();
         this.myydytOsakkeet = new HashMap<>();
         this.samaaOstettuUseammin=new HashMap<>();
-        ostohinnat.put("UPM", 11.0);
+        ostohinnat.put("UPM", 11.0);   //näitä käytetty JUNITest
         markkinaArvot.put("UPM", 12.0);
         saldot.put("UPM", 100);
     }
@@ -106,22 +106,24 @@ public class PorssisalkkuOMX {
     /**
      * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä markkina-arvot
      * myyntiä tehtäessä
-     *
+     *LISÄÄ OSAKE MARKKINAARVOT JA  OSTOHINNAT VAATII SIIS 4 PARAMETRIA
+     * VOISI EHKÄ MARKKINA-ARVON YHDISTÄÄ MYYNTIHINTAAN, ei onnisti koska rakenne rikkoutuu muualla graafisesasa
      * @param osake= tietyn osakkeen nimi
      * @param ostohinta=ostohetkellä maksettu hinta
      * @param saldo =kaikkien tietyn osakkeen lukumäärä
      * @param markkinaArvo =porssin määrittämä sen hetkinen kurssi osakkeelle
      */
-    public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
+    public void lisaaOsake(String osake, int saldo, double ostohinta,double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
-        
+     
        
+      
            this.saldot.put(osake, saldo); 
         
         
-        this.markkinaArvot.put(osake, markkinaArvo);
+        this.markkinaArvot.put(osake, markkinaArvo);    
     
-       if (!samaaOstettuUseammin.isEmpty()&&samaaOstettuUseammin.containsKey(osake)) {  //lisätty 18.11
+       if (!samaaOstettuUseammin.isEmpty()&&samaaOstettuUseammin.containsKey(osake)) {  //lisätty 18.11 tässä toisen kerran tai useammin
 
             ArrayList<Integer> aikaisemmatOstot = samaaOstettuUseammin.get(osake);
             
@@ -133,7 +135,7 @@ public class PorssisalkkuOMX {
             ArrayList<Integer>ostot=new ArrayList<Integer>();
             ostot.add(saldo);
             this.samaaOstettuUseammin.put(osake, ostot);  
-           //lisätty 18.11
+           //lisätty 18.11 tässä ekaa kertaa 
         }
     }
   
