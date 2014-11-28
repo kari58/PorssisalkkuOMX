@@ -54,11 +54,7 @@ public class MyyKuuntelija implements ActionListener {
 
         double markkinaArvo = Double.parseDouble(hintaKentta.getText());
         int kappaleMaara = Integer.parseInt(myyntiKentta.getText());
-        double arvo = kappaleMaara;
-        try {
-            arvo = Integer.parseInt(myyntiKentta.getText());
-        } catch (Exception ex) {
-        }
+
         if (!omatili.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
 
             JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE);
@@ -68,11 +64,7 @@ public class MyyKuuntelija implements ActionListener {
                 String osake = nimiKenttaMyy.getText();
                 omatili.myy(osake, kappaleMaara,markkinaArvo);
 
-               // if (omatili.getMyydytOsakkeet().containsKey(osake)) {
-                   // kappaleMaara += omatili.getMyydytOsakkeet().get(osake);
-                //}
-
-                omatili.getMyydytOsakkeet().put(osake, kappaleMaara);
+             
                 JOptionPane.showMessageDialog(null, "ONNISTUI", "MYYNTI", JOptionPane.ERROR_MESSAGE);
 
             } else {

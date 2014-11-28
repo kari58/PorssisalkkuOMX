@@ -13,45 +13,32 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- * KORVAA
- *   protected HashMap<String, Integer> saldot;
-   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ * KORVAA protected HashMap<String, Integer> saldot; protected HashMap<String,
+ * ArrayList<Integer>> samaaOstettuUseammin;
  *
  * @author kromanow@cs
  */
-public class MyymasiKuuntelija implements ActionListener{
-    
+public class MyymasiKuuntelija implements ActionListener {
+
     private JButton myymasiNappi;
     private JLabel nimi;
     private Tonnipaivassa tonnipaivassa;
-private Omatili omatili;
-private HashMap<String,Omatili>omattilit;
-    public MyymasiKuuntelija(JButton myymasiNappi, JLabel nimi,Tonnipaivassa tonnipaivassa,
-            Omatili omatili,HashMap<String,Omatili>omattilit) {
-        this.myymasiNappi=myymasiNappi;
-        this.nimi=nimi;
-        this.tonnipaivassa=tonnipaivassa;
-        this.omatili=omatili;
-        this.omattilit=omattilit;
+    private Omatili omatili;
+    private HashMap<String, Omatili> omattilit;
+
+    public MyymasiKuuntelija(JButton myymasiNappi, JLabel nimi, Tonnipaivassa tonnipaivassa,
+            Omatili omatili, HashMap<String, Omatili> omattilit) {
+        this.myymasiNappi = myymasiNappi;
+        this.nimi = nimi;
+        this.tonnipaivassa = tonnipaivassa;
+        this.omatili = omatili;
+        this.omattilit = omattilit;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaMyymasiOsakkeet();
-        
-       
-         omatili.getmarkkinaArvot();
-       
+        omatili.getmarkkinaArvot();
+
     }
 }
-     
- 
-
- 
-       
-    
-    
-
-
-    
-

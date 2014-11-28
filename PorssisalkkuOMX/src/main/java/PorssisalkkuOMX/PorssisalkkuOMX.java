@@ -11,25 +11,23 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
- * KORVAA
- * tutki erityisesti TORSTAINA SALDOT GRAAFISESSSA JA POISTA  VAIHE VAIHEELTA
- *   protected HashMap<String, Integer> saldot;
-   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
-   * 
-   * MYYDYT SAMA HOMMA  
- * Luokka toimii arkistona ostohinnoille ,paivamaarille,tapahtumille, ja
- * saldoille
+ * KORVAA tutki erityisesti TORSTAINA SALDOT GRAAFISESSSA JA POISTA VAIHE
+ * VAIHEELTA protected HashMap<String, Integer> saldot; protected
+ * HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ *
+ * MYYDYT SAMA HOMMA Luokka toimii arkistona ostohinnoille
+ * ,paivamaarille,tapahtumille, ja saldoille
  *
  * @author kromanow
  */
 public class PorssisalkkuOMX {
 
-   protected HashMap<String, Double> ostohinnat;
+    protected HashMap<String, Double> ostohinnat;
     protected HashMap<String, Integer> saldot;
-   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin; //lisätty 18.11
+
     protected HashMap<String, Double> markkinaArvot;
     protected HashMap<String, Integer> myydytOsakkeet;
-     //lisätty 18.11  a ja a ei tulostu oamlle riville
+    //lisätty 18.11  a ja a ei tulostu oamlle riville
 
     @Override
     public int hashCode() {
@@ -50,7 +48,7 @@ public class PorssisalkkuOMX {
         }
         final PorssisalkkuOMX other = (PorssisalkkuOMX) obj;
         if (!Objects.equals(this.ostohinnat, other.ostohinnat)) {
-           return false;
+            return false;
         }
         if (!Objects.equals(this.saldot, other.saldot)) {
             return false;
@@ -61,20 +59,17 @@ public class PorssisalkkuOMX {
         return true;
     }
 
-    ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
+   ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
 
     /**
      * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
      */
     public PorssisalkkuOMX() {
-      this.ostohinnat = new HashMap<>();
+        this.ostohinnat = new HashMap<>();
         this.saldot = new HashMap<>();
         this.markkinaArvot = new HashMap<>();
         this.myydytOsakkeet = new HashMap<>();
-        this.samaaOstettuUseammin=new HashMap<>();
-        ostohinnat.put("UPM", 11.0);   //näitä käytetty JUNITest
-        markkinaArvot.put("UPM", 12.0);
-        saldot.put("UPM", 100);
+
     }
 
     public HashMap<String, Integer> getMyydytOsakkeet() {
@@ -99,77 +94,39 @@ public class PorssisalkkuOMX {
     public HashMap<String, Double> getmarkkinaArvot() {
         return markkinaArvot;
     }
-    public HashMap<String, ArrayList<Integer>> getsamaaOstettuUseammin(){
-   return samaaOstettuUseammin;
-}
 
     /**
      * ostossa kuhunkin sarakkeeseen lisätäään ostohinta ja määrä markkina-arvot
-     * myyntiä tehtäessä
-     *LISÄÄ OSAKE MARKKINAARVOT JA  OSTOHINNAT VAATII SIIS 4 PARAMETRIA
-     * VOISI EHKÄ MARKKINA-ARVON YHDISTÄÄ MYYNTIHINTAAN, ei onnisti koska rakenne rikkoutuu muualla graafisesasa
+     * myyntiä tehtäessä LISÄÄ OSAKE MARKKINAARVOT JA OSTOHINNAT VAATII SIIS 4
+     * PARAMETRIA VOISI EHKÄ MARKKINA-ARVON YHDISTÄÄ MYYNTIHINTAAN, ei onnisti
+     * koska rakenne rikkoutuu muualla graafisesasa
+     *
      * @param osake= tietyn osakkeen nimi
      * @param ostohinta=ostohetkellä maksettu hinta
      * @param saldo =kaikkien tietyn osakkeen lukumäärä
      * @param markkinaArvo =porssin määrittämä sen hetkinen kurssi osakkeelle
      */
-    public void lisaaOsake(String osake, int saldo, double ostohinta,double markkinaArvo) {
+    public void lisaaOsake(String osake, int saldo, double ostohinta, double markkinaArvo) {
         this.ostohinnat.put(osake, ostohinta);
-     
-       
-      
-           this.saldot.put(osake, saldo); 
-        
-        
-        this.markkinaArvot.put(osake, markkinaArvo);    
-    
-       if (!samaaOstettuUseammin.isEmpty()&&samaaOstettuUseammin.containsKey(osake)) {  //lisätty 18.11 tässä toisen kerran tai useammin
-
-            ArrayList<Integer> aikaisemmatOstot = samaaOstettuUseammin.get(osake);
-            
-            aikaisemmatOstot.add(saldo);
-            this.samaaOstettuUseammin.put(osake, aikaisemmatOstot);
-
+        if (this.saldot.containsKey(osake)) {
+            saldo += saldot.get(osake);
         }
-        else{
-            ArrayList<Integer>ostot=new ArrayList<Integer>();
-            ostot.add(saldo);
-            this.samaaOstettuUseammin.put(osake, ostot);  
-           //lisätty 18.11 tässä ekaa kertaa 
-        }
-    }
-  
-
-    public double ostohinta(String osake) {
-        if (!this.ostohinnat.containsKey(osake)) {
-            return ostohinnat.get(osake);
-        }
-        return this.ostohinnat.get(osake);
+        this.saldot.put(osake, saldo);
+        this.markkinaArvot.put(osake, markkinaArvo);
+   // omatili.getsaldot().put(nimiKentta.getText(), saldo);
     }
 
-    public int saldo(String osake) {
-        if (!this.saldot.containsKey(osake)) {
-            return this.saldot.get(osake);
-        }
-        return this.saldot.get(osake);
-    }
+    public void vahennaOsake(String osake, int saldo, double markkinaArvo) {
 
-    public double markkinaArvo(String osake) {
-        if (!this.markkinaArvot.containsKey(osake)) {
-            return this.markkinaArvot.get(osake);
-        }
-        return this.markkinaArvot.get(osake);
-    }
-
-    public void vahennaOsake(String osake, int saldo, double markkinaArvo) { 
-       
         this.saldot.put(osake, saldot.get(osake) - saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
+
+        if (this.getMyydytOsakkeet().containsKey(osake)) {
+            saldo += this.getMyydytOsakkeet().get(osake);
+        }
+
         this.myydytOsakkeet.put(osake, saldo);
-      
+
     }
 
-   
-
 }
-

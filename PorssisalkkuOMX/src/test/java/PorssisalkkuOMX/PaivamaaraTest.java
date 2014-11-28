@@ -49,8 +49,7 @@ public class PaivamaaraTest {
         String expResult = "16.9.2014";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-    //this.paiva + "." + this.kuukausi + "." + this.vuosi;
+        
     }
 
     /**
@@ -59,12 +58,12 @@ public class PaivamaaraTest {
     @Test
     public void testAiemmin() {
         System.out.println("aiemmin");
-        Paivamaara verrattava = new Paivamaara(16,8,2014);// vuosi kuukausi,päivä 
-        Paivamaara instance = new Paivamaara(15,8,2014);
-        boolean expResult = true;
+        Paivamaara verrattava = new Paivamaara(15,7,2011);// vuosi kuukausi,päivä 
+        Paivamaara instance = new Paivamaara(16,7,2014);
+        boolean expResult = false;
         boolean result = instance.aiemmin(verrattava);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
        
     }
 
@@ -74,13 +73,12 @@ public class PaivamaaraTest {
     @Test
     public void testErotusVuosissa() {
         System.out.println("erotusVuosissa");
-        Paivamaara verrattava = new Paivamaara(16,8,2011);
-        Paivamaara instance = new Paivamaara(16,8,2014);
+        Paivamaara verrattava = new Paivamaara(16,6,2010);
+        Paivamaara instance = new Paivamaara(15,6,2014);
         int expResult = 3;
         int result = instance.erotusVuosissa(verrattava);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+      
     }
      @Test
     public void testAiemminuusi() {
@@ -92,9 +90,18 @@ public class PaivamaaraTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of palautakokolukuna method, of class Paivamaara.
-     */
+  
+    
+     @Test
+     public void testlaskeErotus(){
+  System.out.println("laskeErotus");
+   Paivamaara verrattava= new  Paivamaara(23,11,2013);
+   Paivamaara instance= new Paivamaara(25,12,2014);      
+  int expResult=1;
+   int result=instance.laskeErotus(verrattava);
+   assertEquals(expResult,result);
+     }
+     
     @Test
     public void testPalautakokolukuna() {
         System.out.println("palautakokolukuna");

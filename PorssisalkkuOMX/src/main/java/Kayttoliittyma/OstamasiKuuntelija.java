@@ -39,9 +39,9 @@ public class OstamasiKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         tonnipaivassa.lisaaOstamasiOsakkeet();
-        omatili.getsaldot();
+    
         omatili.getostohinnat();
-        omatili.getmarkkinaArvot();
+    
 
     }
 

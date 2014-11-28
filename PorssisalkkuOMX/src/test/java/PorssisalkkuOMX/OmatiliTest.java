@@ -53,7 +53,60 @@ public class OmatiliTest {
         vastaus = limiittitili2.osta("osake",10, 100.0);
       assertEquals(vastaus, 0.0, 0.01);
     }
+    @Test
+    public void getLimiittitili(){
+         Omatili limiittitili=new Omatili();
+      double   vastaus =limiittitili.getLimiittitili();
+        
+        assertEquals(1000.0, vastaus,0.0);
+               
+    }
+    @Test
+    public void setTunnus(){
+        Omatili tunnus=new Omatili("tunnus","salasana");
+        String vastaus=tunnus.setTunnus();
+        assertEquals("tunnus",vastaus);
+    }
+    @Test
+    public void getTunnus(){
+        Omatili tunnus=new Omatili("tunnus","salasana");
+        String vastaus=tunnus.getTunnus();
+        assertEquals("tunnus",vastaus);
+    }
+    @Test
+    public void setSalasana(){
+         Omatili salasana=new Omatili("tunnus","salasana");
+          String vastaus=salasana.setSalasana();
+          assertEquals("salasana",vastaus);
+    }
+          @Test
+          public void getSalasana(){
+        Omatili salasana=new Omatili("tunnus","salasana");
+        String vastaus=salasana.getSalasana();
+          assertEquals("salasana",vastaus);
+    }
+//        @Test
+//        public void getOsakkeet(){
+//            Tapahtumat osakkeet=new Tapahtumat("osakkeennimi", "paiva", " kuukausi", " vuosi");
+//            
+//        }
+//    
     /*
+       ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
+     public ArrayList getOsakkeet() {
+        return osakkeet;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+            public double getLimiittitili() {
+        return limiittitili;
+    }
      public double osta(String osake, int saldo, double ostohinta) {
         if ((7 < PE) && (PE < 16) && (F <= 5) && (F >= 2)) {
             return limiittitili -= this.saldo * ostohinta;

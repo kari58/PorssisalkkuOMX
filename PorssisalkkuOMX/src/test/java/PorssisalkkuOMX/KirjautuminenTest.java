@@ -52,5 +52,36 @@ public class KirjautuminenTest {
         kirjautuminen.kirjautuminen();
         
     }
+    @Test
+    public void Kirjautuminen(){
+       Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
+       
+        String vastaus=kirja.toString();
+       assertEquals("Kirjautuminen",vastaus);
+      
+    }
+    @Test
+    public void toStringFanettutoinennimi(){
+        Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
+        String vastaus=kirja.toString();
+        assertEquals("Kirjautuminen",vastaus);
+        
+    }
     
 }
+/*
+ public String toString() {
+        return "Kirjautuminen";       //{" + '}';
+    }
+Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
+       
+        String vastaus=kirja.toString();
+        System.out.println(vastaus);
+    public void Tapahtumat(){
+        
+        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2014);
+               // Tapahtumat tapahtumat=new Tapahtumat("StoraEnso", 12, 8, 2013);
+
+        String vastaus=tapahtumat.getOsakkeennimi();
+        assertEquals("UPM",vastaus);
+*/

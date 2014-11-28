@@ -48,9 +48,9 @@ public class TapahtumatTest {
 }
     @Test
     public void konstruktoriTapahtumat(){
-        Tapahtumat tapahtumat=new Tapahtumat("UPM" ,11, 9, 2014);
+        Tapahtumat tapahtumat=new Tapahtumat("U" ,11, 9, 2014);
         String vastaus=tapahtumat.getOsakkeennimi();
-        assertEquals("UPM",vastaus);
+        assertEquals("U",vastaus);
     }
     @Test
     public void Tapahtumat(){
@@ -65,7 +65,7 @@ public class TapahtumatTest {
             public void Tapahtumat2(){
                 
           
-    Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2010);
+    Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2011);
     Tapahtumat tapahtumat2=new Tapahtumat("StoraEnso", 12, 8, 2013);
     boolean vastaus=tapahtumat.vanhempiKuin(tapahtumat2);
     assertTrue(vastaus);
@@ -89,10 +89,41 @@ public class TapahtumatTest {
                 
                 assertEquals(Integer.parseInt(dateFormat.format(cal.getTime())) - 2010, answer);
             }
-                    
+            @Test
+            public void compareTo(){
+                Tapahtumat tapahtumat5=new Tapahtumat("Lemminkainen",23,9,2010);
+                Tapahtumat tapahtumat6=new Tapahtumat("Lemminkainen",23,9,2009);
+                int vastaus=tapahtumat5.compareTo(tapahtumat6);
+                int expResult=1;
+                assertEquals(expResult,vastaus);
+            }
+              @Test 
+        public void vanhempiKuin(){
+            Tapahtumat tapahtumat7=new Tapahtumat("Lemminkainen",23,9,2000);
+            Tapahtumat tapahtumat8=new Tapahtumat("Lemminkainen",23,9,2009);
+            boolean vastaus=tapahtumat7.vanhempiKuin(tapahtumat8);
+            assertTrue(vastaus);
+                  
+              }
+              
 }
 
 /**
+ *  public boolean vanhempiKuin(Tapahtumat verrattava){
+        return this.ostopaiva.aiemmin(verrattava.ostopaiva);
+    }
+ *  public int compareTo(Tapahtumat o) {
+        return this.ostopaiva.palautakokolukuna()-o.ostopaiva.palautakokolukuna();
+        * 
+       this.ostopaiva=new Paivamaara(paiva, kuukausi, vuosi); 
+    } public void testPalautakokolukuna() {
+        System.out.println("palautakokolukuna");
+        Paivamaara instance = new Paivamaara(14,11,2016);
+        int expResult = 14112016;
+        int result = instance.palautakokolukuna();
+        assertEquals(expResult, result);
+ * 
+ * 
  * 
  * selvittää onko 2013 vai 2012 ostettu osake vanhin FIFO-periaatteeseen
 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
