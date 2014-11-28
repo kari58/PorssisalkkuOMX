@@ -76,7 +76,7 @@ public class Omatili extends PorssisalkkuOMX {
     }
 
     public ArrayList getOsakkeet() {
-        return osakkeet;
+        return super.osakkeet;
     }
 
     public double myy(String osake, int saldo, double markkinaArvo) {

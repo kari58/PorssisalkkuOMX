@@ -26,9 +26,6 @@ public class Pankintili extends PorssisalkkuOMX {
         
     }
 
-    public Pankintili(Pankintili pankintili) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     /**
      * asiakkaan myydessä osaketta pankin arvo-osuustili kyseiselle asiakkaalle

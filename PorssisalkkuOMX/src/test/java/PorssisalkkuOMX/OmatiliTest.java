@@ -43,7 +43,7 @@ public class OmatiliTest {
 
         Omatili limiittitili = new Omatili("tunnus", "salasana");
         double vastaus = limiittitili.getLimiittitili();
-        assertEquals(vastaus, 1000.0, 0.01);
+        assertEquals(vastaus, 0.0, 0.01);
     }
 
     @Test
@@ -51,14 +51,14 @@ public class OmatiliTest {
        Omatili limiittitili2 = new Omatili();
         double vastaus;
         vastaus = limiittitili2.osta("osake",10, 100.0);
-      assertEquals(vastaus, 0.0, 0.01);
+      assertEquals(vastaus, -1000.0, 0.01);
     }
     @Test
     public void getLimiittitili(){
          Omatili limiittitili=new Omatili();
       double   vastaus =limiittitili.getLimiittitili();
         
-        assertEquals(1000.0, vastaus,0.0);
+        assertEquals(vastaus,0.0,0.0);
                
     }
     @Test
@@ -85,14 +85,20 @@ public class OmatiliTest {
         String vastaus=salasana.getSalasana();
           assertEquals("salasana",vastaus);
     }
-//        @Test
-//        public void getOsakkeet(){
+      @Test                                
+        public void getOsakkeet(){
+            Omatili limiittitili=new Omatili();
+            limiittitili.osta("UPM", 11, 1.0);
+            assertEquals(limiittitili.getOsakkeet().size(), 1);
+        }
+       
 //            Tapahtumat osakkeet=new Tapahtumat("osakkeennimi", "paiva", " kuukausi", " vuosi");
 //            
 //        }
 //    
     /*
        ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
+        
      public ArrayList getOsakkeet() {
         return osakkeet;
     }

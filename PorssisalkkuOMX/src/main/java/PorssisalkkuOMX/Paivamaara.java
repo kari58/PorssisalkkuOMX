@@ -24,9 +24,7 @@ public class Paivamaara {
         this.vuosi = vuosi;
     }
 
-    Paivamaara(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     public String toString() {
         return this.paiva + "." + this.kuukausi + "." + this.vuosi;

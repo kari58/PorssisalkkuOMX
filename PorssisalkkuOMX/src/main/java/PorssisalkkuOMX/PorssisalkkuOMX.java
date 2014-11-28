@@ -46,7 +46,9 @@ public class PorssisalkkuOMX {
         if (getClass() != obj.getClass()) {
             return false;
         }
+
         final PorssisalkkuOMX other = (PorssisalkkuOMX) obj;
+
         if (!Objects.equals(this.ostohinnat, other.ostohinnat)) {
             return false;
         }
@@ -59,7 +61,7 @@ public class PorssisalkkuOMX {
         return true;
     }
 
-   ArrayList<Tapahtumat> osakkeet = new ArrayList<Tapahtumat>();
+    ArrayList<Tapahtumat> osakkeet = new ArrayList<>();
 
     /**
      * arralist osakkeet käytetään FIFO:ssa vanhimman osakkeen myynnissä
@@ -113,7 +115,7 @@ public class PorssisalkkuOMX {
         }
         this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
-   // omatili.getsaldot().put(nimiKentta.getText(), saldo);
+        // omatili.getsaldot().put(nimiKentta.getText(), saldo);
     }
 
     public void vahennaOsake(String osake, int saldo, double markkinaArvo) {

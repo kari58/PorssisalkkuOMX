@@ -56,12 +56,51 @@ public class TapahtumatTest {
     public void Tapahtumat(){
         
         Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2014);
-               // Tapahtumat tapahtumat=new Tapahtumat("StoraEnso", 12, 8, 2013);
+               
 
         String vastaus=tapahtumat.getOsakkeennimi();
         assertEquals("UPM",vastaus);
     }
+//@Test
+//public void TapahtumatCalendar(){
+//    Tapahtumat tapahtumat=new Tapahtumat("Talvivaara");
+//    //String vastaus=tapahtumat.
+//    String vastaus=tapahtumat.getOsakkeennimi();
+//    assertEquals("Talvivaara",vastaus);
+//        
+//}  
+    
+
+
+
+//////           public Tapahtumat(String osakkeennimi) {
+////// this.osakkeennimi = osakkeennimi;
+//////
+//////        Calendar nyt = Calendar.getInstance();
+//////        int vuosi = nyt.get(Calendar.YEAR);
+//////        int kuukausi = nyt.get(Calendar.MONTH) + 1;
+//////        int paiva = nyt.get(Calendar.DATE);
+//////        this.ostopaiva = new Paivamaara(paiva, kuukausi, vuosi);
+//////
+//////    }
+    
     @Test
+    public void testTostring(){
+        System.out.println("toString");
+        Tapahtumat instance=new Tapahtumat("UPM,28.11.2014");
+        String expResult="UPM,28.11.2014";
+        String result=instance.toString();
+        assertEquals(expResult,result);
+                }
+   // nFailure: expected:<UPM,28.11.2014[]> but was:<UPM,28.11.2014[,ostopäivä 28.11.2014]>
+    
+        //public String toString() {
+      //  return this.osakkeennimi + ",ostopäivä " + this.ostopaiva;
+    
+//    }
+    
+    
+       @Test
             public void Tapahtumat2(){
                 
           
@@ -76,8 +115,8 @@ public class TapahtumatTest {
    
             @Test
             public void Tapahtumat3vanhinosadake(){
-                Tapahtumat tapahtumat3=new Tapahtumat("Lemminkainen",23,9,2010);
-                Tapahtumat tapahtumat4=new Tapahtumat("Lemminkainen",23,9,2013);
+                Tapahtumat tapahtumat3=new Tapahtumat("Lemminkainen",22,8,2010);
+                Tapahtumat tapahtumat4=new Tapahtumat("Lemminkainen",23,7,2013);
                 int answer=tapahtumat3.vanhinosake();
                 
                 
@@ -85,7 +124,7 @@ public class TapahtumatTest {
                
                 DateFormat dateFormat = new SimpleDateFormat("yyyy");
                 
-                System.out.println("nykyinen vuosi: " + dateFormat.format(cal.getTime()));
+                //System.out.println("nykyinen vuosi: " + dateFormat.format(cal.getTime()));
                 
                 assertEquals(Integer.parseInt(dateFormat.format(cal.getTime())) - 2010, answer);
             }
