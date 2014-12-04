@@ -87,9 +87,14 @@ public class PorssisalkkuOMXTest {
     public void vahennaOsake() {
         PorssisalkkuOMX salkku = new PorssisalkkuOMX();
         salkku.lisaaOsake("UPM", 100, 11.0, 11.0);
-        //salkku.vahennaOsake("UPM", 100, 12.0);
+        salkku.vahennaOsake("UPM", 10, 12.0);
         HashMap<String, Integer> saldot = salkku.getsaldot();
-        assertEquals((Integer) 100, saldot.get("UPM"));
+        HashMap<String, Integer> myydytOsakkeet=salkku.getMyydytOsakkeet();
+        myydytOsakkeet.put("UPM", 10);
+        
+          assertEquals((Integer)10,myydytOsakkeet.get("UPM"));
+        
+        assertEquals((Integer) 90, saldot.get("UPM"));
         /*
                 if (this.getMyydytOsakkeet().containsKey(osake)) {
 
@@ -150,11 +155,31 @@ public class PorssisalkkuOMXTest {
     @Test
     public void equals() {
         PorssisalkkuOMX salkku = new PorssisalkkuOMX();
-         //PorssisalkkuOMX salkku1 = new PorssisalkkuOMX();
+         
         HashMap<String, Integer> saldot = salkku.getsaldot();
-        saldot.put("Talvivaara", 7);
+        saldot.put("q", null);
+        salkku.equals(null);
         Omatili tili=new Omatili();
         assertEquals(false, salkku.equals(tili));
+    }
+    @Test
+    public void equals2(){
+        PorssisalkkuOMX salkku=new PorssisalkkuOMX();
+            
+        HashMap<String, Integer> saldot = salkku.getsaldot();
+        saldot.put("UPM",1);
+        saldot.put("UPM", 1);
+        
+        salkku.equals(7777);
+        assertEquals(false,salkku.equals(this));
+    }
+    @Test
+    public void equalssaldot(){
+        PorssisalkkuOMX salkkuq=new PorssisalkkuOMX();
+        PorssisalkkuOMX salkkut=new PorssisalkkuOMX();
+        HashMap<String,Integer>saldot=salkkuq.getsaldot();
+        saldot.put("UPM", 2);
+        assertEquals(false,salkkuq.equals(salkkut));
     }
     @Test
     public void equalsostohinnat(){

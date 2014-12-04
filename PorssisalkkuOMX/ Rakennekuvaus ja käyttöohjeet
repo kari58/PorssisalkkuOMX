@@ -1,7 +1,9 @@
 Rakennekuvaus PorssisalkkuOMX
 0) Graafisessa näytössä annetaan salasana ja tunnus, joka on kovakoodattuna kirjautuminen.class.
 
-Ohjelma kysyy tunnusta =kari ja salasanaa=ilma ja sen jälkeen voi tehdä kauppaa
+Ohjelma kysyy tunnusta =kari ja salasanaa=ilma ja sen jälkeen voi tehdä kauppaa. Kauppaa pääsee tekemääm myös ilman salasanoja.
+Ohjelma toimii virheellisesti ostojen ja myyntien kohdalla. Jos ostetaan osaketta A, B ja C ,niin osatamasi näyttää oikein ostot tai myynnit. Ostettaessa peräjälkeen esim.
+B kolme kertaa, niin ostamasi näyttää viimeisen. Sama koskee myynnissä.
 
 1)  Kun painetaan Osta osake esim. UPM ja 100 kpl,ostohinta 11.57 eur, ohjelma ilmoitta osto onnistui. Ostamasi kuuntelija ilmoitetaan oston määrä ja ostohinta.Ostamasi osakkeet painamalla löytyy osakkeen nimi, saldo ja ostohinta
 Kun painetaan Myy osake nappia, ohjelmassa on mainissa lisätty Talvivaaraa ja ohjelma ilmoittaa että myyty,PorssisalkkuOMX sisältää osakkeet, ostohinnat, joiden HashMap on siis lisätty 1000 Talvivaaraa.

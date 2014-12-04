@@ -7,6 +7,7 @@ package PorssisalkkuOMX;
 
 import PorssisalkkuOMX.Kirjautuminen;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,24 +21,26 @@ import static org.junit.Assert.*;
  * @author kromanow
  */
 public class KirjautuminenTest {
+
     private Kirjautuminen kirjautuminen;
-    
+    private Scanner lukija;
+
     public KirjautuminenTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-        
+
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -45,43 +48,36 @@ public class KirjautuminenTest {
     /**
      * Test of kirjautuminen method, of class Kirjautuminen.
      */
+//    @Test
+//    public void testKirjautuminen() {
+//        Scanner scanner = new Scanner("tunnus\nsalasana\n");
+//        kirjautuminen = new Kirjautuminen(scanner);
+//        kirjautuminen.kirjautuminen();
+//        
+//    }
     @Test
-    public void testKirjautuminen() {
-        Scanner scanner = new Scanner("tunnus\nsalasana\n");
-        kirjautuminen = new Kirjautuminen(scanner);
-        kirjautuminen.kirjautuminen();
-        
-    }
-    @Test
-    public void Kirjautuminen(){
-       Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
-       
-        String vastaus=kirja.toString();
-       assertEquals("Kirjautuminen",vastaus);
-      
-    }
-    @Test
-    public void toStringFanettutoinennimi(){
-        Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
-        String vastaus=kirja.toString();
-        assertEquals("Kirjautuminen",vastaus);
-        
-    }
-    
-}
-/*
- public String toString() {
-        return "Kirjautuminen";       //{" + '}';
-    }
-Kirjautuminen kirja=new Kirjautuminen("tunnus","salasana");
-       
-        String vastaus=kirja.toString();
-        System.out.println(vastaus);
-    public void Tapahtumat(){
-        
-        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2014);
-               // Tapahtumat tapahtumat=new Tapahtumat("StoraEnso", 12, 8, 2013);
+    public void Kirjautuminen() {
+        Kirjautuminen kirja = new Kirjautuminen("tunnus", "salasana");
 
-        String vastaus=tapahtumat.getOsakkeennimi();
-        assertEquals("UPM",vastaus);
-*/
+        String vastaus = kirja.toString();
+        assertEquals("Kirjautuminen", vastaus);
+
+    }
+
+    @Test
+    public void toStringFanettutoinennimi() {
+        Kirjautuminen kirja = new Kirjautuminen("tunnus", "salasana");
+        String vastaus = kirja.toString();
+        assertEquals("Kirjautuminen", vastaus);
+
+    }
+
+    @Test
+    public void KirjautuminenU() {
+        lukija=new Scanner(System.in);
+  Kirjautuminen kirjautuminen=new Kirjautuminen(lukija);
+        
+        assertEquals(true, kirjautuminen.omattilit.containsKey("kari"));
+    }
+
+}

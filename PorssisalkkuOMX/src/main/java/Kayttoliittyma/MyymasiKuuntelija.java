@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Kayttoliittyma;
 
 import PorssisalkkuOMX.Omatili;
@@ -12,12 +8,7 @@ import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-/**
- * KORVAA protected HashMap<String, Integer> saldot; protected HashMap<String,
- * ArrayList<Integer>> samaaOstettuUseammin;
- *
- * @author kromanow@cs
- */
+
 public class MyymasiKuuntelija implements ActionListener {
 
     private JButton myymasiNappi;

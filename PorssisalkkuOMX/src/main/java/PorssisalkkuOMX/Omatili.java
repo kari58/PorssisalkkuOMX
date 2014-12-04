@@ -10,8 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * protected HashMap<String, Integer> saldot; protected HashMap<String,
- * ArrayList<Integer>> samaaOstettuUseammin; KORVAA SALDOT
+ * 
  *
  *
  *
@@ -29,12 +28,9 @@ import java.util.HashMap;
  */
 public class Omatili extends PorssisalkkuOMX {
 
-    
     private String tunnus;
     private String salasana;
     private double limiittitili;
- 
-  
 
     public Omatili(String tunnus, String salasana) {
         this.tunnus = tunnus;
@@ -90,10 +86,9 @@ public class Omatili extends PorssisalkkuOMX {
         }
 
         vahennaOsake(osake, saldo, (double) markkinaArvo);
-        System.out.println("osake: " + osake);
+
         for (Tapahtumat osakkeet1 : new ArrayList<>(super.osakkeet)) {
-            System.out.println(osakkeet1.getOsakkeennimi());
-            System.out.println(osake);
+
             if (osakkeet1.getOsakkeennimi().equals(osake)) {
                 super.osakkeet.remove(osakkeet1);
             }
@@ -118,7 +113,7 @@ public class Omatili extends PorssisalkkuOMX {
      * kuitenkin jos on huumassa noussut kurssi noudatetaan varovaisuutta,
      * jolloin F saattaa saada arvoja >5;
      * @param saldo
-     * @return   999
+     * @return 999
      */
     public double osta(String osake, int saldo, double ostohinta) {
 
@@ -127,8 +122,8 @@ public class Omatili extends PorssisalkkuOMX {
         super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
 
         return limiittitili -= ostohinta * saldo;
+
         
-        // omatili.getsaldot().put(nimiKentta.getText(), saldo);/
     }
 
 }

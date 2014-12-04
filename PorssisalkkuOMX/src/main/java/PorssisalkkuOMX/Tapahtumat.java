@@ -22,10 +22,7 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
         this.ostopaiva = new Paivamaara(paiva, kuukausi, vuosi);
     }
 
-//    public Tapahtumat(String osakkeennimi, Paivamaara ostopaiva) {
-//        this.osakkeennimi = osakkeennimi;
-//        this.ostopaiva = ostopaiva;
-//    }
+
 
     public Tapahtumat(String osakkeennimi) {
         this.osakkeennimi = osakkeennimi;
@@ -47,7 +44,7 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
      * FIFO-säännön mukaan myydessä vanhin osake pitää myydä ekana
      */
         Paivamaara tamaPaiva = new Paivamaara(paiva, kuukausi, vuosi);
-        System.out.println("vuosi.... " + vuosi + " ja... " + ostopaiva.toString());
+        
         return ostopaiva.erotusVuosissa(tamaPaiva);
 
     }
@@ -61,7 +58,7 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
     }
 
     public String toString() {
-        return this.osakkeennimi;// + ",ostopäivä " + this.ostopaiva; TÄMÄ OTETTU TESTIA VARTEN VEX KOSKA TILTTAA
+        return this.osakkeennimi;
     }
 
     public Paivamaara getVanhin() {

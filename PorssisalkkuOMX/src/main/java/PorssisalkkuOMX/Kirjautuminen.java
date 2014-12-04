@@ -32,7 +32,7 @@ import java.util.Scanner;
  */
 public class Kirjautuminen {
 
-    private HashMap<String, Omatili> omattilit;
+    HashMap<String, Omatili> omattilit;
     Scanner lukija;
 
     public Kirjautuminen(String tunnus, String salasana) {
@@ -40,27 +40,27 @@ public class Kirjautuminen {
 /**
  * jos väärä salasana tai tunnus ohjelma ilmoittaa sen
  */
-    public void kirjautuminen() {
-
-        System.out.print("Anna tunnus: ");
-        String tunnus = lukija.nextLine();
-        if (!omattilit.containsKey(tunnus)) {
-        } else {
-            System.out.print("Anna salasana: ");
-            String salasana = lukija.nextLine();
-
-            if (tunnus.equals(omattilit.get(tunnus).getTunnus()) && (salasana.equals(omattilit.get(tunnus).getSalasana()))) {
-
-                System.out.println("Olet kirjautunut järjestelmään ja saat käyttää Omatili");
-            } else {
-                System.out.println("Virheellinen tunnus tai salasana!");
-            }
-        }
-    }
+//    public void kirjautuminen() {
+//
+//      
+//        String tunnus = lukija.nextLine();
+//        if (!omattilit.containsKey(tunnus)) {
+//        } else {
+//          
+//            String salasana = lukija.nextLine();
+//
+//            if (tunnus.equals(omattilit.get(tunnus).getTunnus()) && (salasana.equals(omattilit.get(tunnus).getSalasana()))) {
+//
+//            
+//            } else {
+//                System.out.println("Virheellinen tunnus tai salasana!");
+//            }
+//        }
+//    }
 
     @Override
     public String toString() {
-        return "Kirjautuminen";       //{" + '}';
+        return "Kirjautuminen";       
     }
 /**
  * Asetetaan salasana=kari  ja tunnus =ilma

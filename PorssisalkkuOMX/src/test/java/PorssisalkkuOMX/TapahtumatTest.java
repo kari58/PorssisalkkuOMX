@@ -55,13 +55,23 @@ public class TapahtumatTest {
     @Test
     public void Tapahtumat(){
         
-        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2014);
+        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 13, 2014);
+               
+
+        String vastaus=tapahtumat.getOsakkeennimi();
+        assertEquals("UPM",vastaus);
+    }
+      @Test
+    public void TapahtumatINTKUUKAUSI(){
+        
+        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 12, 2014);
                
 
         String vastaus=tapahtumat.getOsakkeennimi();
         assertEquals("UPM",vastaus);
     }
 //@Test
+    
 //public void TapahtumatCalendar(){
 //    Tapahtumat tapahtumat=new Tapahtumat("Talvivaara");
 //    //String vastaus=tapahtumat.
@@ -104,8 +114,8 @@ public class TapahtumatTest {
             public void Tapahtumat2(){
                 
           
-    Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 9, 2011);
-    Tapahtumat tapahtumat2=new Tapahtumat("StoraEnso", 12, 8, 2013);
+    Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 12, 2013);
+    Tapahtumat tapahtumat2=new Tapahtumat("StoraEnso", 12, 12, 2013);
     boolean vastaus=tapahtumat.vanhempiKuin(tapahtumat2);
     assertTrue(vastaus);
     

@@ -26,16 +26,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-/**
- 
-/**
- *
- *
- * @author kromanow
- */
-/*
 
- */
+
+ 
 public class Tonnipaivassa implements Runnable {
 
     private String tunnus;
@@ -100,9 +93,7 @@ public class Tonnipaivassa implements Runnable {
 
     }
 
-    /**
-    
-     */
+   
     private void luoKomponentit(Container container) {
         GridLayout layout = new GridLayout(3, 2);
         container.setLayout(layout);

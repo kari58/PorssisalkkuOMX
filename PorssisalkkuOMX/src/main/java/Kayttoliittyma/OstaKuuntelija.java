@@ -53,14 +53,11 @@ public class OstaKuuntelija implements ActionListener {
         double ostohinta = Double.parseDouble(ostohintaKentta.getText());
         int saldo = Integer.parseInt(ostoKentta.getText());
 
-        try {
-            saldo = Integer.parseInt(ostoKentta.getText());
-        } catch (Exception ex) {
-        }
+
         if (ae.getSource() == this.osta) {
 
             omatili.osta(nimiKentta.getText(), saldo, ostohinta);
-            omatili.getsaldot().put(nimiKentta.getText(), saldo);//HALOOOOOO
+            omatili.getsaldot().put(nimiKentta.getText(), saldo);
             omatili.getostohinnat().put(nimiKentta.getText(), ostohinta);
 
             JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
@@ -69,44 +66,3 @@ public class OstaKuuntelija implements ActionListener {
 
     }
 }
-/*
- public void actionPerformed(ActionEvent ae) {
- int arvo = 0;
- 
- try {
- arvo = Integer.parseInt(syotekentta.getText());
- } catch (Exception e) {
- }
- 
- if (ae.getSource() == plus) {
- sovellus.plus(arvo);
- } else if (ae.getSource() == miinus) {
- sovellus.miinus(arvo);
- } else {
- sovellus.nollaa();
- }
- int laskunTulos = sovellus.tulos();
-         
- syotekentta.setText("");
- tuloskentta.setText("" + laskunTulos);
- if ( laskunTulos==0) {
- nollaa.setEnabled(false);
- } else {
- nollaa.setEnabled(true);
- }
- }
- 
- }
- */
-
-/*
-huomio olen kopioinut 148 laskin systeemin ja siinä graafisessa AIKA PALJON TAPAHTUMIA 
-
-Käyttöliittymän koodista selkeyden vuoksi olisi hyvä saada kaikki logiikka eroteltua logiikka luokkiin
-esim. PorssisalkkuOMX tai Omatili. 
-Tällä hetkellä esim. OstaKuuntelija-luokan metodissa actionPerformed tehdään kutsu 
-omatili.getsaldot().put(nimiKentta.getText(), saldo);, joka tulisi toteuttaa logiikan puolella käyttöliittymän sijaan. 
-Käyttöliittymän tulisi vain kertoa logiikalle minkä osakkeen saldoa korotetaan ja kuinka paljon. 
-Tällä hetkellä joitakin toimintoja tehdäänkin sekä logiikan että käyttöliittymän puolella niin osa toiminnoista tuplaantuu. 
-Tämän saa karsittua siirtämällä kaiken ohjelmalogiikan toiminnot logiikan puolelle.
-*/

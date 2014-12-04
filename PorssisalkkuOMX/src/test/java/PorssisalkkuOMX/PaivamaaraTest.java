@@ -57,9 +57,31 @@ public class PaivamaaraTest {
      */
     @Test
     public void testAiemmin() {
-        System.out.println("aiemmin");
-        Paivamaara verrattava = new Paivamaara(15,7,2011);// vuosi kuukausi,päivä 
-        Paivamaara instance = new Paivamaara(16,7,2014);
+     
+        Paivamaara verrattava = new Paivamaara(17,7,2011); 
+        Paivamaara instance = new Paivamaara(16,7,2011);
+        boolean expResult = true;
+        boolean result = instance.aiemmin(verrattava);
+        assertEquals(expResult, result);
+        
+       
+    }
+      @Test
+    public void testAiemmin1() {
+        
+        Paivamaara verrattava = new Paivamaara(1,4,2014); 
+        Paivamaara instance = new Paivamaara(2,3,2014);
+        boolean expResult = true;
+        boolean result = instance.aiemmin(verrattava);
+        assertEquals(expResult, result);
+        
+       
+    }
+      @Test
+    public void testAiemmin2() {
+        
+        Paivamaara verrattava = new Paivamaara(15,0,2014); 
+        Paivamaara instance = new Paivamaara(16,0,2014);
         boolean expResult = false;
         boolean result = instance.aiemmin(verrattava);
         assertEquals(expResult, result);
@@ -72,7 +94,7 @@ public class PaivamaaraTest {
      */
     @Test
     public void testErotusVuosissa() {
-        System.out.println("erotusVuosissa");
+        
         Paivamaara verrattava = new Paivamaara(16,6,2010);
         Paivamaara instance = new Paivamaara(15,6,2014);
         int expResult = 3;
@@ -82,7 +104,7 @@ public class PaivamaaraTest {
     }
      @Test
     public void testAiemminuusi() {
-        System.out.println("aiemmin");
+        
         Paivamaara verrattava = new Paivamaara(13,8,2014);// vuosi kuukausi,päivä 
         Paivamaara instance = new Paivamaara(15,8,2014);
         boolean expResult = false;

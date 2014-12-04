@@ -27,7 +27,8 @@ public class PorssisalkkuOMX {
 
     protected HashMap<String, Double> markkinaArvot;
     protected HashMap<String, Integer> myydytOsakkeet;
-    //lisätty 18.11  a ja a ei tulostu oamlle riville
+   
+    
 
     @Override
     public int hashCode() {
@@ -115,7 +116,7 @@ public class PorssisalkkuOMX {
         }
         this.saldot.put(osake, saldo);
         this.markkinaArvot.put(osake, markkinaArvo);
-        // omatili.getsaldot().put(nimiKentta.getText(), saldo);
+        
     }
 
     public void vahennaOsake(String osake, int saldo, double markkinaArvo) {

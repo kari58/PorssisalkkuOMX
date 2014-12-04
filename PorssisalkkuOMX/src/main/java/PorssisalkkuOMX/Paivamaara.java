@@ -82,7 +82,7 @@ public class Paivamaara {
     }
 
     public int laskeErotus(Paivamaara verrattava) {
-        System.out.println("Vuodet: " + vuosi + " " + verrattava.vuosi);
+      
         int vuosiPois = 0;
         if (this.kuukausi < verrattava.kuukausi) {
             vuosiPois = 1;
@@ -93,8 +93,6 @@ public class Paivamaara {
         return this.vuosi - verrattava.vuosi - vuosiPois;
     }
 
-    int laskeErotus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 
 }
