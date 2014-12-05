@@ -10,11 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * 
- *
- *
- *
- * Tässä ostetaan sakkeita ja myydään niitä FIFO-periaatteella Ostoista ja
+ * Tässä ostetaan osakkeita ja myydään niitä FIFO-periaatteella Ostoista ja
  * myyneistä metodien kohdalla javadoc -kuvaukset FIFO:n ymmärtää parhaiten
  * :osto 9 eur 1' kpl, toinen osto samaa sarjaa 7 eur 1' kpl ja markkinaArvon
  * ollessa 8 eur ja halutessa/joutuessa myymään 1' kpl , tappiota tulee 8-9=
@@ -117,13 +113,12 @@ public class Omatili extends PorssisalkkuOMX {
      */
     public double osta(String osake, int saldo, double ostohinta) {
 
-        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);//ostohinta ostohinta tuplana ÅÅÅÅÅÅÅÅ, poisto rikkooo graafista
+        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);
         saldot.put(osake, saldot.get(osake) + saldo);
         super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
 
         return limiittitili -= ostohinta * saldo;
 
-        
     }
 
 }

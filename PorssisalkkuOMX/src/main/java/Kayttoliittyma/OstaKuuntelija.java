@@ -17,12 +17,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * KORVAA aloitettu 21.11 korvaamaan saldot
+ * 
  *
- * protected HashMap<String, Integer> saldot; protected HashMap<String,
- * ArrayList<Integer>> samaaOstettuUseammin; UPM 22 kpl 10 eur ,UPM 300 kpl , 11
- * eur näin pitää mennä eli omatiliin myös ostohinnat ja porssisalkkuOMX MYÖS
- * ÄLÄ KORVAA LIIAN USEIN ETTEI TILT
+ * 
  *
  * @author kromanow
  */

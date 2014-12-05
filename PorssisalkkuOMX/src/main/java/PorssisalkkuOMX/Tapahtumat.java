@@ -22,14 +22,12 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
         this.ostopaiva = new Paivamaara(paiva, kuukausi, vuosi);
     }
 
-
-
     public Tapahtumat(String osakkeennimi) {
         this.osakkeennimi = osakkeennimi;
 
         Calendar nyt = Calendar.getInstance();
         int vuosi = nyt.get(Calendar.YEAR);
-        int kuukausi = nyt.get(Calendar.MONTH) + 1;
+        int kuukausi = nyt.get(Calendar.MONTH);
         int paiva = nyt.get(Calendar.DATE);
         this.ostopaiva = new Paivamaara(paiva, kuukausi, vuosi);
 
@@ -38,13 +36,13 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
     public int vanhinosake() {
         Calendar nyt = Calendar.getInstance();
         int vuosi = nyt.get(Calendar.YEAR);
-        int kuukausi = nyt.get(Calendar.MONTH) + 1;
+        int kuukausi = nyt.get(Calendar.MONTH);
         int paiva = nyt.get(Calendar.DATE);
-    /**
-     * FIFO-säännön mukaan myydessä vanhin osake pitää myydä ekana
-     */
+        /**
+         * FIFO-säännön mukaan myydessä vanhin osake pitää myydä ekana
+         */
         Paivamaara tamaPaiva = new Paivamaara(paiva, kuukausi, vuosi);
-        
+
         return ostopaiva.erotusVuosissa(tamaPaiva);
 
     }
@@ -61,14 +59,10 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
         return this.osakkeennimi;
     }
 
-    public Paivamaara getVanhin() {
-        return this.ostopaiva;
-    }
-
     /**
      * palauttaa kok.lukuna, joka on määritelty Paivamaara luokassa
      *
-     * @param o=koskee compareTo, joka toimii vain negatiivisilla kokluvuilla
+     * @param o=koskee compareTo, joka toimii vain EInegatiivisilla kokluvuilla
      * @return
      */
     @Override

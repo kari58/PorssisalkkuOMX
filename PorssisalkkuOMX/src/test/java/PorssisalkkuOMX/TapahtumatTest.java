@@ -64,35 +64,13 @@ public class TapahtumatTest {
       @Test
     public void TapahtumatINTKUUKAUSI(){
         
-        Tapahtumat tapahtumat=new Tapahtumat("UPM", 11, 12, 2014);
-               
-
-        String vastaus=tapahtumat.getOsakkeennimi();
-        assertEquals("UPM",vastaus);
+       
+            Paivamaara ostopaiva=new Paivamaara( 11, 12, 2014);
+String vastaus=ostopaiva.toString();
+        
+        assertEquals("11.12.2014",vastaus);
     }
-//@Test
-    
-//public void TapahtumatCalendar(){
-//    Tapahtumat tapahtumat=new Tapahtumat("Talvivaara");
-//    //String vastaus=tapahtumat.
-//    String vastaus=tapahtumat.getOsakkeennimi();
-//    assertEquals("Talvivaara",vastaus);
-//        
-//}  
-    
 
-
-
-//////           public Tapahtumat(String osakkeennimi) {
-////// this.osakkeennimi = osakkeennimi;
-//////
-//////        Calendar nyt = Calendar.getInstance();
-//////        int vuosi = nyt.get(Calendar.YEAR);
-//////        int kuukausi = nyt.get(Calendar.MONTH) + 1;
-//////        int paiva = nyt.get(Calendar.DATE);
-//////        this.ostopaiva = new Paivamaara(paiva, kuukausi, vuosi);
-//////
-//////    }
     
     @Test
     public void testTostring(){
@@ -102,13 +80,7 @@ public class TapahtumatTest {
         String result=instance.toString();
         assertEquals(expResult,result);
                 }
-   // nFailure: expected:<UPM,28.11.2014[]> but was:<UPM,28.11.2014[,ostopäivä 28.11.2014]>
-    
-        //public String toString() {
-      //  return this.osakkeennimi + ",ostopäivä " + this.ostopaiva;
-    
-//    }
-    
+
     
        @Test
             public void Tapahtumat2(){
@@ -134,7 +106,7 @@ public class TapahtumatTest {
                
                 DateFormat dateFormat = new SimpleDateFormat("yyyy");
                 
-                //System.out.println("nykyinen vuosi: " + dateFormat.format(cal.getTime()));
+             
                 
                 assertEquals(Integer.parseInt(dateFormat.format(cal.getTime())) - 2010, answer);
             }
@@ -157,37 +129,3 @@ public class TapahtumatTest {
               
 }
 
-/**
- *  public boolean vanhempiKuin(Tapahtumat verrattava){
-        return this.ostopaiva.aiemmin(verrattava.ostopaiva);
-    }
- *  public int compareTo(Tapahtumat o) {
-        return this.ostopaiva.palautakokolukuna()-o.ostopaiva.palautakokolukuna();
-        * 
-       this.ostopaiva=new Paivamaara(paiva, kuukausi, vuosi); 
-    } public void testPalautakokolukuna() {
-        System.out.println("palautakokolukuna");
-        Paivamaara instance = new Paivamaara(14,11,2016);
-        int expResult = 14112016;
-        int result = instance.palautakokolukuna();
-        assertEquals(expResult, result);
- * 
- * 
- * 
- * selvittää onko 2013 vai 2012 ostettu osake vanhin FIFO-periaatteeseen
-DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-Calendar cal = Calendar.getInstance();
-System.out.println(dateFormat.format(cal.getTime())); //2014/08/06 16:00:22
-
-
-
- public int vanhinosake(){   
-        Calendar nyt=Calendar.getInstance();
-    int vuosi=nyt.get(Calendar.YEAR);
-    int kuukausi=nyt.get(Calendar.MONTH)+1;
-    int paiva=nyt.get(Calendar.DATE);
-    Paivamaara tamaPaiva=new Paivamaara(paiva,kuukausi, vuosi);
-    return ostopaiva.erotusVuosissa(tamaPaiva);
-        
-    }
-*/

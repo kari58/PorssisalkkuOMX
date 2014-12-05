@@ -51,37 +51,7 @@ public class PankintiliTest {
         double result = instance.myy("UPM", 100);
         assertEquals(result, 98900, 0.01);
     }
-    /*
-     @Test
-     public void Limiittitili() {
-     Limiittitili limiittitili2 = new Limiittitili();
-     double vastaus = limiittitili2.osta(10.0, 100);
-     assertEquals(vastaus, 99000.0, 0.01);
-        
-     public double myy(String osakkeennimi,int saldo){
-     return  pankintili-=markkinaArvot.get(osakkeennimi)*saldo;
-     }
-     }
-     */
 
-    /**
-     * Test of osta method, of class Pankintili.
-     */
-  /*
-      @Test
-    public void testOsta() {
-        System.out.println("osta");
-
-        double result = instance.osta("UPM", 1);
-        assertEquals(result, 100011, 0.0);
-
-    }
-    */
-/*
-    public double osta(String osakkeennimi,int saldo){
-        return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
-    }
-    */
     @Test
     public void testErotusVuosissa() {
         System.out.println("erotusVuosissa");
@@ -104,32 +74,7 @@ public class PankintiliTest {
     
 }
 }
-    /*
-  Pankintili i= new Pankintili(pankintili);
-        
-        double expResult = 1001000;
-        double result = i.osta(osake, saldo);
-        assertEquals(expResult, result, 10);
 
-
-public double osta(String osakkeennimi,int saldo){
-        saldot.put(osakkeennimi, saldo);
-        
-        markkinaArvot.put(osakkeennimi,markkinaArvot.get(Osake));
-       return Isotili+=markkinaArvot.get(osakkeennimi)*saldo;
-
-   @Test
-    public void lisaaOsake(){
-        PorssisalkkuOMX salkku=new PorssisalkkuOMX();
-        salkku.lisaaOsake("UPM", 100, 11.0, 11.0);
-        HashMap<String,Integer> saldot=salkku.getsaldot();
-        assertEquals((Integer)100,saldot.get("UPM"));
-
-
-
-    */
-
-        
       
   
     

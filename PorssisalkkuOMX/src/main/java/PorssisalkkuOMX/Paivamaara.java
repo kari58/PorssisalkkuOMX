@@ -24,8 +24,6 @@ public class Paivamaara {
         this.vuosi = vuosi;
     }
 
-
-
     public String toString() {
         return this.paiva + "." + this.kuukausi + "." + this.vuosi;
     }
@@ -54,12 +52,9 @@ public class Paivamaara {
     public boolean aiemmin(Paivamaara verrattava) {
         if (this.vuosi < verrattava.vuosi) {
             return true;
-        }
-        else if (this.vuosi == verrattava.vuosi && this.kuukausi < verrattava.kuukausi) {
+        } else if (this.vuosi == verrattava.vuosi && this.kuukausi < verrattava.kuukausi) {
             return true;
-        }
-        else
-            if (this.vuosi == verrattava.vuosi && this.kuukausi == verrattava.kuukausi && this.paiva < verrattava.paiva) {
+        } else if (this.vuosi == verrattava.vuosi && this.kuukausi == verrattava.kuukausi && this.paiva < verrattava.paiva) {
             return true;
         }
         return false;
@@ -73,7 +68,6 @@ public class Paivamaara {
      * @return
      *
      */
-
     public int erotusVuosissa(Paivamaara verrattava) {
         if (aiemmin(verrattava)) {
             return verrattava.erotusVuosissa(this);
@@ -82,7 +76,7 @@ public class Paivamaara {
     }
 
     public int laskeErotus(Paivamaara verrattava) {
-      
+
         int vuosiPois = 0;
         if (this.kuukausi < verrattava.kuukausi) {
             vuosiPois = 1;
@@ -92,7 +86,5 @@ public class Paivamaara {
         }
         return this.vuosi - verrattava.vuosi - vuosiPois;
     }
-
- 
 
 }

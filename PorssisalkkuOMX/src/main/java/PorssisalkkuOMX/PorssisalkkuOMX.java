@@ -28,17 +28,7 @@ public class PorssisalkkuOMX {
     protected HashMap<String, Double> markkinaArvot;
     protected HashMap<String, Integer> myydytOsakkeet;
    
-    
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 73 * hash + Objects.hashCode(this.ostohinnat);
-        hash = 73 * hash + Objects.hashCode(this.saldot);
-        hash = 73 * hash + Objects.hashCode(this.markkinaArvot);
-        return hash;
-    }
-
+   
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

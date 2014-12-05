@@ -18,14 +18,12 @@ package PorssisalkkuOMX;
 public class Pankintili extends PorssisalkkuOMX {
 
     private double Isotili;
-   
 
     public Pankintili(double Isotili) {
         super();
         this.Isotili = Isotili;
-        
-    }
 
+    }
 
     /**
      * asiakkaan myydessä osaketta pankin arvo-osuustili kyseiselle asiakkaalle
@@ -39,7 +37,7 @@ public class Pankintili extends PorssisalkkuOMX {
 
     /**
      * this.markkinaArvot.put(osake, markkinaArvo); asiakkaan ostaessa osakkeita
-     * pankin tili kasvaa ostoll
+     * pankin tili kasvaa ostolla
      */
     public double osta(String osakkeennimi, int saldo) {
 

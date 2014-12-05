@@ -37,35 +37,17 @@ public class Kirjautuminen {
 
     public Kirjautuminen(String tunnus, String salasana) {
     }
-/**
- * jos väärä salasana tai tunnus ohjelma ilmoittaa sen
- */
-//    public void kirjautuminen() {
-//
-//      
-//        String tunnus = lukija.nextLine();
-//        if (!omattilit.containsKey(tunnus)) {
-//        } else {
-//          
-//            String salasana = lukija.nextLine();
-//
-//            if (tunnus.equals(omattilit.get(tunnus).getTunnus()) && (salasana.equals(omattilit.get(tunnus).getSalasana()))) {
-//
-//            
-//            } else {
-//                System.out.println("Virheellinen tunnus tai salasana!");
-//            }
-//        }
-//    }
 
     @Override
     public String toString() {
-        return "Kirjautuminen";       
+        return "Kirjautuminen";
     }
-/**
- * Asetetaan salasana=kari  ja tunnus =ilma
- * @param lukija 
- */
+
+    /**
+     * Asetetaan salasana=kari ja tunnus =ilma
+     *
+     * @param lukija
+     */
     public Kirjautuminen(Scanner lukija) {
         this.omattilit = new HashMap<String, Omatili>();
         omattilit.put("kari", new Omatili("kari", "ilma"));

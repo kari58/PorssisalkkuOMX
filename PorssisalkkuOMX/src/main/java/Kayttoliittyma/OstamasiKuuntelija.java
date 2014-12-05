@@ -13,9 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
- * KORVAA
- *   protected HashMap<String, Integer> saldot;
-   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ 
  *
  * @author kromanow@cs
  */

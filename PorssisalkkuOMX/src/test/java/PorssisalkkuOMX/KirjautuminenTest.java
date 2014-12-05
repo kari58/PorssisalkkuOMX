@@ -45,16 +45,6 @@ public class KirjautuminenTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of kirjautuminen method, of class Kirjautuminen.
-     */
-//    @Test
-//    public void testKirjautuminen() {
-//        Scanner scanner = new Scanner("tunnus\nsalasana\n");
-//        kirjautuminen = new Kirjautuminen(scanner);
-//        kirjautuminen.kirjautuminen();
-//        
-//    }
     @Test
     public void Kirjautuminen() {
         Kirjautuminen kirja = new Kirjautuminen("tunnus", "salasana");
@@ -74,9 +64,9 @@ public class KirjautuminenTest {
 
     @Test
     public void KirjautuminenU() {
-        lukija=new Scanner(System.in);
-  Kirjautuminen kirjautuminen=new Kirjautuminen(lukija);
-        
+        lukija = new Scanner(System.in);
+        Kirjautuminen kirjautuminen = new Kirjautuminen(lukija);
+
         assertEquals(true, kirjautuminen.omattilit.containsKey("kari"));
     }
 

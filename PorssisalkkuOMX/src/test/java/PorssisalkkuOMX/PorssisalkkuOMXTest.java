@@ -134,33 +134,15 @@ public class PorssisalkkuOMXTest {
         assertEquals((Double) 0.33, ostohinnat.get("Talvivaara"));
     }
 
-    /**
-     * public HashMap<String, Double> getmarkkinaArvot() { return markkinaArvot;
-     * }
-     */
-//    @Test
-//   
-//public void hashCode1(){        //Objects obj
-//    PorssisalkkuOMX salkku=new PorssisalkkuOMX();
-//    HashMap<String, Double> ostohinnat = salkku.getostohinnat();
-//    ostohinnat.put("UPM", 0.5);
-//    Objects.hashCode(ostohinnat);
-//    System.out.print("Ostohinnat hashcode: " +Objects.hashCode(ostohinnat));
-//   // HashMap<String, Integer> saldot = salkku.getsaldot();
-//   // HashMap<String, Double> markkinaArvot = salkku.getmarkkinaArvot();
-//    assertEquals(3,3);
-//    //Ostohinnat hashcode: -1507768047Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
-//        
-//}
+
     @Test
     public void equals() {
         PorssisalkkuOMX salkku = new PorssisalkkuOMX();
          
         HashMap<String, Integer> saldot = salkku.getsaldot();
-        saldot.put("q", null);
-        salkku.equals(null);
+        saldot.put("citycon", null);
         Omatili tili=new Omatili();
-        assertEquals(false, salkku.equals(tili));
+        assertEquals(false, salkku.equals(null));
     }
     @Test
     public void equals2(){
@@ -197,29 +179,18 @@ public class PorssisalkkuOMXTest {
         markkinaArvot.put("Talvivaara",0.0000000000001);
         assertEquals(false,salkku.equals(salkku3));
     }
+      @Test
+    public void equalsostohinnat6(){
+        PorssisalkkuOMX salkku=new PorssisalkkuOMX();
+       
+        HashMap<String,Double>ostohinnat=salkku.getostohinnat();
+        ostohinnat.put("Talvivaara", 0.000001);
+        
+        
+        assertEquals(true,salkku.equals(salkku));
+    }
 
-    /*
-     public boolean equals(Object obj) {
-     if (obj == null) {salkku
-     return false;
-     }
-     if (getClass() != obj.getClass()) {
-     return false;
-     }
-     final PorssisalkkuOMX other = (PorssisalkkuOMX) obj;
-     if (!Objects.equals(this.ostohinnat, other.ostohinnat)) {
-     return false;
-     }
-     if (!Objects.equals(this.saldot, other.saldot)) {
-     return false;
-     }
-     if (!Objects.equals(this.markkinaArvot, other.markkinaArvot)) {
-     return false;
-     }
-     return true;
-     }
-
-     */
+  
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

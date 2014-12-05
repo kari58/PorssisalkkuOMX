@@ -10,9 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * KORVAA
- *   protected HashMap<String, Integer> saldot;
-   protected HashMap<String, ArrayList<Integer>> samaaOstettuUseammin;
+ *
  * Olethan huomioinut tunnus salasana=ilma ja tunnus=kari muuten ei toimi
  *
  * testti testi MyyKuuntelija myydään osakkeita, joita PorsisalkkuOMX sisältää,
