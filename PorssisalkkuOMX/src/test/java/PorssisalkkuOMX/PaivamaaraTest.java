@@ -102,7 +102,7 @@ public class PaivamaaraTest {
     }
    public void testErotusVuosissa2() {
 
-        Paivamaara verrattava = new Paivamaara(17, 6, 2014);
+        Paivamaara verrattava = new Paivamaara(18, 6, 2014);
         Paivamaara instance = new Paivamaara(15, 5, 2014);
         int expResult = 0;
         int result = instance.erotusVuosissa(verrattava);
