@@ -70,27 +70,34 @@ public class Omatili extends PorssisalkkuOMX {
     public ArrayList getOsakkeet() {
         return super.osakkeet;
     }
-
+/**
+ * myy() vahentaa osakkeen saldon ja nimen saldot, markkinaarvot listasta
+ * limiittitilille talletaan kaupasta rahat
+ * @param osake
+ * @param saldo
+ * @param markkinaArvo
+ * @return 
+ */
     public double myy(String osake, int saldo, double markkinaArvo) {
+        if (saldo > 0 && markkinaArvo > 0) {
+            Collections.sort(super.osakkeet);
 
-        Collections.sort(super.osakkeet);
+            if (saldot.containsKey(osake)) {
 
-        if (saldot.containsKey(osake)) {
+                limiittitili += markkinaArvo * saldo;
 
-            limiittitili += markkinaArvo * saldo;
-
-        }
-
-        vahennaOsake(osake, saldo, (double) markkinaArvo);
-
-        for (Tapahtumat osakkeet1 : new ArrayList<>(super.osakkeet)) {
-
-            if (osakkeet1.getOsakkeennimi().equals(osake)) {
-                super.osakkeet.remove(osakkeet1);
             }
-        }
-        markkinaArvot.put(osake, markkinaArvo);
 
+            vahennaOsake(osake, saldo, (double) markkinaArvo);
+
+            for (Tapahtumat osakkeet1 : new ArrayList<>(super.osakkeet)) {
+
+                if (osakkeet1.getOsakkeennimi().equals(osake)) {
+                    super.osakkeet.remove(osakkeet1);
+                }
+            }
+            markkinaArvot.put(osake, markkinaArvo);
+        }
         return limiittitili;
 
     }
@@ -112,13 +119,14 @@ public class Omatili extends PorssisalkkuOMX {
      * @return 999
      */
     public double osta(String osake, int saldo, double ostohinta) {
+        if (ostohinta > 0 && saldo > 0) {
+            lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);
+            saldot.put(osake, saldot.get(osake) + saldo);
+            super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
 
-        lisaaOsake(osake, saldo, (double) ostohinta, (double) ostohinta);
-        saldot.put(osake, saldot.get(osake) + saldo);
-        super.osakkeet.add(new Tapahtumat(osake, 14, 10, 2014));
-
-        return limiittitili -= ostohinta * saldo;
-
+            return limiittitili -= ostohinta * saldo;
+        }
+        return limiittitili;
     }
 
 }

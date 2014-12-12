@@ -41,12 +41,8 @@ public class PankintiliTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of myy method, of class Pankintili.
-     */
     @Test
     public void testMyy() {
-       
 
         double result = instance.myy("UPM", 100);
         assertEquals(result, 98900, 0.01);
@@ -63,23 +59,10 @@ public class PankintiliTest {
 
     }
 
-
     @Test
     public void testOsta() {
-       double result=instance.osta("UPM", 100);
-       assertEquals(result,101100.0,0.01);
-        
-       
-        
-    
+        double result = instance.osta("UPM", 100);
+        assertEquals(result, 101100.0, 0.01);
+
+    }
 }
-}
-
-      
-  
-    
-
-
-
-   
-

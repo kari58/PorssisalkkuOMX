@@ -1,5 +1,3 @@
-
-
 package Kayttoliittyma;
 
 import PorssisalkkuOMX.Omatili;
@@ -33,33 +31,36 @@ public class MyyKuuntelija implements ActionListener {
         this.myyntiKentta = myyntiKentta;
         this.omatili = omatili;
         this.myy = myy;
-     this.hintaKentta = hintaKentta;
+        this.hintaKentta = hintaKentta;
 
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-
         double markkinaArvo = Double.parseDouble(hintaKentta.getText());
         int kappaleMaara = Integer.parseInt(myyntiKentta.getText());
+        if (kappaleMaara > 0 && markkinaArvo > 0) {
 
-        if (!omatili.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
+            if (!omatili.getsaldot().containsKey(this.nimiKenttaMyy.getText())) {
 
-            JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE);
-        } else {
-            if (omatili.getsaldot().get(nimiKenttaMyy.getText()) >= Integer.parseInt(myyntiKentta.getText())) {
-
-                String osake = nimiKenttaMyy.getText();
-                omatili.myy(osake, kappaleMaara,markkinaArvo);
-
-             
-                JOptionPane.showMessageDialog(null, "ONNISTUI", "MYYNTI", JOptionPane.ERROR_MESSAGE);
-
+                JOptionPane.showMessageDialog(null, "Ett omista yhtään näitä", "Et voi myydä", JOptionPane.ERROR_MESSAGE);
             } else {
+                if (omatili.getsaldot().get(nimiKenttaMyy.getText()) >= Integer.parseInt(myyntiKentta.getText())) {
 
-                JOptionPane.showMessageDialog(null, "Et voi myydä", "Et omista noin paljon !", JOptionPane.ERROR_MESSAGE);
+                    String osake = nimiKenttaMyy.getText();
+                    omatili.myy(osake, kappaleMaara, markkinaArvo);
+
+                    JOptionPane.showMessageDialog(null, "ONNISTUI", "MYYNTI", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+
+                    JOptionPane.showMessageDialog(null, "Et voi myydä", "Et omista noin paljon !", JOptionPane.ERROR_MESSAGE);
+                }
+
             }
-
+            
+        }else {
+            JOptionPane.showMessageDialog(null, "Ei onnistu negatiivisilla luvuilla", "MYYNTI EPÄONNISTUI", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

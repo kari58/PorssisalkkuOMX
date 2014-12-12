@@ -37,19 +37,3 @@ public class MainTest {
     public void tearDown() {
     }
 }
-//    
-//    @Test
-//    public void testMain() {
-//        System.out.println("main");
-//        Main main=new Main();
-//        String[] args = null;
-//        Main.main(args);
-//        AssertEquals();
-//    }
-//
-//    private void AssertEquals() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//   
-//    
-//}

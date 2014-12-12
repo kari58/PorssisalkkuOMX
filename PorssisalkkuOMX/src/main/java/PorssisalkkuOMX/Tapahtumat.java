@@ -9,6 +9,8 @@ import java.util.Calendar;
  */
 /**
  * Koko luokka toimii ainoastaan FIFO-myyntiä varten
+ * jossa siis myydään vanhin osake ensin.
+ * Ostop'ivat ja ostoajat tallennetaan
  *
  * @author kromanow
  */
@@ -46,7 +48,11 @@ public class Tapahtumat implements Comparable<Tapahtumat> {
         return ostopaiva.erotusVuosissa(tamaPaiva);
 
     }
-
+/**
+ * Kuten metodin nimestä voi päätellä, se ilmoittaa kahdesta päivämäärästä vanhimman
+ * @param verrattava
+ * @return 
+ */
     public boolean vanhempiKuin(Tapahtumat verrattava) {
         return this.ostopaiva.aiemmin(verrattava.ostopaiva);
     }

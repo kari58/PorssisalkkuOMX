@@ -38,9 +38,6 @@ public class PaivamaaraTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of toString method, of class Paivamaara.
-     */
     @Test
     public void testToString() {
         System.out.println("toString");
@@ -51,9 +48,6 @@ public class PaivamaaraTest {
 
     }
 
-    /**
-     * Test of aiemmin method, of class Paivamaara.
-     */
     @Test
     public void testAiemmin() {
 
@@ -87,9 +81,6 @@ public class PaivamaaraTest {
 
     }
 
-    /**
-     * Test of erotusVuosissa method, of class Paivamaara.
-     */
     @Test
     public void testErotusVuosissa() {
 
@@ -100,7 +91,8 @@ public class PaivamaaraTest {
         assertEquals(expResult, result);
 
     }
-   public void testErotusVuosissa2() {
+
+    public void testErotusVuosissa2() {
 
         Paivamaara verrattava = new Paivamaara(18, 6, 2014);
         Paivamaara instance = new Paivamaara(15, 5, 2014);
@@ -109,7 +101,8 @@ public class PaivamaaraTest {
         assertEquals(expResult, result);
 
     }
-      public void testErotusVuosissa3() {
+
+    public void testErotusVuosissa3() {
 
         Paivamaara verrattava = new Paivamaara(16, 6, 2010);
         Paivamaara instance = new Paivamaara(15, 6, 2014);
@@ -118,6 +111,7 @@ public class PaivamaaraTest {
         assertEquals(expResult, result);
 
     }
+
     @Test
     public void testAiemminuusi() {
 

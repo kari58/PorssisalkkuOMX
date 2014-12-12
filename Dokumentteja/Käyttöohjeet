@@ -1,0 +1,23 @@
+Käyttöohjeet PorssisalkkuOMX.
+Ohjelma kysyy tunnusta =kari ja salasanaa=ilma ja sen jälkeen voi tehdä kauppaa. Kauppaa pääsee tekemääm myös ilman salasanoja.
+Ohjelma toimii virheellisesti ostojen ja myyntien kohdalla. Jos ostetaan osaketta A, B ja C ,niin ostamasi näyttää oikein ostot tai myynnit. Ostettaessa peräjälkeen esim.
+B kolme kertaa, niin ostamasi näyttää viimeisen. Sama koskee myynnissä.
+
+Huomioi , että ensin pitää kirjautua tunnuksilla ja salasanoilla sisään allaolevan ohjeen mukaan
+Avaamalla main ja ja ajamalla run file saadaan Tonnipaivassa.java esiin.Graafinen ikkuna avautuu ja sinne tunnus ja salasana. Kirjoitetaan tunnus=kari ja salasana=ilma.Jolloin saat luvan käyttää Omatili.javaa. 
+Auennut graafinen ikkuna. Osta osake!- kenttään kirjoitetaan esim UPM ja Osto, montako?- kenttään kirjoitetaan esim 100.Ostohintaan naputetaan esim. 12.08 Naputtamalla hiiren vasemmalla nappulalla Osta osake!-painiketta, ohjelma ilmoittaa että on "Ostettu".Ostamasi osakkeet antaa alla olevaan tyhjään tilaan edellä mainitut tapahtuman. Ohjelma rekisteröi HashMap-saldot oston ja ArrayList-osakkeet tapahtuman päiväyksen.Et voi ostaa negatiivisella rahalla tai myyda. Sama koskee ostojen tai myyntejen maaraa. 
+Samaa 100 UPm osaketta voi vastaavasti myydä Mikä myydään?-Myydään montako-Myy osake-painikkeilla. Jos yrität myydä 1000 kpl UPM tai osakkeennimi xzxzx, niin ohjelma ilmoittaa, et voi myydä.
+Myyntihinta naputetaan tyhjään tilaan.Myymäsi osakkeissa näkyy sitten myyty osake, saldo, ja hinta.
+
+
+1)  Kun painetaan Osta osake esim. UPM ja 100 kpl,ostohinta 11.57 eur, ohjelma ilmoitta osto onnistui. Ostamasi kuuntelija ilmoitetaan oston määrä ja ostohinta.Ostamasi osakkeet painamalla löytyy osakkeen nimi, saldo ja ostohinta
+Kun painetaan Myy osake nappia, ohjelmassa on mainissa lisätty Talvivaaraa ja ohjelma ilmoittaa että myyty,PorssisalkkuOMX sisältää osakkeet, ostohinnat, joiden HashMap on siis lisätty 1000 Talvivaaraa.
+Voit myydä vain sen mitä omistat! Myymasi osakkeet ilmoittaa myyntihinnan, myydyn määrän ja osakkeen nimen.
+Seuraavat eivat ole graafisessa.
+2) Omatili luokassa on voitot  ja tappiot, osta metodi ja myy metodi, joiden kuvaus on annettu javadocissa
+3) Paivamaara luokka palvelee omatilin myy metodia, jossa FIFO-peraatten mukaan firstinfirtstout myydään osake
+4)Tapahtumat luokka kerää tiedon Paivamaarasta ja edellisen tavoin Omatilin myy metodin FIFO tapahtumiin luo tiedot
+5)Pankintilin Isotili kasvaa Omatilin ostaessa , jolloin taasen Omatilin limiittitili pieneneen ostolla. Limittitilin katetta ei tarkastella tässä,oikeassa kaupankäynnisssä kylläkin.
+
+
+

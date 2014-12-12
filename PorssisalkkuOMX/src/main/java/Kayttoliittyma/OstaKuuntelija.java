@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- * 
  *
- * 
+ *
+ *
  *
  * @author kromanow
  */
@@ -49,17 +49,19 @@ public class OstaKuuntelija implements ActionListener {
 
         double ostohinta = Double.parseDouble(ostohintaKentta.getText());
         int saldo = Integer.parseInt(ostoKentta.getText());
+        if (ostohinta > 0 && saldo > 0) {
 
+            if (ae.getSource() == this.osta) {
 
-        if (ae.getSource() == this.osta) {
+                omatili.osta(nimiKentta.getText(), saldo, ostohinta);
+                omatili.getsaldot().put(nimiKentta.getText(), saldo);
+                omatili.getostohinnat().put(nimiKentta.getText(), ostohinta);
 
-            omatili.osta(nimiKentta.getText(), saldo, ostohinta);
-            omatili.getsaldot().put(nimiKentta.getText(), saldo);
-            omatili.getostohinnat().put(nimiKentta.getText(), ostohinta);
+                JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
 
-            JOptionPane.showMessageDialog(null, "ONNISTUI", "OSTO", JOptionPane.ERROR_MESSAGE);
-
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Ei onnistu negatiivisilla luvuilla", "OSTO EPÄONNISTUI", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 }
